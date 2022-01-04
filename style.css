@@ -68,8 +68,10 @@ h1 {
 }
 
 p {
+  /* position, dimensions */
   padding: 0;
   margin: 0;
+  /* fonts */
   font-size: large;
 }
 
