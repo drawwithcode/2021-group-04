@@ -58,6 +58,7 @@ button {
   color: white;
   font-size: medium;
   border-style: solid;
+  border-width: 1.5px;
   border-radius: 0.5em;
   border-color: white;
 }
@@ -69,7 +70,8 @@ h1 {
   font-size: 8vmax;
 }
 
-p {
+p,
+span {
   /* position, dimensions */
   padding: 0;
   margin: 0;

@@ -1,22 +1,176 @@
 let intro = document.getElementById("intro");
+let introContent = document.getElementById("intro-content");
 let questions = document.getElementById("questions");
 let identity = document.getElementById("identity");
 let I1 = document.getElementById("I1");
+let I2 = document.getElementById("I2");
+let I3 = document.getElementById("I3");
+let I4 = document.getElementById("I4");
+let I5 = document.getElementById("I5");
 let relationships = document.getElementById("relationships");
+let R1 = document.getElementById("R1");
+let R2 = document.getElementById("R2");
+let R3 = document.getElementById("R3");
+let R4 = document.getElementById("R4");
+let R5 = document.getElementById("R5");
 let violence = document.getElementById("violence");
+let V1 = document.getElementById("V1");
+let V2 = document.getElementById("V2");
+let V3 = document.getElementById("V3");
+let V4 = document.getElementById("V4");
+let V5 = document.getElementById("V5");
 let sexuality = document.getElementById("sexuality");
+let S1 = document.getElementById("S1");
+let S2 = document.getElementById("S2");
+let S3 = document.getElementById("S3");
+let S4 = document.getElementById("S4");
+let S5 = document.getElementById("S5");
 let beliefs = document.getElementById("beliefs");
+let B1 = document.getElementById("B1");
+let B2 = document.getElementById("B2");
+let B3 = document.getElementById("B3");
+let B4 = document.getElementById("B4");
+let B5 = document.getElementById("B5");
+let B6 = document.getElementById("B6");
 let artwork = document.getElementById("artwork");
+let artworkContent = document.getElementById("artwork-content");
 
-function nextSection(currentQuestion) {
-  switch (currentQuestion) {
+function nextSection(sectionNumber) {
+  switch (sectionNumber) {
     case "1":
-      intro.className = "sctn hide";
+      // todo: random out of three
+      console.log(sectionNumber);
+      intro.className = "section hide";
+      introContent.className = "container hide";
       setTimeout(() => {
-        questions.className = "sctn show";
-        identity.className = "sctn show";
+        questions.className = "section show";
+        identity.className = "section show";
         I1.className = "container show";
       }, 750);
+      break;
+    case "2":
+      console.log(sectionNumber);
+      I1.className = "container hide";
+      setTimeout(() => {
+        I4.className = "container show";
+      }, 750);
+      break;
+    case "3":
+      // todo: random out of two
+      console.log(sectionNumber);
+      I4.className = "container hide";
+      setTimeout(() => {
+        I5.className = "container show";
+      }, 750);
+      break;
+    case "4":
+      // todo: random out of two
+      console.log(sectionNumber);
+      I5.className = "container hide";
+      identity.className = "section hide";
+      setTimeout(() => {
+        relationships.className = "section show";
+        R1.className = "container show";
+      }, 750);
+      break;
+    case "5":
+      // todo: random out of two
+      console.log(sectionNumber);
+      R1.className = "container hide";
+      setTimeout(() => {
+        R3.className = "container show";
+      }, 750);
+      break;
+    case "6":
+      console.log(sectionNumber);
+      R3.className = "container hide";
+      setTimeout(() => {
+        R5.className = "container show";
+      }, 750);
+      break;
+    case "7":
+      // todo: random out of three
+      console.log(sectionNumber);
+      R5.className = "container hide";
+      relationships.className = "section hide";
+      setTimeout(() => {
+        violence.className = "section show";
+        V1.className = "container show";
+      }, 750);
+      break;
+    case "8":
+      console.log(sectionNumber);
+      V1.className = "container hide";
+      setTimeout(() => {
+        V4.className = "container show";
+      }, 750);
+      break;
+    case "9":
+      console.log(sectionNumber);
+      V4.className = "container hide";
+      setTimeout(() => {
+        V5.className = "container show";
+      }, 750);
+      break;
+    case "10":
+      // todo: random out of three
+      console.log(sectionNumber);
+      V5.className = "container hide";
+      violence.className = "section hide";
+      setTimeout(() => {
+        sexuality.className = "section show";
+        S1.className = "container show";
+      }, 750);
+      break;
+    case "11":
+      console.log(sectionNumber);
+      S1.className = "container hide";
+      setTimeout(() => {
+        S4.className = "container show";
+      }, 750);
+      break;
+    case "12":
+      console.log(sectionNumber);
+      S4.className = "container hide";
+      setTimeout(() => {
+        S5.className = "container show";
+      }, 750);
+      break;
+    case "13":
+      // todo: random out of two
+      console.log(sectionNumber);
+      S5.className = "container hide";
+      sexuality.className = "section hide";
+      setTimeout(() => {
+        beliefs.className = "section show";
+        B1.className = "container show";
+      }, 750);
+      break;
+    case "14":
+      console.log(sectionNumber);
+      B1.className = "container hide";
+      setTimeout(() => {
+        B3.className = "container show";
+      }, 750);
+      break;
+    case "15":
+      // todo: random out of three
+      console.log(sectionNumber);
+      B3.className = "container hide";
+      setTimeout(() => {
+        B4.className = "container show";
+      }, 750);
+      break;
+    case "16":
+      console.log(sectionNumber);
+      B4.className = "container hide";
+      beliefs.className = "section hide";
+      setTimeout(() => {
+        artwork.className = "section show";
+        artworkContent.className = "container show";
+      }, 750);
+      break;
     default:
+      console.log("nope");
   }
 }

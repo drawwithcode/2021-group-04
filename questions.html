@@ -18,10 +18,15 @@
     <script src="libraries/p5.sound.min.js"></script>
   </head>
   <body>
+    <!--background-->
+    <section class="section show" id="background">
+      <div class="container show" id="background-content"></div>
+    </section>
+
     <!--intro-->
-    <section class="sctn show" id="intro">
-      <div class="container show">
-        <h1>BLANK TEXT</h1>
+    <section class="section show" id="intro">
+      <div class="container show" id="intro-content">
+        <h1>[blank text]</h1>
         <div class="footer">
           <button onclick="nextSection('1')">START</button>
         </div>
@@ -29,216 +34,313 @@
     </section>
 
     <!--questions-->
-    <section class="sctn hide" id="questions">
+    <section class="section hide" id="questions">
       <!--section 1-->
-      <section class="sctn hide" id="identity">
-        <div class="container hide" id="I1">
+      <section class="section hide" id="identity">
+        <div class="container hide" id="I1" data-question-group="1">
+          <div class="wrapper">
+            <p>Are humans free?</p>
+          </div>
+          <div class="footer">
+            <button onclick="nextSection('2')">
+              <span>[choice → yes/no]</span>
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="I2" data-question-group="1">
+          <div class="wrapper">
+            <p>Have you ever cried looking at yourself in the mirror?</p>
+          </div>
+          <div class="footer">
+            <button onclick="nextSection('2')">
+              <span>[choice → yes/no]</span>
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="I3" data-question-group="1">
           <div class="wrapper">
             <p>
               If there was a button to restart your entire life, would you press
               it?
             </p>
           </div>
-          <div class="footer"><button>[choice → yes/no]</button></div>
-        </div>
-        <div class="container" id="I2" style="display: none">
-          <div class="wrapper">
-            <p>How does the dream end?</p>
+          <div class="footer">
+            <button onclick="nextSection('2')">
+              <span>[choice → yes/no]</span>
+            </button>
           </div>
-          <div class="footer"><button>[text → anything]</button></div>
         </div>
-        <div class="container" id="I3" style="display: none">
-          <div class="wrapper">
-            <p>Have you ever cried looking at yourself in the mirror?</p>
-          </div>
-          <div class="footer"><button>[choice → yes/no]</button></div>
-        </div>
-        <div class="container" id="I4" style="display: none">
-          <div class="wrapper">
-            <p>Are humans free?</p>
-          </div>
-          <div class="footer"><button>[choice → yes/no]</button></div>
-        </div>
-        <div class="container" id="I5" style="display: none">
+        <div class="container hide" id="I4" data-question-group="2">
           <div class="wrapper">
             <p>Is it better to feel remorseful or regretful?</p>
           </div>
           <div class="footer">
-            <button>[quantity → multiple choice scale/slider]</button>
+            <button onclick="nextSection('3')">
+              <span>[quantity → multiple choice/slider]</span>
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="I5" data-question-group="3">
+          <div class="wrapper">
+            <p>How does the dream end?</p>
+          </div>
+          <div class="footer">
+            <button onclick="nextSection('4')">
+              <span>[text → anything]</span>
+            </button>
           </div>
         </div>
       </section>
 
       <!--section 2 (relationships)-->
-      <section id="relationships" style="display: none">
-        <div class="container" id="R1" style="display: none">
+      <section class="section hide" id="relationships">
+        <div class="container hide" id="R1" data-question-group="4">
           <div class="wrapper">
-            <p>When did you realize that you are alone?</p>
+            <p>Is it more important to love yourself more than the others?</p>
           </div>
           <div class="footer">
-            <button>[quantity → multiple choice scale/slider]</button>
+            <button onclick="nextSection('5')">
+              <span>[choice → yes/no]</span>
+            </button>
           </div>
         </div>
-        <div class="container" id="R2" style="display: none">
-          <div class="wrapper">
-            <p>
-              How many people have suffered because of you? Was it worth it?
-            </p>
-          </div>
-          <div class="footer"><button>[text → anything]</button></div>
-        </div>
-        <div class="container" id="R3" style="display: none">
-          <div class="wrapper">
-            <p>How invisible do you feel?</p>
-          </div>
-          <div class="footer">
-            <button>[quantity → multiple choice scale/slider]</button>
-          </div>
-        </div>
-        <div class="container" id="R4" style="display: none">
+        <div class="container hide" id="R2" data-question-group="4">
           <div class="wrapper">
             <p>
               You just found out that your friends' partner has cheated on them.
               Would you tell them the truth?
             </p>
           </div>
-          <div class="footer"><button>[choice → yes/no]</button></div>
-        </div>
-        <div class="container" id="R5" style="display: none">
-          <div class="wrapper">
-            <p>Is it more important to love yourself more than the others?</p>
+          <div class="footer">
+            <button onclick="nextSection('5')">
+              <span>[choice → yes/no]</span>
+            </button>
           </div>
-          <div class="footer"><button>[choice → yes/no]</button></div>
+        </div>
+        <div class="container hide" id="R3" data-question-group="5">
+          <div class="wrapper">
+            <p>How invisible do you feel?</p>
+          </div>
+          <div class="footer">
+            <button onclick="nextSection('6')">
+              <span>[quantity → multiple choice/slider]</span>
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="R4" data-question-group="5">
+          <div class="wrapper">
+            <p>When did you realize that you are alone?</p>
+          </div>
+          <div class="footer">
+            <button onclick="nextSection('6')">
+              <span>[quantity → multiple choice/slider]</span>
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="R5" data-question-group="6">
+          <div class="wrapper">
+            <p>
+              How many people have suffered because of you? Was it worth it?
+            </p>
+          </div>
+          <div class="footer">
+            <button onclick="nextSection('7')">
+              <span>[text → anything]</span>
+            </button>
+          </div>
         </div>
       </section>
 
       <!--section 3 (violence)-->
-      <section id="violence" style="display: none">
-        <div class="container" id="V1" style="display: none">
-          <div class="wrapper">
-            <p>Have you ever fantasized about murdering your father?</p>
-          </div>
-          <div class="footer"><button>[choice → yes/no]</button></div>
-        </div>
-        <div class="container" id="V2" style="display: none">
+      <section class="section hide" id="violence">
+        <div class="container hide" id="V1" data-question-group="7">
           <div class="wrapper">
             <p>Have you ever enjoyed hurting someone?</p>
           </div>
-          <div class="footer"><button>[choice → yes/no]</button></div>
+          <div class="footer">
+            <button onclick="nextSection('8')">
+              <span>[choice → yes/no]</span>
+            </button>
+          </div>
         </div>
-        <div class="container" id="V3" style="display: none">
+        <div class="container hide" id="V2" data-question-group="7">
+          <div class="wrapper">
+            <p>Have you ever fantasized about murdering your father?</p>
+          </div>
+          <div class="footer">
+            <button onclick="nextSection('8')">
+              <span>[choice → yes/no]</span>
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="V3" data-question-group="7">
           <div class="wrapper">
             <p>To kill or to be killed?</p>
           </div>
-          <div class="footer"><button>[choice → 1/2]</button></div>
-        </div>
-        <div class="container" id="V4" style="display: none">
-          <div class="wrapper">
-            <p>What would justify capital punishment?</p>
+          <div class="footer">
+            <button onclick="nextSection('8')">
+              <span>[choice → 1/2]</span>
+            </button>
           </div>
-          <div class="footer"><button>[text → anything]</button></div>
         </div>
-        <div class="container" id="V5" style="display: none">
+        <div class="container hide" id="V4" data-question-group="8">
           <div class="wrapper">
             <p>
               How likely you'd be willing to sacrifice your self to save
               somebody else?
             </p>
           </div>
-          <div class="footer" style="display: none">
-            <button>[quantity → multiple choice scale/slider]</button>
+          <div class="footer">
+            <button onclick="nextSection('9')">
+              <span>[quantity → multiple choice/slider]</span>
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="V5" data-question-group="9">
+          <div class="wrapper">
+            <p>What would justify capital punishment?</p>
+          </div>
+          <div class="footer">
+            <button onclick="nextSection('10')">
+              <span>[text → anything]</span>
+            </button>
           </div>
         </div>
       </section>
 
       <!--section 4 (sexuality)-->
-      <section id="sexuality" style="display: none">
-        <div class="container" id="S1" style="display: none">
+      <section class="section hide" id="sexuality">
+        <div class="container hide" id="S1" data-question-group="10">
           <div class="wrapper">
             <p>Have you ever cried during sex?</p>
           </div>
-          <div class="footer"><button>[choice → yes/no]</button></div>
-        </div>
-        <div class="container" id="S2" style="display: none">
-          <div class="wrapper">
-            <p>Taking control or being submissive?</p>
+          <div class="footer">
+            <button onclick="nextSection('11')">
+              <span>[choice → yes/no]</span>
+            </button>
           </div>
-          <div class="footer"><button>[choice → 1/2]</button></div>
         </div>
-        <div class="container" id="S3" style="display: none">
+        <div class="container hide" id="S2" data-question-group="10">
           <div class="wrapper">
             <p>
               Have you ever thought about having sex with someone you shouldn't?
             </p>
           </div>
-          <div class="footer"><button>[choice → yes/no]</button></div>
+          <div class="footer">
+            <button onclick="nextSection('11')">
+              <span>[choice → yes/no]</span>
+            </button>
+          </div>
         </div>
-        <div class="container" id="S4" style="display: none">
+        <div class="container hide" id="S3" data-question-group="10">
+          <div class="wrapper">
+            <p>Taking control or being submissive?</p>
+          </div>
+          <div class="footer">
+            <button onclick="nextSection('11')">
+              <span>[choice → 1/2</span>]
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="S4" data-question-group="11">
+          <div class="wrapper">
+            <p>How safe would you feel while sexting?</p>
+          </div>
+          <div class="footer">
+            <button onclick="nextSection('12')">
+              <span>[quantity → multiple choice/slider]</span>
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="S5" data-question-group="12">
           <div class="wrapper">
             <p>
               How would you feel if you found out that your partner had
               cybersex?
             </p>
           </div>
-          <div class="footer"><button>[text → anything]</button></div>
-        </div>
-        <div class="container" id="S5" style="display: none">
-          <div class="wrapper">
-            <p>How safe would you feel while sexting?</p>
-          </div>
           <div class="footer">
-            <button>[quantity → multiple choice scale/slider]</button>
+            <button onclick="nextSection('13')">
+              <span>[text → anything]</span>
+            </button>
           </div>
         </div>
       </section>
 
       <!--section 5 (beliefs)-->
-      <section id="beliefs" style="display: none">
-        <div class="container" id="B1" style="display: none">
+      <section class="section hide" id="beliefs">
+        <div class="container hide" id="B1" data-question-group="13">
           <div class="wrapper">
-            <p>Where do we go when we die?</p>
+            <p>Is science a religion?</p>
           </div>
-          <div class="footer"><button>[text → anything]</button></div>
+          <div class="footer">
+            <button onclick="nextSection('14')">
+              <span>[choice → yes/no]</span>
+            </button>
+          </div>
         </div>
-        <div class="container" id="B2" style="display: none">
+        <div class="container hide" id="B2" data-question-group="13">
           <div class="wrapper">
-            <p>What saves us?</p>
+            <p>Would you give up your religious beliefs for someone else?</p>
           </div>
-          <div class="footer"><button>[text → anything]</button></div>
+          <div class="footer">
+            <button onclick="nextSection('14')">
+              <span>[choice → yes/no]</span>
+            </button>
+          </div>
         </div>
-        <div class="container" id="B3" style="display: none">
+        <div class="container hide" id="B3" data-question-group="14">
           <div class="wrapper">
             <p>How close are you to happiness?</p>
           </div>
           <div class="footer">
-            <button>[quantity → multiple choice scale/slider]</button>
+            <button onclick="nextSection('15')">
+              <span>[quantity → multiple choice/slider]</span>
+            </button>
           </div>
         </div>
-        <div class="container" id="B4" style="display: none">
+        <div class="container hide" id="B4" data-question-group="15">
           <div class="wrapper">
             <p>What is stopping you from feeling complete?</p>
           </div>
-          <div class="footer"><button>[text → anything]</button></div>
-        </div>
-        <div class="container" id="B5" style="display: none">
-          <div class="wrapper">
-            <p>Is science a religion?</p>
+          <div class="footer">
+            <button onclick="nextSection('16')">
+              <span>[text → anything]</span>
+            </button>
           </div>
-          <div class="footer"><button>[choice → yes/no]</button></div>
         </div>
-        <div class="container" id="B6" style="display: none">
+        <div class="container hide" id="B5" data-question-group="15">
           <div class="wrapper">
-            <p>Would you give up your religious beliefs for someone else?</p>
+            <p>What saves us?</p>
           </div>
-          <div class="footer"><button>[choice → yes/no]</button></div>
+          <div class="footer">
+            <button onclick="nextSection('16')">
+              <span>[text → anything]</span>
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="B6" data-question-group="15">
+          <div class="wrapper">
+            <p>Where do we go when we die?</p>
+          </div>
+          <div class="footer">
+            <button onclick="nextSection('16')">
+              <span>[text → anything]</span>
+            </button>
+          </div>
         </div>
       </section>
     </section>
 
     <!--artwork-->
-    <section class="sctn hide" id="artwork">
-      <div class="container">
-        <h1>BLANK TEXT</h1>
+    <section class="section hide" id="artwork">
+      <div class="container hide" id="artwork-content">
+        <h1>[artwork]</h1>
+        <div class="footer">
+          <button onclick="">
+            <span>[save to archive]</span>
+          </button>
+        </div>
       </div>
     </section>
 
