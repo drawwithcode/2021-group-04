@@ -77,7 +77,7 @@ p {
   font-size: large;
 }
 
-section {
+.sctn.show {
   /* position, dimensions */
   position: absolute;
   width: 100%;
@@ -89,6 +89,30 @@ section {
   /* styles, colours */
   background: transparent;
   color: white;
+  /* animations */
+  /* z-index: 1; */
+  opacity: 100%;
+  pointer-events: auto;
+  transition: all 1s ease-in-out;
+}
+
+.sctn.hide {
+  /* position, dimensions */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* behavioral settings */
+  display: block;
+  /* styles, colours */
+  background: transparent;
+  color: white;
+  /* animations */
+  /* z-index: -1; */
+  opacity: 0%;
+  pointer-events: none;
+  transition: all 1s ease-in-out;
 }
 
 .header {
@@ -127,7 +151,7 @@ section {
   font-size: large;
 }
 
-.container {
+.container.show {
   /* position, dimensions */
   position: absolute;
   width: 100%;
@@ -136,6 +160,27 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* animations */
+  /* z-index: 1; */
+  opacity: 100%;
+  pointer-events: auto;
+  transition: all 1s ease-in-out;
+}
+
+.container.hide {
+  /* position, dimensions */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* behavioral settings */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* animations */
+  /* z-index: -1; */
+  opacity: 0%;
+  pointer-events: none;
+  transition: all 1s ease-in-out;
 }
 
 .wrapper {
