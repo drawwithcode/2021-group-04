@@ -29,7 +29,7 @@ body {
   /* behavioral settings */
   overflow: hidden;
   /* styles, colours */
-  background: #232628;
+  background: transparent;
   color: white;
   /* fonts */
   font-family: "Everett", sans-serif;

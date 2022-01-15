@@ -11,7 +11,8 @@ function setup() {
 }
 
 function draw() {
-  clear();
+  // clear();
+  background("#232628");
   rect(width / 2, height / 2, windowWidth, height * sin(frameCount / 500));
 }
 
