@@ -34,136 +34,257 @@ let B5 = document.getElementById("B5");
 let B6 = document.getElementById("B6");
 let artwork = document.getElementById("artwork");
 let artworkContent = document.getElementById("artwork-content");
+let dice = 0;
 
 function nextSection(sectionNumber) {
   switch (sectionNumber) {
     case "1":
-      // todo: random out of three
-      console.log(sectionNumber);
-      intro.className = "section hide";
-      introContent.className = "container hide";
-      setTimeout(() => {
-        questions.className = "section show";
-        identity.className = "section show";
-        I1.className = "container show";
-      }, 750);
-      break;
+      dice = getRandomInt(1, 3);
+      if (dice === 1) {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        intro.className = "section hide";
+        introContent.className = "container hide";
+        setTimeout(() => {
+          questions.className = "section show";
+          identity.className = "section show";
+          I1.className = "container show";
+        }, 750);
+        break;
+      } else if (dice === 2) {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        intro.className = "section hide";
+        introContent.className = "container hide";
+        setTimeout(() => {
+          questions.className = "section show";
+          identity.className = "section show";
+          I2.className = "container show";
+        }, 750);
+        break;
+      } else {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        intro.className = "section hide";
+        introContent.className = "container hide";
+        setTimeout(() => {
+          questions.className = "section show";
+          identity.className = "section show";
+          I3.className = "container show";
+        }, 750);
+        break;
+      }
     case "2":
-      console.log(sectionNumber);
+      console.log("question " + sectionNumber);
       I1.className = "container hide";
+      I2.className = "container hide";
+      I3.className = "container hide";
       setTimeout(() => {
         I4.className = "container show";
       }, 750);
       break;
     case "3":
-      // todo: random out of two
-      console.log(sectionNumber);
+      console.log("question " + sectionNumber);
       I4.className = "container hide";
       setTimeout(() => {
         I5.className = "container show";
       }, 750);
       break;
     case "4":
-      // todo: random out of two
-      console.log(sectionNumber);
-      I5.className = "container hide";
-      identity.className = "section hide";
-      setTimeout(() => {
-        relationships.className = "section show";
-        R1.className = "container show";
-      }, 750);
-      break;
+      dice = getRandomInt(1, 2);
+      if (dice === 1) {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        I5.className = "container hide";
+        identity.className = "section hide";
+        setTimeout(() => {
+          relationships.className = "section show";
+          R1.className = "container show";
+        }, 750);
+        break;
+      } else {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        I5.className = "container hide";
+        identity.className = "section hide";
+        setTimeout(() => {
+          relationships.className = "section show";
+          R2.className = "container show";
+        }, 750);
+        break;
+      }
     case "5":
-      // todo: random out of two
-      console.log(sectionNumber);
-      R1.className = "container hide";
-      setTimeout(() => {
-        R3.className = "container show";
-      }, 750);
-      break;
+      dice = getRandomInt(1, 2);
+      if (dice === 1) {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        R1.className = "container hide";
+        R2.className = "container hide";
+        setTimeout(() => {
+          R3.className = "container show";
+        }, 750);
+        break;
+      } else {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        R1.className = "container hide";
+        R2.className = "container hide";
+        setTimeout(() => {
+          R4.className = "container show";
+        }, 750);
+        break;
+      }
     case "6":
-      console.log(sectionNumber);
+      console.log("question " + sectionNumber);
       R3.className = "container hide";
+      R4.className = "container hide";
       setTimeout(() => {
         R5.className = "container show";
       }, 750);
       break;
     case "7":
-      // todo: random out of three
-      console.log(sectionNumber);
-      R5.className = "container hide";
-      relationships.className = "section hide";
-      setTimeout(() => {
-        violence.className = "section show";
-        V1.className = "container show";
-      }, 750);
-      break;
+      dice = getRandomInt(1, 3);
+      if (dice === 1) {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        R5.className = "container hide";
+        relationships.className = "section hide";
+        setTimeout(() => {
+          violence.className = "section show";
+          V1.className = "container show";
+        }, 750);
+        break;
+      } else if (dice === 2) {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        R5.className = "container hide";
+        relationships.className = "section hide";
+        setTimeout(() => {
+          violence.className = "section show";
+          V2.className = "container show";
+        }, 750);
+        break;
+      } else {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        R5.className = "container hide";
+        relationships.className = "section hide";
+        setTimeout(() => {
+          violence.className = "section show";
+          V3.className = "container show";
+        }, 750);
+        break;
+      }
     case "8":
-      console.log(sectionNumber);
+      console.log("question " + sectionNumber);
       V1.className = "container hide";
+      V2.className = "container hide";
+      V3.className = "container hide";
       setTimeout(() => {
         V4.className = "container show";
       }, 750);
       break;
     case "9":
-      console.log(sectionNumber);
+      console.log("question " + sectionNumber);
       V4.className = "container hide";
       setTimeout(() => {
         V5.className = "container show";
       }, 750);
       break;
     case "10":
-      // todo: random out of three
-      console.log(sectionNumber);
-      V5.className = "container hide";
-      violence.className = "section hide";
-      setTimeout(() => {
-        sexuality.className = "section show";
-        S1.className = "container show";
-      }, 750);
-      break;
+      dice = getRandomInt(1, 3);
+      if (dice === 1) {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        V5.className = "container hide";
+        violence.className = "section hide";
+        setTimeout(() => {
+          sexuality.className = "section show";
+          S1.className = "container show";
+        }, 750);
+        break;
+      } else if (dice === 2) {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        V5.className = "container hide";
+        violence.className = "section hide";
+        setTimeout(() => {
+          sexuality.className = "section show";
+          S2.className = "container show";
+        }, 750);
+        break;
+      } else {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        V5.className = "container hide";
+        violence.className = "section hide";
+        setTimeout(() => {
+          sexuality.className = "section show";
+          S3.className = "container show";
+        }, 750);
+        break;
+      }
     case "11":
-      console.log(sectionNumber);
+      console.log("question " + sectionNumber);
       S1.className = "container hide";
+      S2.className = "container hide";
+      S3.className = "container hide";
       setTimeout(() => {
         S4.className = "container show";
       }, 750);
       break;
     case "12":
-      console.log(sectionNumber);
+      console.log("question " + sectionNumber);
       S4.className = "container hide";
       setTimeout(() => {
         S5.className = "container show";
       }, 750);
       break;
     case "13":
-      // todo: random out of two
-      console.log(sectionNumber);
-      S5.className = "container hide";
-      sexuality.className = "section hide";
-      setTimeout(() => {
-        beliefs.className = "section show";
-        B1.className = "container show";
-      }, 750);
-      break;
+      dice = getRandomInt(1, 2);
+      if (dice === 1) {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        S5.className = "container hide";
+        sexuality.className = "section hide";
+        setTimeout(() => {
+          beliefs.className = "section show";
+          B1.className = "container show";
+        }, 750);
+        break;
+      } else {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        S5.className = "container hide";
+        sexuality.className = "section hide";
+        setTimeout(() => {
+          beliefs.className = "section show";
+          B2.className = "container show";
+        }, 750);
+        break;
+      }
     case "14":
-      console.log(sectionNumber);
+      console.log("question " + sectionNumber);
       B1.className = "container hide";
+      B2.className = "container hide";
       setTimeout(() => {
         B3.className = "container show";
       }, 750);
       break;
     case "15":
-      // todo: random out of three
-      console.log(sectionNumber);
-      B3.className = "container hide";
-      setTimeout(() => {
-        B4.className = "container show";
-      }, 750);
-      break;
+      dice = getRandomInt(1, 3);
+      if (dice === 1) {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        B3.className = "container hide";
+        setTimeout(() => {
+          B4.className = "container show";
+        }, 750);
+        break;
+      } else if (dice === 2) {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        B3.className = "container hide";
+        setTimeout(() => {
+          B5.className = "container show";
+        }, 750);
+        break;
+      } else {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        B3.className = "container hide";
+        setTimeout(() => {
+          B6.className = "container show";
+        }, 750);
+        break;
+      }
     case "16":
-      console.log(sectionNumber);
+      console.log("question " + sectionNumber);
       B4.className = "container hide";
+      B5.className = "container hide";
+      B6.className = "container hide";
       beliefs.className = "section hide";
       setTimeout(() => {
         artwork.className = "section show";
@@ -173,4 +294,13 @@ function nextSection(sectionNumber) {
     default:
       console.log("nope");
   }
+}
+
+// class artwork {}
+
+// generate a random integer from range, inclusive
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }

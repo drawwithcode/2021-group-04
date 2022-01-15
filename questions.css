@@ -37,6 +37,11 @@ body {
   font-size: large;
 }
 
+canvas {
+  /* behavioral settings */
+  display: block;
+}
+
 a {
   /* styles, colours */
   color: white;
@@ -61,6 +66,7 @@ button {
   border-width: 1.5px;
   border-radius: 0.5em;
   border-color: white;
+  /* mix-blend-mode: difference; */
 }
 
 h1 {
@@ -79,41 +85,43 @@ span {
   font-size: large;
 }
 
-.sctn.show {
+.section.show {
   /* position, dimensions */
   position: absolute;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  /* z-index: 1; */
   /* behavioral settings */
   display: block;
+  pointer-events: auto;
   /* styles, colours */
+  opacity: 100%;
   background: transparent;
   color: white;
+  mix-blend-mode: difference;
   /* animations */
-  /* z-index: 1; */
-  opacity: 100%;
-  pointer-events: auto;
   transition: all 1s ease-in-out;
 }
 
-.sctn.hide {
+.section.hide {
   /* position, dimensions */
   position: absolute;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  /* z-index: -1; */
   /* behavioral settings */
   display: block;
+  pointer-events: none;
   /* styles, colours */
+  opacity: 0%;
   background: transparent;
   color: white;
+  mix-blend-mode: difference;
   /* animations */
-  /* z-index: -1; */
-  opacity: 0%;
-  pointer-events: none;
   transition: all 1s ease-in-out;
 }
 
@@ -150,7 +158,7 @@ span {
   /* fonts */
   font-family: "Everett", sans-serif;
   font-weight: normal;
-  font-size: large;
+  font-size: medium;
 }
 
 .container.show {
@@ -158,14 +166,17 @@ span {
   position: absolute;
   width: 100%;
   height: 100%;
+  /* z-index: 1; */
   /* behavioral settings */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* animations */
-  /* z-index: 1; */
-  opacity: 100%;
   pointer-events: auto;
+  /* styles, colours */
+  opacity: 100%;
+  background: transparent;
+  /* mix-blend-mode: difference; */
+  /* animations */
   transition: all 1s ease-in-out;
 }
 
@@ -174,14 +185,17 @@ span {
   position: absolute;
   width: 100%;
   height: 100%;
+  /* z-index: -1; */
   /* behavioral settings */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* animations */
-  /* z-index: -1; */
-  opacity: 0%;
   pointer-events: none;
+  /* styles, colours */
+  opacity: 0%;
+  background: transparent;
+  /* mix-blend-mode: difference; */
+  /* animations */
   transition: all 1s ease-in-out;
 }
 
@@ -192,8 +206,10 @@ span {
   /* behavioral settings */
   display: inline;
   /* styles, colours */
+  background: transparent;
   border-style: solid;
   border-width: 1.5px;
   border-radius: 0.5em;
   border-color: white;
+  /* mix-blend-mode: difference; */
 }
