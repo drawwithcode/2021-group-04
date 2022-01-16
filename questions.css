@@ -42,22 +42,15 @@ canvas {
   display: block;
 }
 
-a {
-  /* styles, colours */
-  color: white;
-  /* fonts */
-  font-family: "Everett", sans-serif;
-  font-weight: normal;
-  font-size: large;
-  text-decoration: none;
-}
-
+a,
 button {
   /* position, dimensions */
   margin: 10px;
   padding: 5px;
+  /* width: calc(100% - 20px); */
   /* behavioral settings */
   cursor: pointer;
+  text-align: center;
   /* styles, colours */
   background: transparent;
   color: white;
@@ -66,7 +59,11 @@ button {
   border-width: 1.5px;
   border-radius: 0.5em;
   border-color: white;
-  /* mix-blend-mode: difference; */
+  /* fonts */
+  font-family: "Everett", sans-serif;
+  font-weight: normal;
+  font-size: large;
+  text-decoration: none;
 }
 
 h1 {
@@ -83,6 +80,27 @@ span {
   margin: 0;
   /* fonts */
   font-size: large;
+}
+
+textarea {
+  height: 6em;
+  max-width: calc(100% - 20px);
+  margin: 10px;
+  background: transparent;
+  resize: none;
+  /* styles, colours */
+  background: transparent;
+  color: white;
+  font-size: medium;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 0.5em;
+  border-color: white;
+  /* fonts */
+  font-family: "Everett", sans-serif;
+  font-weight: normal;
+  font-size: large;
+  text-decoration: none;
 }
 
 .section.show {
@@ -133,8 +151,17 @@ span {
   top: 0;
   margin: 0px;
   padding: 10px;
+  /* behavioral settings */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* styles, colours */
   background: transparent;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)); */
+  border-bottom-style: solid;
+  border-width: 1.5px;
+  border-color: white;
+  mix-blend-mode: normal;
   /* fonts */
   font-family: "Everett", sans-serif;
   font-weight: normal;
@@ -155,6 +182,10 @@ span {
   justify-content: center;
   /* styles, colours */
   background: transparent;
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)); */
+  border-top-style: solid;
+  border-width: 1.5px;
+  border-color: white;
   /* fonts */
   font-family: "Everett", sans-serif;
   font-weight: normal;
@@ -166,16 +197,17 @@ span {
   position: absolute;
   width: 100%;
   height: 100%;
+  padding: 10px;
   /* z-index: 1; */
   /* behavioral settings */
-  display: flex;
+  display: inline-flex;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
   pointer-events: auto;
   /* styles, colours */
   opacity: 100%;
   background: transparent;
-  /* mix-blend-mode: difference; */
   /* animations */
   transition: all 1s ease-in-out;
 }
@@ -185,23 +217,24 @@ span {
   position: absolute;
   width: 100%;
   height: 100%;
+  padding: 10px;
   /* z-index: -1; */
   /* behavioral settings */
   display: flex;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
   pointer-events: none;
   /* styles, colours */
   opacity: 0%;
   background: transparent;
-  /* mix-blend-mode: difference; */
   /* animations */
   transition: all 1s ease-in-out;
 }
 
 .wrapper {
   /* position, dimensions */
-  margin: 10%;
+  margin: 10px;
   padding: 5px;
   /* behavioral settings */
   display: inline;
@@ -211,5 +244,22 @@ span {
   border-width: 1.5px;
   border-radius: 0.5em;
   border-color: white;
-  /* mix-blend-mode: difference; */
+}
+
+/* responsiveness */
+@media only screen and (max-width: 480px) {
+  textarea,
+  .wrapper,
+  .save-artwork,
+  .link-home,
+  .next-section,
+  .skip-question {
+    width: calc(100% - 20px);
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  /* .next-section {
+    max-width: 75%;
+  } */
 }

@@ -1,3 +1,4 @@
+// DOM
 let intro = document.getElementById("intro");
 let introContent = document.getElementById("intro-content");
 let questions = document.getElementById("questions");
@@ -34,8 +35,11 @@ let B5 = document.getElementById("B5");
 let B6 = document.getElementById("B6");
 let artwork = document.getElementById("artwork");
 let artworkContent = document.getElementById("artwork-content");
+
+// the dice is rolled for showing one of the questions relative to the same group of each section
 let dice = 0;
 
+// questionnaire progression (hard coded)
 function nextSection(sectionNumber) {
   switch (sectionNumber) {
     case "1":
@@ -296,7 +300,18 @@ function nextSection(sectionNumber) {
   }
 }
 
-// class artwork {}
+class generativeArtwork {
+  // parameters to build the image
+  constructor() {
+    //this.property
+  }
+
+  // show the defined image
+  display() {
+    push();
+    pop();
+  }
+}
 
 // generate a random integer from range, inclusive
 function getRandomInt(min, max) {
