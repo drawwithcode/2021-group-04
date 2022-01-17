@@ -1,9 +1,9 @@
 function setup() {
-  // create the canvas inside #background-content"
+  // create the canvas inside #background-content
   createCanvas(windowWidth, windowHeight).parent("background-content");
 
   // styling
-  //noFill();
+  // noFill();
   fill("#abff38");
   rectMode(CENTER);
   strokeWeight(1);

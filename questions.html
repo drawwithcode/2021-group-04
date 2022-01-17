@@ -29,7 +29,10 @@
         <div class="header">
           <a href class="link-home"><span>HOME</span></a>
         </div>
-        <h1>[blank text]</h1>
+        <div class="wrapper">
+          <h1>Click start when you're ready.</h1>
+        </div>
+        <!-- <h1>Click start when you're ready.</h1> -->
         <div class="footer">
           <button class="next-section" onclick="nextSection('1')">START</button>
         </div>
@@ -49,7 +52,7 @@
           <div class="wrapper">
             <p>Are humans free?</p>
           </div>
-          <textarea id="I1-text"> </textarea>
+          <textarea id="I1-text"></textarea>
           <div class="footer">
             <button class="next-section" onclick="nextSection('2')">
               <span>[choice → yes/no]</span>
@@ -65,6 +68,7 @@
           <div class="wrapper">
             <p>Have you ever cried looking at yourself in the mirror?</p>
           </div>
+          <textarea id="I2-text"></textarea>
           <div class="footer">
             <button class="next-section" onclick="nextSection('2')">
               <span>[choice → yes/no]</span>
@@ -83,6 +87,7 @@
               it?
             </p>
           </div>
+          <textarea id="I3-text"></textarea>
           <div class="footer">
             <button class="next-section" onclick="nextSection('2')">
               <span>[choice → yes/no]</span>
@@ -472,7 +477,7 @@
         <div class="header">
           <a href class="link-home"><span>HOME</span></a>
         </div>
-        <h1>[artwork]</h1>
+        <div id="artwork-instance"></div>
         <div class="footer">
           <button class="save-artwork" onclick="">
             <span>[save to archive]</span>
@@ -485,5 +490,7 @@
     <script src="questions.js"></script>
     <!--p5 script (background)-->
     <script src="background.js"></script>
+    <!--p5 script (artwork)-->
+    <script src="artwork.js"></script>
   </body>
 </html>
