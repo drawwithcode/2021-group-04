@@ -29,7 +29,7 @@ body {
   /* behavioral settings */
   overflow: hidden;
   /* styles, colours */
-  background: black;
+  background: #232628;
   color: white;
   /* fonts */
   font-family: "Everett", sans-serif;
@@ -121,7 +121,7 @@ textarea {
   opacity: 100%;
   background: transparent;
   color: white;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
   /* animations */
   transition: all 1s ease-in-out;
 }
@@ -141,7 +141,7 @@ textarea {
   opacity: 0%;
   background: transparent;
   color: white;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
   /* animations */
   transition: all 1s ease-in-out;
 }
@@ -165,7 +165,6 @@ textarea {
   border-bottom-style: solid;
   border-width: 1.5px;
   border-color: white;
-  /* mix-blend-mode: normal; */
   /* fonts */
   font-family: "Everett", sans-serif;
   font-weight: normal;

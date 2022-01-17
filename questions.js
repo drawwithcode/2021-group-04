@@ -1,4 +1,6 @@
 // DOM
+let intViewportWidth = window.innerWidth;
+let intViewportHeight = window.innerHeight;
 let intro = document.getElementById("intro");
 let introContent = document.getElementById("intro-content");
 let questions = document.getElementById("questions");
@@ -35,12 +37,6 @@ let B5 = document.getElementById("B5");
 let B6 = document.getElementById("B6");
 let artwork = document.getElementById("artwork");
 let artworkContent = document.getElementById("artwork-content");
-// let artworkInstance = document.getElementById("artwork-instance");
-
-// artwork rendering
-// artworkInstanceBoundingClientRect = artworkInstance.getBoundingClientRect();
-// artworkWidth = artworkInstanceBoundingClientRect.width;
-// artworkHeight = artworkInstanceBoundingClientRect.height;
 
 // the dice is rolled for showing one of the questions relative to the same group of each section
 let dice = 0;
@@ -291,7 +287,7 @@ function nextSection(sectionNumber) {
         break;
       }
     case "16":
-      console.log("question " + sectionNumber);
+      console.log("artwork");
       B4.className = "container hide";
       B5.className = "container hide";
       B6.className = "container hide";
@@ -306,68 +302,6 @@ function nextSection(sectionNumber) {
   }
 }
 
-class generativeArtwork {
-  // parameters to build the image
-  constructor(
-    identity1,
-    identity2,
-    identity3,
-    relationships1,
-    relationships2,
-    relationships3,
-    violence1,
-    violence2,
-    violence3,
-    sexuality1,
-    sexuality2,
-    sexuality3,
-    beliefs1,
-    beliefs2,
-    beliefs3
-  ) {
-    this.identity1 = identity1;
-    this.identity2 = identity2;
-    this.identity3 = identity3;
-    this.relationships1 = relationships1;
-    this.relationships2 = relationships2;
-    this.relationships3 = relationships3;
-    this.violence1 = violence1;
-    this.violence2 = violence2;
-    this.violence3 = violence3;
-    this.sexuality1 = sexuality1;
-    this.sexuality2 = sexuality2;
-    this.sexuality3 = sexuality3;
-    this.beliefs1 = beliefs1;
-    this.beliefs2 = beliefs2;
-    this.beliefs3 = beliefs3;
-  }
-
-  // show the defined image
-  display() {
-    // noStroke();
-    push();
-    fill("#FF4500");
-    rect(0, 0, width, height / 5);
-    pop();
-    push();
-    fill("#7722F6");
-    rect(0, 0 + height / 5, width, height / 5);
-    pop();
-    push();
-    fill("#F950A2");
-    rect(0, 0 + (height / 5) * 2, width, height / 5);
-    pop();
-    push();
-    fill("#02FFF7");
-    rect(0, 0 + (height / 5) * 3, width, height / 5);
-    pop();
-    push();
-    fill("#F1FFA5");
-    rect(0, 0 + (height / 5) * 4, width, height / 5);
-    pop();
-  }
-}
-
 // generate a random integer from range, inclusive
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -375,71 +309,31 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// function setup() {
-//   console.log("ciao1");
-//   createCanvas(200, 200);
-//   // createCanvas(artworkWidth, artworkHeight).parent("artwork-instance");
-// }
+let sketch = function (sketch) {
+  sketch.setup = function () {
+    sketch
+      .createCanvas(intViewportWidth, intViewportHeight)
+      .parent("background-content");
+    sketch.rectMode(sketch.CENTER);
+    sketch.fill("#abff38");
+    sketch.strokeWeight(1);
+    sketch.stroke("#abff38");
+  };
 
-// function draw() {
-//   // clear();
-//   console.log("ciao2");
-//   background("#232628");
-//   rect(width / 2, height / 2, windowWidth, height * sin(frameCount / 500));
-// }
+  sketch.draw = function () {
+    sketch.background("#232628");
+    sketch.rect(
+      intViewportWidth / 2,
+      intViewportHeight / 2,
+      intViewportWidth,
+      intViewportHeight * sketch.sin(sketch.frameCount / 500)
+    );
+    // sketch.filter(sketch.BLUR, 10);
+  };
 
-// bad code #1
-// const s = (sketch) => {
-// let test = new generativeArtwork(
-//   1,
-//   2,
-//   3,
-//   4,
-//   5,
-//   6,
-//   7,
-//   8,
-//   9,
-//   10,
-//   11,
-//   12,
-//   13,
-//   14,
-//   15
-// );
-//   sketch.setup = () => {
-//     sketch.createCanvas(artworkWidth, artworkHeight).parent("artwork-instance");
-//   };
-//   sketch.draw = () => {
-//     sketch.clear();
-//     test.display();
-//     // sketch.rect(x, y, 50, 50);
-//   };
-// };
-// let myp5 = new p5(s);
+  sketch.windowResized = function () {
+    sketch.createCanvas(intViewportWidth, intViewportHeight);
+  };
+};
 
-// bad code #2
-// let test;
-// function setup() {
-//   createCanvas(artworkWidth, artworkHeight).parent("artwork-instance");
-//   test = new generativeArtwork(
-//     1,
-//     2,
-//     3,
-//     4,
-//     5,
-//     6,
-//     7,
-//     8,
-//     9,
-//     10,
-//     11,
-//     12,
-//     13,
-//     14,
-//     15
-//   );
-// }
-// function draw() {
-//   test.display();
-// }
+let backgroundSketch = new p5(sketch);
