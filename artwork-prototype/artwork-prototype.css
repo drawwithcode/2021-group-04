@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  color: black;
+  background: white;
+  transition: background 250ms ease-in-out, color 2500ms ease-in-out;
+}
+
+body {
+  position: relative;
+}
+
+canvas {
+  display: block;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
