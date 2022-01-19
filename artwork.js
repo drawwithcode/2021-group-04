@@ -1,4 +1,5 @@
 // artwork rendering
+// let artworkSectionIsActive
 let artworkInstance = document.getElementById("artwork-instance");
 artworkInstanceBoundingClientRect = artworkInstance.getBoundingClientRect();
 artworkWidth = artworkInstanceBoundingClientRect.width;
@@ -9,7 +10,10 @@ let test;
 function setup() {
   console.log("width: " + artworkWidth);
   console.log("height: " + artworkHeight);
-  createCanvas(artworkWidth, artworkHeight).parent("artwork-instance");
+  createCanvas(artworkWidth - 40, artworkWidth - 40).parent("artwork-instance");
+  pixelDensity(1);
+  frameRate(1);
+  noStroke();
 
   test = new generativeArtwork(
     1,
@@ -32,7 +36,12 @@ function setup() {
 
 function draw() {
   clear();
-  test.display();
+  if (document.getElementById("artwork").className == "section hide") {
+    // console.log("artwork section is currently inactive");
+  } else {
+    // console.log("artwork section is currently active");
+    test.display();
+  }
 }
 
 class generativeArtwork {
@@ -94,5 +103,16 @@ class generativeArtwork {
     fill("#F1FFA5");
     rect(0, 0 + (height / 5) * 4, width, height / 5);
     pop();
+    filter(BLUR, 50);
   }
+}
+
+function windowResized() {
+  artworkInstanceBoundingClientRect = artworkInstance.getBoundingClientRect();
+  artworkWidth = artworkInstanceBoundingClientRect.width;
+  artworkHeight = artworkInstanceBoundingClientRect.height;
+  console.log("the viewport changed size");
+  console.log("width: " + artworkWidth);
+  console.log("height: " + artworkHeight);
+  resizeCanvas(artworkWidth - 40, artworkWidth - 40);
 }

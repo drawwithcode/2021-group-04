@@ -309,31 +309,31 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-let sketch = function (sketch) {
-  sketch.setup = function () {
-    sketch
-      .createCanvas(intViewportWidth, intViewportHeight)
-      .parent("background-content");
-    sketch.rectMode(sketch.CENTER);
-    sketch.fill("#abff38");
-    sketch.strokeWeight(1);
-    sketch.stroke("#abff38");
-  };
+// let sketch = function (sketch) {
+//   sketch.setup = function () {
+//     sketch
+//       .createCanvas(intViewportWidth, intViewportHeight)
+//       .parent("background-content");
+//     sketch.rectMode(sketch.CENTER);
+//     sketch.fill("#abff38");
+//     sketch.strokeWeight(1);
+//     sketch.stroke("#abff38");
+//   };
 
-  sketch.draw = function () {
-    sketch.background("#232628");
-    sketch.rect(
-      intViewportWidth / 2,
-      intViewportHeight / 2,
-      intViewportWidth,
-      intViewportHeight * sketch.sin(sketch.frameCount / 500)
-    );
-    // sketch.filter(sketch.BLUR, 10);
-  };
+//   sketch.draw = function () {
+//     sketch.background("#232628");
+//     sketch.rect(
+//       intViewportWidth / 2,
+//       intViewportHeight / 2,
+//       intViewportWidth,
+//       intViewportHeight * sketch.sin(sketch.frameCount / 500)
+//     );
+//     // sketch.filter(sketch.BLUR, 10);
+//   };
 
-  sketch.windowResized = function () {
-    sketch.createCanvas(intViewportWidth, intViewportHeight);
-  };
-};
+//   sketch.windowResized = function () {
+//     sketch.createCanvas(intViewportWidth, intViewportHeight);
+//   };
+// };
 
-let backgroundSketch = new p5(sketch);
+// let backgroundSketch = new p5(sketch);

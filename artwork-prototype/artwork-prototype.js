@@ -1,16 +1,17 @@
 // noise (arbitrary)
-const octaves = 16;
-const falloff = 0.625;
+const octaves = 8;
+const falloff = 0.5;
 
 // texture control (6, 9, 12) based on the length of the strings inside the text areas
 // let subd = 6;
-//let subd = 9;
+// let subd = 9;
 let subd = 12;
 
 function setup() {
   // createCanvas(250, 250).parent("container");
   createCanvas(500, 500).parent("container");
   // createCanvas(750, 750).parent("container");
+  pixelDensity(1);
   frameRate(1);
   rectMode(CENTER);
   noStroke();
@@ -84,30 +85,70 @@ class generativeArtwork {
       for (var y = 0 + height / subd / 2; y < height; y += width / subd) {
         push();
         let noiseColor = noise(x * frameCount, y * frameCount);
-        if (noiseColor > 0 && noiseColor < 0.2) {
+        console.log(noiseColor);
+        // if (noiseColor > 0 && noiseColor < 0.2) {
+        //   fill("#FE0000");
+        //   rect(x, y, width / subd, height / subd);
+        // } else if (noiseColor > 0.2 && noiseColor < 0.4) {
+        //   fill("#B44EF2");
+        //   rect(x, y, width / subd, height / subd);
+        // } else if (noiseColor > 0.4 && noiseColor < 0.6) {
+        //   fill("#FF1493");
+        //   rect(x, y, width / subd, height / subd);
+        // } else if (noiseColor > 0.6 && noiseColor < 0.8) {
+        //   fill("#1D64FF");
+        //   rect(x, y, width / subd, height / subd);
+        // } else if (noiseColor > 0.8 && noiseColor < 1) {
+        //   fill("#ABFF38");
+        //   rect(x, y, width / subd, height / subd);
+        // }
+
+        // if (noiseColor > 0.125 && noiseColor < 0.275) {
+        //   fill("#FE0000");
+        //   rect(x, y, width / subd, height / subd);
+        // } else if (noiseColor > 0.275 && noiseColor < 0.425) {
+        //   fill("#B44EF2");
+        //   rect(x, y, width / subd, height / subd);
+        // } else if (noiseColor > 0.425 && noiseColor < 0.575) {
+        //   fill("#FF1493");
+        //   rect(x, y, width / subd, height / subd);
+        // } else if (noiseColor > 0.575 && noiseColor < 0.725) {
+        //   fill("#1D64FF");
+        //   rect(x, y, width / subd, height / subd);
+        // } else if (noiseColor > 0.725 && noiseColor < 0.875) {
+        //   fill("#ABFF38");
+        //   rect(x, y, width / subd, height / subd);
+        // }
+
+        if (noiseColor > 0.1875 && noiseColor < 0.3125) {
           fill("#FE0000");
           rect(x, y, width / subd, height / subd);
-        } else if (noiseColor > 0.2 && noiseColor < 0.4) {
+        } else if (noiseColor > 0.3125 && noiseColor < 0.4375) {
           fill("#B44EF2");
           rect(x, y, width / subd, height / subd);
-        } else if (noiseColor > 0.4 && noiseColor < 0.6) {
+        } else if (noiseColor > 0.4375 && noiseColor < 0.5625) {
           fill("#FF1493");
           rect(x, y, width / subd, height / subd);
-        } else if (noiseColor > 0.6 && noiseColor < 0.8) {
+        } else if (noiseColor > 0.5625 && noiseColor < 0.6875) {
           fill("#1D64FF");
           rect(x, y, width / subd, height / subd);
-        } else if (noiseColor > 0.8 && noiseColor < 1) {
+        } else if (noiseColor > 0.6875 && noiseColor < 0.8125) {
           fill("#ABFF38");
           rect(x, y, width / subd, height / subd);
         }
+
+        // fill(noiseColor * 255);
+        // rect(x, y, width / subd, height / subd);
+        pop();
       }
     }
 
     // filter based on the median value of the sliders, rounded (0, 25, 50, 75, 100)
-    //filter(BLUR, 0);
+    // filter(BLUR, 0);
+    // filter(BLUR, 12.5);
     // filter(BLUR, 25);
-    //filter(BLUR, 50);
+    filter(BLUR, 50);
     // filter(BLUR, 75);
-    filter(BLUR, 100);
+    // filter(BLUR, 100);
   }
 }
