@@ -209,6 +209,42 @@ textarea {
   background: transparent;
 }
 
+.choice-wrapper {
+  /* position, dimensions */
+  position: relative;
+  width: 100%;
+  height: 50%;
+  padding: 0px;
+  /* behavioral settings */
+  display: flex;
+  flex-flow: row;
+  align-items: stretch;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.choice-button {
+  flex-grow: 1;
+  width: 100%;
+  border: none;
+  padding: 20px;
+}
+
+.choice-slider {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  height: 1px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.vertical-divisor {
+  height: 100%;
+  border-left: 1px solid white;
+}
+
 #artwork-snapshot {
   position: relative;
   display: block;
