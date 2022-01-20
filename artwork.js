@@ -1,21 +1,11 @@
-// artwork rendering
-// let artworkSectionIsActive
-let artworkInstance = document.getElementById("artwork-instance");
-artworkInstanceBoundingClientRect = artworkInstance.getBoundingClientRect();
-artworkWidth = artworkInstanceBoundingClientRect.width;
-artworkHeight = artworkInstanceBoundingClientRect.height;
-
-let test;
+let artworkSnapshot = document.getElementById("artwork-snapshot");
+let generatedArtwork;
 
 function setup() {
-  console.log("width: " + artworkWidth);
-  console.log("height: " + artworkHeight);
-  createCanvas(artworkWidth - 40, artworkWidth - 40).parent("artwork-instance");
+  createCanvas(500, 500).parent("artwork-buffer");
   pixelDensity(1);
-  frameRate(1);
   noStroke();
-
-  test = new generativeArtwork(
+  generatedArtwork = new generativeArtwork(
     1,
     2,
     3,
@@ -37,10 +27,10 @@ function setup() {
 function draw() {
   clear();
   if (document.getElementById("artwork").className == "section hide") {
-    // console.log("artwork section is currently inactive");
   } else {
-    // console.log("artwork section is currently active");
-    test.display();
+    generatedArtwork.display();
+    artworkSnapshot.src = canvas.toDataURL();
+    noLoop();
   }
 }
 
@@ -82,7 +72,6 @@ class generativeArtwork {
 
   // show the defined image
   display() {
-    // noStroke();
     push();
     fill("#FF4500");
     rect(0, 0, width, height / 5);
@@ -103,16 +92,6 @@ class generativeArtwork {
     fill("#F1FFA5");
     rect(0, 0 + (height / 5) * 4, width, height / 5);
     pop();
-    filter(BLUR, 50);
+    filter(BLUR, 100);
   }
-}
-
-function windowResized() {
-  artworkInstanceBoundingClientRect = artworkInstance.getBoundingClientRect();
-  artworkWidth = artworkInstanceBoundingClientRect.width;
-  artworkHeight = artworkInstanceBoundingClientRect.height;
-  console.log("the viewport changed size");
-  console.log("width: " + artworkWidth);
-  console.log("height: " + artworkHeight);
-  resizeCanvas(artworkWidth - 40, artworkWidth - 40);
 }

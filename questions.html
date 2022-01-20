@@ -15,13 +15,12 @@
     <link rel="stylesheet" type="text/css" href="questions.css" />
     <!--p5 libraries-->
     <script src="assets/libraries/p5.min.js"></script>
-    <script src="assets/libraries/p5.sound.min.js"></script>
   </head>
   <body>
-    <!--background-->
-    <!-- <section class="section show" id="background">
-      <div class="container show" id="background-content"></div>
-    </section> -->
+    <!--buffer-->
+    <section class="section hide">
+      <div class="container show" id="artwork-buffer"></div>
+    </section>
 
     <!--intro-->
     <section class="section show" id="intro">
@@ -32,6 +31,7 @@
         <div class="wrapper">
           <h1>Click START when you're ready.</h1>
         </div>
+        <hr />
         <div class="footer">
           <button class="next-question" onclick="nextSection('1')">
             START
@@ -53,9 +53,11 @@
           <div class="wrapper">
             <p>Are humans free?</p>
           </div>
+          <hr />
           <div class="wrapper">
             <textarea id="I1-text"></textarea>
           </div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('2')">
               <span>[choice → yes/no]</span>
@@ -71,9 +73,11 @@
           <div class="wrapper">
             <p>Have you ever cried looking at yourself in the mirror?</p>
           </div>
+          <hr />
           <div class="wrapper">
             <textarea id="I2-text"></textarea>
           </div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('2')">
               <span>[choice → yes/no]</span>
@@ -92,9 +96,11 @@
               it?
             </p>
           </div>
+          <hr />
           <div class="wrapper">
             <textarea id="I3-text"></textarea>
           </div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('2')">
               <span>[choice → yes/no]</span>
@@ -110,7 +116,9 @@
           <div class="wrapper">
             <p>Is it better to feel remorseful or regretful?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('3')">
               <span>[quantity → multiple choice/slider]</span>
@@ -126,7 +134,9 @@
           <div class="wrapper">
             <p>How does the dream end?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('4')">
               <span>[text → anything]</span>
@@ -146,7 +156,9 @@
           <div class="wrapper">
             <p>Is it more important to love yourself more than the others?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('5')">
               <span>[choice → yes/no]</span>
@@ -165,7 +177,9 @@
               Would you tell them the truth?
             </p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('5')">
               <span>[choice → yes/no]</span>
@@ -181,7 +195,9 @@
           <div class="wrapper">
             <p>How invisible do you feel?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('6')">
               <span>[quantity → multiple choice/slider]</span>
@@ -197,7 +213,9 @@
           <div class="wrapper">
             <p>When did you realize that you are alone?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('6')">
               <span>[quantity → multiple choice/slider]</span>
@@ -215,7 +233,9 @@
               How many people have suffered because of you? Was it worth it?
             </p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('7')">
               <span>[text → anything]</span>
@@ -235,7 +255,9 @@
           <div class="wrapper">
             <p>Have you ever enjoyed hurting someone?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('8')">
               <span>[choice → yes/no]</span>
@@ -251,7 +273,9 @@
           <div class="wrapper">
             <p>Have you ever fantasized about murdering your father?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('8')">
               <span>[choice → yes/no]</span>
@@ -267,7 +291,9 @@
           <div class="wrapper">
             <p>To kill or to be killed?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('8')">
               <span>[choice → 1/2]</span>
@@ -286,7 +312,9 @@
               somebody else?
             </p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('9')">
               <span>[quantity → multiple choice/slider]</span>
@@ -302,7 +330,9 @@
           <div class="wrapper">
             <p>What would justify capital punishment?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('10')">
               <span>[text → anything]</span>
@@ -322,7 +352,9 @@
           <div class="wrapper">
             <p>Have you ever cried during sex?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('11')">
               <span>[choice → yes/no]</span>
@@ -340,7 +372,9 @@
               Have you ever thought about having sex with someone you shouldn't?
             </p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('11')">
               <span>[choice → yes/no]</span>
@@ -356,7 +390,9 @@
           <div class="wrapper">
             <p>Taking control or being submissive?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('11')">
               <span>[choice → 1/2</span>]
@@ -372,7 +408,9 @@
           <div class="wrapper">
             <p>How safe would you feel while sexting?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('12')">
               <span>[quantity → multiple choice/slider]</span>
@@ -391,7 +429,9 @@
               cybersex?
             </p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('13')">
               <span>[text → anything]</span>
@@ -411,7 +451,9 @@
           <div class="wrapper">
             <p>Is science a religion?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('14')">
               <span>[choice → yes/no]</span>
@@ -427,7 +469,9 @@
           <div class="wrapper">
             <p>Would you give up your religious beliefs for someone else?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('14')">
               <span>[choice → yes/no]</span>
@@ -443,7 +487,9 @@
           <div class="wrapper">
             <p>How close are you to happiness?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('15')">
               <span>[quantity → multiple choice/slider]</span>
@@ -459,7 +505,9 @@
           <div class="wrapper">
             <p>What is stopping you from feeling complete?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('16')">
               <span>[text → anything]</span>
@@ -475,7 +523,9 @@
           <div class="wrapper">
             <p>What saves us?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('16')">
               <span>[text → anything]</span>
@@ -491,7 +541,9 @@
           <div class="wrapper">
             <p>Where do we go when we die?</p>
           </div>
+          <hr />
           <div class="wrapper"></div>
+          <hr />
           <div class="footer">
             <button class="next-question" onclick="nextSection('16')">
               <span>[text → anything]</span>
@@ -507,7 +559,10 @@
         <!-- <div class="header">
           <a href class="link-home"><span>HOME</span></a>
         </div> -->
-        <div class="wrapper" id="artwork-instance"></div>
+        <div class="wrapper">
+          <img id="artwork-snapshot" src="" />
+        </div>
+        <hr />
         <div class="footer">
           <button class="save-artwork" onclick="">
             <span>SAVE AND UPLOAD</span>
@@ -516,10 +571,8 @@
       </div>
     </section>
 
-    <!--script-->
+    <!--script (questions)-->
     <script src="questions.js"></script>
-    <!--p5 script (background)-->
-    <!-- <script src="background.js"></script> -->
     <!--p5 script (artwork)-->
     <script src="artwork.js"></script>
   </body>

@@ -29,6 +29,13 @@ body {
   font-size: large;
 }
 
+hr {
+  display: block;
+  margin: 0px;
+  border: 0;
+  border-top: 1px solid white;
+}
+
 canvas {
   /* behavioral settings */
   display: block;
@@ -182,9 +189,6 @@ textarea {
   justify-content: center;
   /* styles, colours */
   background: transparent;
-  border-bottom-style: solid;
-  border-width: 1px;
-  border-color: white;
   /* fonts */
   font-family: "Everett", sans-serif;
   font-weight: normal;
@@ -199,19 +203,18 @@ textarea {
   padding: 20px;
   /* behavioral settings */
   display: block;
+  justify-content: center;
   flex-grow: 1;
   /* styles, colours */
   background: transparent;
-  border-bottom-style: solid;
-  border-width: 1px;
-  /* border-radius: 0.5em; */
-  border-color: white;
 }
 
-#artwork-instance {
+#artwork-snapshot {
   position: relative;
-  /* height: 75%; */
-  width: 100%;
+  display: block;
+  margin: auto;
+  width: auto;
+  height: 100%;
 }
 
 .footer {
@@ -240,10 +243,12 @@ textarea {
   .save-artwork {
     width: 100%;
   }
+  #artwork-snapshot {
+    height: auto;
+    width: 100%;
+  }
 }
 
-@media only screen and (min-width: 481px) and (max-width: 1024px) {
-  /* .next-section {
-    max-width: 75%;
-  } */
-}
+/* @media only screen and (min-width: 481px) and (max-width: 1024px) {
+
+} */
