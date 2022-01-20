@@ -1,6 +1,4 @@
 // DOM
-let intViewportWidth = window.innerWidth;
-let intViewportHeight = window.innerHeight;
 let intro = document.getElementById("intro");
 let introContent = document.getElementById("intro-content");
 let questions = document.getElementById("questions");
@@ -35,11 +33,20 @@ let B3 = document.getElementById("B3");
 let B4 = document.getElementById("B4");
 let B5 = document.getElementById("B5");
 let B6 = document.getElementById("B6");
+let loading = document.getElementById("loading");
+let loadingContent = document.getElementById("loading-content");
 let artwork = document.getElementById("artwork");
 let artworkContent = document.getElementById("artwork-content");
+let artworkSnapshot = document.getElementById("artwork-snapshot");
 
-// the dice is rolled for showing one of the questions relative to the same group of each section
+// a dice is rolled in order to show just one question for each type
 let dice = 0;
+
+// artwork object to render inside the buffer (a p5 canvas)
+let generatedArtwork;
+
+// loading transition control
+let artworkIsLoading = false;
 
 // questionnaire progression (hard coded)
 function nextSection(sectionNumber) {
@@ -287,14 +294,17 @@ function nextSection(sectionNumber) {
         break;
       }
     case "16":
-      console.log("artwork");
+      console.log("loading");
       B4.className = "container hide";
       B5.className = "container hide";
       B6.className = "container hide";
       beliefs.className = "section hide";
       setTimeout(() => {
-        artwork.className = "section show";
-        artworkContent.className = "container show";
+        loading.className = "section show";
+        loadingContent.className = "container show";
+        setTimeout(() => {
+          artworkIsLoading = true;
+        }, 750);
       }, 750);
       break;
     default:
@@ -309,31 +319,42 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// let sketch = function (sketch) {
-//   sketch.setup = function () {
-//     sketch
-//       .createCanvas(intViewportWidth, intViewportHeight)
-//       .parent("background-content");
-//     sketch.rectMode(sketch.CENTER);
-//     sketch.fill("#abff38");
-//     sketch.strokeWeight(1);
-//     sketch.stroke("#abff38");
-//   };
+function setup() {
+  createCanvas(500, 500).parent("artwork-buffer");
+  pixelDensity(1);
+  noStroke();
+  generatedArtwork = new generativeArtwork(
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  );
+}
 
-//   sketch.draw = function () {
-//     sketch.background("#232628");
-//     sketch.rect(
-//       intViewportWidth / 2,
-//       intViewportHeight / 2,
-//       intViewportWidth,
-//       intViewportHeight * sketch.sin(sketch.frameCount / 500)
-//     );
-//     // sketch.filter(sketch.BLUR, 10);
-//   };
-
-//   sketch.windowResized = function () {
-//     sketch.createCanvas(intViewportWidth, intViewportHeight);
-//   };
-// };
-
-// let backgroundSketch = new p5(sketch);
+function draw() {
+  clear();
+  if (artworkIsLoading) {
+    generatedArtwork.display();
+    noLoop();
+    artworkSnapshot.src = canvas.toDataURL();
+    setTimeout(() => {
+      loadingContent.className = "container hide";
+      loading.className = "section hide";
+      setTimeout(() => {
+        artwork.className = "section show";
+        artworkContent.className = "container show";
+      }, 750);
+    }, 750);
+  }
+}

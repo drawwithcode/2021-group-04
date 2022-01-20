@@ -1,39 +1,3 @@
-let artworkSnapshot = document.getElementById("artwork-snapshot");
-let generatedArtwork;
-
-function setup() {
-  createCanvas(500, 500).parent("artwork-buffer");
-  pixelDensity(1);
-  noStroke();
-  generatedArtwork = new generativeArtwork(
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15
-  );
-}
-
-function draw() {
-  clear();
-  if (document.getElementById("artwork").className == "section hide") {
-  } else {
-    generatedArtwork.display();
-    artworkSnapshot.src = canvas.toDataURL();
-    noLoop();
-  }
-}
-
 class generativeArtwork {
   // parameters to build the image
   constructor(
