@@ -124,36 +124,35 @@ function nextSection(sectionNumber) {
         break;
       }
     case "5":
+      console.log("question " + sectionNumber);
+      R1.className = "container hide";
+      R2.className = "container hide";
+      setTimeout(() => {
+        R3.className = "container show";
+      }, 750);
+      break;
+    case "6":
       dice = getRandomInt(1, 2);
       if (dice === 1) {
         console.log("question " + sectionNumber + " (" + dice + ")");
-        R1.className = "container hide";
-        R2.className = "container hide";
-        setTimeout(() => {
-          R3.className = "container show";
-        }, 750);
-        break;
-      } else {
-        console.log("question " + sectionNumber + " (" + dice + ")");
-        R1.className = "container hide";
-        R2.className = "container hide";
+        R3.className = "container hide";
         setTimeout(() => {
           R4.className = "container show";
         }, 750);
         break;
+      } else {
+        console.log("question " + sectionNumber + " (" + dice + ")");
+        R3.className = "container hide";
+        setTimeout(() => {
+          R5.className = "container show";
+        }, 750);
+        break;
       }
-    case "6":
-      console.log("question " + sectionNumber);
-      R3.className = "container hide";
-      R4.className = "container hide";
-      setTimeout(() => {
-        R5.className = "container show";
-      }, 750);
-      break;
     case "7":
       dice = getRandomInt(1, 3);
       if (dice === 1) {
         console.log("question " + sectionNumber + " (" + dice + ")");
+        R4.className = "container hide";
         R5.className = "container hide";
         relationships.className = "section hide";
         setTimeout(() => {

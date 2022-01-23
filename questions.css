@@ -5,9 +5,9 @@
 
 * {
   /* dimensioning */
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
   /* fonts */
   font-family: "Everett", sans-serif;
   font-weight: normal;
@@ -33,20 +33,14 @@ canvas {
   display: block;
 }
 
-hr {
-  display: block;
-  margin: 0px;
-  border: 0;
-  border-top: 1px solid white;
-}
-
 p,
 span {
-  display: block;
   /* position, dimensions */
-  padding: 0;
   margin: 0;
   border: 0;
+  padding: 0;
+  /* behavioral settings */
+  display: block;
 }
 
 .section.show {
@@ -124,8 +118,10 @@ span {
 }
 
 #artwork-buffer {
-  opacity: 100%;
+  /* behavioral settings */
   display: block;
+  /* styles, colours */
+  opacity: 100%;
 }
 
 .header {
@@ -135,7 +131,7 @@ span {
   right: 0;
   top: 0;
   margin: 0px;
-  padding: 20px;
+  padding: 40px;
   /* behavioral settings */
   display: flex;
   align-items: center;
@@ -153,35 +149,38 @@ span {
   position: relative;
   height: 50%;
   margin: 0px;
-  padding: 20px;
+  padding: 40px;
   /* behavioral settings */
-  display: block;
-  justify-content: center;
   flex-grow: 1;
+  display: block;
+  /* justify-content: center; */
   /* styles, colours */
   background: transparent;
 }
 
 .question-text {
+  /* fonts */
   font-size: 4em;
 }
 
+/* type 1 answer */
 .answer-button-wrapper {
   /* position, dimensions */
   position: relative;
   width: 100%;
   height: 50%;
-  padding: 20px;
+  padding: 40px;
   /* behavioral settings */
   flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
-  grid-column-gap: 20px;
+  grid-column-gap: 40px;
   grid-row-gap: 0px;
 }
 
-.answer-button {
+/* to do: remove */
+.answer-button-wrapper .answer-button {
   /* position, dimensions */
   margin: 0px;
   padding: 20px;
@@ -200,7 +199,8 @@ span {
   font-size: 4em;
 }
 
-.answer-button:hover {
+/* to do: remove */
+.answer-button-wrapper .answer-button:hover {
   /* styles, colours */
   background: white;
   color: #232628;
@@ -210,7 +210,7 @@ span {
   /* position, dimensions */
   position: fixed;
   width: 0;
-  /* behavioral settings */
+  /* styles, colours */
   opacity: 0;
 }
 
@@ -253,6 +253,7 @@ span {
   color: #232628;
 }
 
+/* type 2 answer */
 .answer-range-wrapper {
   /* position, dimensions */
   position: relative;
@@ -260,7 +261,6 @@ span {
   height: 50%;
   padding: 20px;
   /* behavioral settings */
-  flex-grow: 1;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -272,18 +272,16 @@ span {
   border-color: white;
 }
 
-.mobile-label-wrapper {
+.answer-range-wrapper .mobile-range-label-wrapper {
   /* position, dimensions */
   position: relative;
   width: 100%;
-  height: 50%;
+  /* height: 50%; */
   padding: 0px;
   /* behavioral settings */
-  flex-grow: 1;
   display: none;
   flex-direction: row;
-  gap: 20px;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
 }
 
@@ -313,14 +311,11 @@ span {
   position: relative;
   width: 50%;
   height: 25%;
-  /* behavioral settings */
-  display: flex;
-  flex-direction: row;
 }
 
 .answer-range-wrapper input[type="range"]::-webkit-slider-runnable-track {
   /* position, dimensions */
-  width: 300px;
+  width: 100%;
   height: 1px;
   /* styles, colours */
   background: white;
@@ -342,34 +337,73 @@ span {
   border-radius: 50%;
 }
 
+.answer-range-wrapper input[type="range"]:focus {
+  /* behavioral settings */
+  outline: none;
+}
+
+.answer-range-wrapper input[type="range"]:focus::-webkit-slider-runnable-track {
+  /* styles, colours */
+  background: #4e5152;
+}
+
+input[type="range"]::-moz-range-track {
+  /* position, dimensions */
+  width: 100%;
+  height: 1px;
+  /* styles, colours */
+  background: white;
+  border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  /* position, dimensions */
+  width: 2em;
+  height: 2em;
+  /* behavioral settings */
+  cursor: pointer;
+  /* styles, colours */
+  background: white;
+  border: none;
+  border-radius: 50%;
+}
+
+/* hide the outline behind the border */
+input[type="range"]:-moz-focusring {
+  /* behavioral settings */
+  /* outline: 1px solid white;
+  outline-offset: -1px; */
+  outline: none;
+}
+
+input[type="range"]:focus::-moz-range-track {
+  /* styles, colours */
+  background: #4e5152;
+}
+
+/* type 3 answer */
 .answer-text {
   /* position, dimensions */
   width: 100%;
   height: 50%;
   margin: 0px;
-  padding: 10px;
+  padding: 20px;
   /* behavioral settings */
   resize: none;
   overflow: auto;
+  outline: none;
   /* styles, colours */
   background: transparent;
   color: white;
   border: solid white 1px;
-  outline: none;
-  text-decoration: none;
   /* fonts */
+  text-decoration: none;
   font-size: 4em;
 }
 
 .answer-text::placeholder {
   /* styles, colours */
   color: #4e5152;
-}
-
-.vertical-divisor {
-  /* position, dimensions */
-  height: 100%;
-  border-left: 1px solid white;
 }
 
 #artwork-snapshot {
@@ -390,9 +424,9 @@ span {
   bottom: 0;
   margin: 0px;
   padding-top: 0px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
   /* behavioral settings */
   display: flex;
   align-items: center;
@@ -423,18 +457,42 @@ span {
 
 .next-button:hover {
   /* styles, colours */
-  mix-blend-mode: difference;
+  color: #4e5152;
+  /* mix-blend-mode: difference; */
+}
+
+.next-button:focus {
+  /* styles, colours */
+  outline: none;
+  color: #4e5152;
+  /* mix-blend-mode: difference; */
 }
 
 /* responsiveness */
-@media only screen and (max-width: 480px) {
-  /* todo: remove */
-  .next-question,
-  .save-artwork {
-    width: 100%;
+@media only screen and (max-width: 540px) {
+  /* general layout */
+  .header,
+  .wrapper {
+    padding: 20px;
   }
-
-  /* to finalise */
+  .answer-button-wrapper {
+    padding: 20px;
+    grid-column-gap: 20px;
+  }
+  .answer-button-wrapper .answer-button,
+  .answer-button-wrapper label {
+    padding: 10px;
+  }
+  .answer-text {
+    padding: 10px;
+  }
+  .footer {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  /* fonts */
   .question-text,
   .answer-button,
   .answer-button-wrapper label,
@@ -442,37 +500,72 @@ span {
   .answer-text {
     font-size: 1.5em;
   }
+  .next-button {
+    font-size: 0.75em;
+  }
+  /* behaviour */
   .answer-range-wrapper {
+    padding: 10px;
+    height: 50%;
     flex-direction: column;
-    height: fit-content;
-    gap: calc(20px + 10px);
+    gap: 10px;
+  }
+  .answer-range-wrapper .mobile-range-label-wrapper {
+    display: flex;
   }
   .answer-range-wrapper .desktop-range-label {
     display: none;
   }
-  .mobile-label-wrapper {
-    display: flex;
-  }
   .answer-range-wrapper input[type="range"] {
     width: 100%;
-    margin-bottom: 1em;
-  }
-  .next-button {
-    font-size: 0.75em;
+    height: 2em;
+    /* margin-top: 0.375em; */
   }
   #artwork-snapshot {
-    height: auto;
     width: 100%;
+    height: auto;
   }
 }
 
-/* android keyboard */
+/* some mobile browsers stretch the viewport when using the keyboard */
 @media only screen and (max-height: 360px) {
   .answer-text {
     height: 100%;
   }
 }
 
-/* @media only screen and (min-width: 481px) and (max-width: 1024px) {
-
-} */
+/* tablets */
+@media only screen and (min-width: 541px) and (max-width: 1024px) {
+  /* behaviour */
+  .answer-range-wrapper {
+    height: 50%;
+    flex-direction: column;
+  }
+  .answer-range-wrapper .mobile-range-label-wrapper {
+    display: flex;
+  }
+  .answer-range-wrapper .desktop-range-label {
+    display: none;
+  }
+  .answer-range-wrapper input[type="range"] {
+    width: 100%;
+    height: 4em;
+    /* margin-top: 0.75em; */
+  }
+  .answer-range-wrapper input[type="range"]::-webkit-slider-thumb {
+    /* position, dimensions */
+    margin-top: -2em;
+    width: 4em;
+    height: 4em;
+  }
+  .answer-range-wrapper input[type="range"]::-moz-range-thumb {
+    /* position, dimensions */
+    margin-top: -2em;
+    width: 4em;
+    height: 4em;
+  }
+  #artwork-snapshot {
+    width: 100%;
+    height: auto;
+  }
+}
