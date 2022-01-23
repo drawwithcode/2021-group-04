@@ -8,11 +8,12 @@ const falloff = 0.5;
 let subd = 12;
 
 function setup() {
-  createCanvas(500, 500).parent("container");
+  createCanvas(540, 540).parent("container");
   pixelDensity(1);
   frameRate(1);
   rectMode(CENTER);
   noStroke();
+  background(255);
 
   test = new generativeArtwork(
     1,
@@ -34,7 +35,6 @@ function setup() {
 }
 
 function draw() {
-  background(255);
   test.display();
 }
 
@@ -145,8 +145,10 @@ class generativeArtwork {
 
     // filter based on the median value of the sliders, rounded (0, 25, 50, 75, 100)
     // filter(BLUR, 0);
+    // filter(BLUR, 12.5);
     // filter(BLUR, 25);
-    filter(BLUR, 50);
+    // filter(BLUR, 37.5);
+    // filter(BLUR, 50);
     // filter(BLUR, 75);
     // filter(BLUR, 100);
   }

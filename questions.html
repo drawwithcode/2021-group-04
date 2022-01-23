@@ -22,6 +22,11 @@
       <div class="container show" id="artwork-buffer"></div>
     </section>
 
+    <!--background-->
+    <section class="section show" id="background">
+      <div class="container show" id="background-content"></div>
+    </section>
+
     <!--intro-->
     <section class="section show" id="intro">
       <div class="container show" id="intro-content">
@@ -29,13 +34,10 @@
           <a href class="link-home"><span>HOME</span></a>
         </div> -->
         <div class="wrapper">
-          <h1>Click START when you're ready.</h1>
+          <p class="question-text">Click START when you're ready.</p>
         </div>
-        <hr />
         <div class="footer">
-          <button class="next-question" onclick="nextSection('1')">
-            START
-          </button>
+          <button class="next-button" onclick="nextSection('1')">START</button>
         </div>
       </div>
     </section>
@@ -45,112 +47,97 @@
       <!--section 1-->
       <section class="section hide" id="identity">
         <div class="container hide" id="I1" data-question-group="1">
-          <!-- <div class="header">
-            <button class="skip-question" onclick="">
-              <span>Skip question</span>
-            </button>
-          </div> -->
           <div class="wrapper">
-            <p>Are humans free?</p>
+            <p class="question-text">Are humans free?</p>
           </div>
-          <hr />
-          <div class="choice-wrapper">
-            <button class="choice-button">Yes</button>
-            <div class="vertical-divisor"></div>
-            <button class="choice-button">No</button>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="I1-yes" name="amount" />
+            <label for="I1-yes">Yes</label>
+            <input type="radio" id="I1-no" name="amount" />
+            <label for="I1-no">No</label>
+            <!-- <button class="answer-button">Yes</button>
+            <button class="answer-button">No</button> -->
           </div>
-          <hr />
           <div class="footer">
-            <button class="next-question" onclick="nextSection('2')">
-              <span>[choice → yes/no]</span>
-            </button>
+            <button class="next-button" onclick="nextSection('2')">NEXT</button>
           </div>
         </div>
         <div class="container hide" id="I2" data-question-group="1">
-          <!-- <div class="header">
-            <button class="skip-question" onclick="">
-              <span>Skip question</span>
-            </button>
-          </div> -->
           <div class="wrapper">
-            <p>Have you ever cried looking at yourself in the mirror?</p>
+            <p class="question-text">
+              Have you ever cried looking at yourself in the mirror?
+            </p>
           </div>
-          <hr />
-          <div class="choice-wrapper">
-            <button class="choice-button">Yes</button>
-            <div class="vertical-divisor"></div>
-            <button class="choice-button">No</button>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="I2-yes" name="amount" />
+            <label for="I2-yes">Yes</label>
+            <input type="radio" id="I2-no" name="amount" />
+            <label for="I2-no">No</label>
+            <!-- <button class="answer-button">Yes</button>
+            <button class="answer-button">No</button> -->
           </div>
-          <hr />
           <div class="footer">
-            <button class="next-question" onclick="nextSection('2')">
-              <span>[choice → yes/no]</span>
-            </button>
+            <button class="next-button" onclick="nextSection('2')">NEXT</button>
           </div>
         </div>
         <div class="container hide" id="I3" data-question-group="1">
-          <!-- <div class="header">
-            <button class="skip-question" onclick="">
-              <span>Skip question</span>
-            </button>
-          </div> -->
           <div class="wrapper">
-            <p>
+            <p class="question-text">
               If there was a button to restart your entire life, would you press
               it?
             </p>
           </div>
-          <hr />
-          <div class="choice-wrapper">
-            <button class="choice-button">Yes</button>
-            <div class="vertical-divisor"></div>
-            <button class="choice-button">No</button>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="I3-yes" name="amount" />
+            <label for="I3-yes">Yes</label>
+            <input type="radio" id="I3-no" name="amount" />
+            <label for="I3-no">No</label>
+            <!-- <button class="answer-button">Yes</button>
+            <button class="answer-button">No</button> -->
           </div>
-          <hr />
           <div class="footer">
-            <button class="next-question" onclick="nextSection('2')">
-              <span>[choice → yes/no]</span>
-            </button>
+            <button class="next-button" onclick="nextSection('2')">NEXT</button>
           </div>
         </div>
         <div class="container hide" id="I4" data-question-group="2">
-          <!-- <div class="header">
-            <button class="skip-question" onclick="">
-              <span>Skip question</span>
-            </button>
-          </div> -->
           <div class="wrapper">
-            <p>Is it better to feel remorseful or regretful?</p>
+            <p class="question-text">
+              How often do you feel remorseful or regretful?
+            </p>
           </div>
-          <hr />
           <div class="wrapper">
-            <input type="range" min="-100" max="100" class="choice-slider" />
+            <div class="answer-range-wrapper">
+              <div class="mobile-label-wrapper">
+                <label for="I4-range" class="mobile-range-label">Never</label>
+                <label for="I4-range" class="mobile-range-label">A lot</label>
+              </div>
+              <label for="I4-range" class="desktop-range-label">Never</label>
+              <input
+                type="range"
+                id="I4-range"
+                min="-100"
+                max="100"
+                class="answer-range"
+              />
+              <label for="I4-range" class="desktop-range-label">A lot</label>
+            </div>
           </div>
-          <hr />
           <div class="footer">
-            <button class="next-question" onclick="nextSection('3')">
-              <span>[quantity → multiple choice/slider]</span>
-            </button>
+            <button class="next-button" onclick="nextSection('3')">NEXT</button>
           </div>
         </div>
         <div class="container hide" id="I5" data-question-group="3">
-          <!-- <div class="header">
-            <button class="skip-question" onclick="">
-              <span>Skip question</span>
-            </button>
-          </div> -->
           <div class="wrapper">
-            <p>How does the dream end?</p>
+            <p class="question-text">How does the dream end?</p>
           </div>
-          <hr />
           <div class="wrapper">
-            <textarea></textarea>
+            <textarea
+              class="answer-text"
+              placeholder="Feel free to use your native language."
+            ></textarea>
           </div>
-          <hr />
           <div class="footer">
-            <button class="next-question" onclick="nextSection('4')">
-              <span>[text → anything]</span>
-            </button>
+            <button class="next-button" onclick="nextSection('4')">NEXT</button>
           </div>
         </div>
       </section>
@@ -567,7 +554,9 @@
     <section class="section hide" id="loading">
       <div class="container hide" id="loading-content">
         <div class="wrapper">
-          <h1>Processing your thoughts.<br />Please hold on.</h1>
+          <p class="question-text">
+            Processing your thoughts.<br />Please hold on.
+          </p>
         </div>
       </div>
     </section>
@@ -575,15 +564,11 @@
     <!--artwork-->
     <section class="section hide" id="artwork">
       <div class="container hide" id="artwork-content">
-        <!-- <div class="header">
-          <a href class="link-home"><span>HOME</span></a>
-        </div> -->
         <div class="wrapper">
           <img id="artwork-snapshot" src="" />
         </div>
-        <hr />
         <div class="footer">
-          <button class="save-artwork" onclick="">
+          <button class="next-button" onclick="">
             <span>SAVE AND UPLOAD</span>
           </button>
         </div>

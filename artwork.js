@@ -1,3 +1,12 @@
+// noise (arbitrary)
+const octaves = 8;
+const falloff = 0.5;
+
+// texture control (6, 9, 12) based on the length of the strings inside the text areas
+// let subd = 6;
+// let subd = 9;
+let subd = 12;
+
 class generativeArtwork {
   // parameters to build the image
   constructor(
@@ -36,26 +45,38 @@ class generativeArtwork {
 
   // show the defined image
   display() {
-    push();
-    fill("#FF4500");
-    rect(0, 0, width, height / 5);
-    pop();
-    push();
-    fill("#7722F6");
-    rect(0, 0 + height / 5, width, height / 5);
-    pop();
-    push();
-    fill("#F950A2");
-    rect(0, 0 + (height / 5) * 2, width, height / 5);
-    pop();
-    push();
-    fill("#02FFF7");
-    rect(0, 0 + (height / 5) * 3, width, height / 5);
-    pop();
-    push();
-    fill("#F1FFA5");
-    rect(0, 0 + (height / 5) * 4, width, height / 5);
-    pop();
-    filter(BLUR, 100);
+    noiseDetail(octaves, falloff);
+    for (var x = 0 + width / subd / 2; x < width; x += width / subd) {
+      for (var y = 0 + height / subd / 2; y < height; y += width / subd) {
+        push();
+        let noiseColor = noise(x * 100, y * 100);
+        if (noiseColor > 0.1875 && noiseColor < 0.3125) {
+          fill("#FE0000");
+          rect(x, y, width / subd, height / subd);
+        } else if (noiseColor > 0.3125 && noiseColor < 0.4375) {
+          fill("#B44EF2");
+          rect(x, y, width / subd, height / subd);
+        } else if (noiseColor > 0.4375 && noiseColor < 0.5625) {
+          fill("#FF1493");
+          rect(x, y, width / subd, height / subd);
+        } else if (noiseColor > 0.5625 && noiseColor < 0.6875) {
+          fill("#1D64FF");
+          rect(x, y, width / subd, height / subd);
+        } else if (noiseColor > 0.6875 && noiseColor < 0.8125) {
+          fill("#ABFF38");
+          rect(x, y, width / subd, height / subd);
+        }
+        pop();
+      }
+    }
+
+    // filter based on the median value of the sliders, rounded (0, 25, 50, 75, 100)
+    // filter(BLUR, 0);
+    // filter(BLUR, 12.5);
+    // filter(BLUR, 25);
+    // filter(BLUR, 37.5);
+    // filter(BLUR, 50);
+    // filter(BLUR, 75);
+    // filter(BLUR, 100);
   }
 }

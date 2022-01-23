@@ -1,4 +1,6 @@
 // DOM
+let intViewportWidth = window.innerWidth;
+let intViewportHeight = window.innerHeight;
 let intro = document.getElementById("intro");
 let introContent = document.getElementById("intro-content");
 let questions = document.getElementById("questions");
@@ -320,9 +322,11 @@ function getRandomInt(min, max) {
 }
 
 function setup() {
-  createCanvas(500, 500).parent("artwork-buffer");
+  createCanvas(540, 540).parent("artwork-buffer");
   pixelDensity(1);
+  rectMode(CENTER);
   noStroke();
+  background(255);
   generatedArtwork = new generativeArtwork(
     1,
     2,
@@ -343,7 +347,6 @@ function setup() {
 }
 
 function draw() {
-  clear();
   if (artworkIsLoading) {
     generatedArtwork.display();
     noLoop();
@@ -358,3 +361,34 @@ function draw() {
     }, 750);
   }
 }
+
+// todo: finalise background animation
+// let sketch = function (sketch) {
+//   sketch.setup = function () {
+//     sketch
+//       .createCanvas(intViewportWidth, intViewportHeight)
+//       .parent("background-content");
+//     sketch.rectMode(sketch.CENTER);
+//     sketch.fill("#abff38");
+//     sketch.strokeWeight(1);
+//     sketch.stroke("#abff38");
+//   };
+
+//   sketch.draw = function () {
+//     sketch.background("#232628");
+//     sketch.rect(
+//       intViewportWidth / 2,
+//       intViewportHeight / 2,
+//       intViewportWidth,
+//       intViewportHeight * sketch.sin(sketch.frameCount / 500)
+//     );
+//   };
+
+//   sketch.windowResized = function () {
+//     intViewportWidth = window.innerWidth;
+//     intViewportHeight = window.innerHeight;
+//     sketch.resizeCanvas(intViewportWidth, intViewportHeight);
+//   };
+// };
+
+// let backgroundSketch = new p5(sketch);
