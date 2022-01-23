@@ -439,6 +439,10 @@ input[type="range"]:focus::-moz-range-track {
   font-size: medium;
 }
 
+#save-artwork {
+  justify-content: center;
+}
+
 .next-button {
   /* position, dimensions */
   margin: 0;
@@ -525,6 +529,9 @@ input[type="range"]:focus::-moz-range-track {
     width: 100%;
     height: auto;
   }
+  #save-artwork {
+    justify-content: flex-end;
+  }
 }
 
 /* some mobile browsers stretch the viewport when using the keyboard */
@@ -567,5 +574,8 @@ input[type="range"]:focus::-moz-range-track {
   #artwork-snapshot {
     width: 100%;
     height: auto;
+  }
+  #save-artwork {
+    justify-content: flex-end;
   }
 }
