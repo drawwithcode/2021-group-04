@@ -1,0 +1,1 @@
+myAbout = document.getElementById("myAbout");

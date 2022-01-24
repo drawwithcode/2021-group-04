@@ -27,8 +27,8 @@ body {
   margin: 0;
   padding: 0;
   /* styles, colours */
-  background: #232628;
-  color: white;
+  background: #dfdee2;
+  color: black;
   /* fonts */
   font-family: "Everett", sans-serif;
   font-weight: normal;
@@ -37,7 +37,7 @@ body {
 
 a {
   /* styles, colours */
-  color: white;
+  color: black;
   /* fonts */
   font-family: "Everett", sans-serif;
   font-weight: normal;
@@ -53,11 +53,10 @@ button {
   cursor: pointer;
   /* styles, colours */
   background: transparent;
-  color: white;
+  color: black;
   font-size: medium;
   border-style: solid;
-  border-radius: 0.5em;
-  border-color: white;
+  border-color: black;
 }
 
 h1 {
@@ -83,7 +82,7 @@ section {
   display: block;
   /* styles, colours */
   background: transparent;
-  color: white;
+  color: black;
 }
 
 .header {
@@ -113,11 +112,10 @@ section {
   cursor: pointer;
   /* styles, colours */
   background: transparent;
-  color: white;
+  color: black;
   border-style: solid;
-  border-width: 1.5px;
-  border-radius: 0.5em;
-  border-color: white;
+  border-width: 1px;
+  border-color: black;
 }
 
 #archive {
@@ -131,11 +129,10 @@ section {
   cursor: pointer;
   /* styles, colours */
   background: transparent;
-  color: white;
+  color: black;
   border-style: solid;
-  border-width: 1.5px;
-  border-radius: 0.5em;
-  border-color: white;
+  border-width: 1px;
+  border-color: black;
 }
 
 .footer {
@@ -179,5 +176,54 @@ section {
   border-style: solid;
   border-width: 1.5px;
   border-radius: 0.5em;
-  border-color: white;
+  border-color: black;
+}
+
+/* MARQUEE */
+marquee {
+  bottom: 0;
+  position: fixed;
+  background-color: black;
+  height: 1.8em;
+}
+
+/*TESTO SCORRIMENTO MARQUEE*/
+#text-marquee {
+  font-family: EVERETT;
+  font-size: 1.2vw;
+  color: #dfdee2;
+  line-height: 0em;
+  transform: translate(0, -75%);
+}
+
+#logo-container {
+  width: 100%;
+  position: fixed;
+  top: 25%;
+  left: 0;
+  padding: 0;
+}
+
+#logo-container img {
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+#myAbout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  position: relative;
+}
+
+#wrapper {
+  width: 40%;
+  background-color: #dfdee2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  padding: 25px;
 }
