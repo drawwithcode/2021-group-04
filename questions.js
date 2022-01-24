@@ -41,6 +41,32 @@ let artwork = document.getElementById("artwork");
 let artworkContent = document.getElementById("artwork-content");
 let artworkSnapshot = document.getElementById("artwork-snapshot");
 
+// artwork parameters
+let identity1;
+let identity2;
+let identity3;
+let identityTime = 5;
+let relationships1;
+let relationships2;
+let relationships3;
+let relationshipsTime = 5;
+let violence1;
+let violence2;
+let violence3;
+let violenceTime = 5;
+let sexuality1;
+let sexuality2;
+let sexuality3;
+let sexualityTime = 5;
+let beliefs1;
+let beliefs2;
+let beliefs3;
+let beliefsTime = 5;
+
+// time
+let startTime;
+let elapsedTime;
+
 // a dice is rolled in order to show just one question for each type
 let dice = 0;
 
@@ -63,6 +89,8 @@ function nextSection(sectionNumber) {
           questions.className = "section show";
           identity.className = "section show";
           I1.className = "container show";
+          startTime = Date.now();
+          console.log(startTime);
         }, 750);
         break;
       } else if (dice === 2) {
@@ -73,6 +101,8 @@ function nextSection(sectionNumber) {
           questions.className = "section show";
           identity.className = "section show";
           I2.className = "container show";
+          startTime = Date.now();
+          console.log(startTime);
         }, 750);
         break;
       } else {
@@ -83,10 +113,40 @@ function nextSection(sectionNumber) {
           questions.className = "section show";
           identity.className = "section show";
           I3.className = "container show";
+          startTime = Date.now();
+          console.log(startTime);
         }, 750);
         break;
       }
     case "2":
+      if (dice === 1) {
+        if (document.querySelector('input[name="I1-group"]:checked') == null) {
+          break;
+        } else {
+          identity1 = document.querySelector(
+            'input[name="I1-group"]:checked'
+          ).value;
+          console.log(identity1);
+        }
+      } else if (dice === 2) {
+        if (document.querySelector('input[name="I2-group"]:checked') == null) {
+          break;
+        } else {
+          identity1 = document.querySelector(
+            'input[name="I2-group"]:checked'
+          ).value;
+          console.log(identity1);
+        }
+      } else {
+        if (document.querySelector('input[name="I3-group"]:checked') == null) {
+          break;
+        } else {
+          identity1 = document.querySelector(
+            'input[name="I3-group"]:checked'
+          ).value;
+          console.log(identity1);
+        }
+      }
       console.log("question " + sectionNumber);
       I1.className = "container hide";
       I2.className = "container hide";
@@ -96,6 +156,8 @@ function nextSection(sectionNumber) {
       }, 750);
       break;
     case "3":
+      identity2 = document.getElementById("I4-range").value;
+      console.log(identity2);
       console.log("question " + sectionNumber);
       I4.className = "container hide";
       setTimeout(() => {
@@ -103,6 +165,15 @@ function nextSection(sectionNumber) {
       }, 750);
       break;
     case "4":
+      if (!document.getElementById("I5-text").value.trim()) {
+        break;
+      } else {
+        identity3 = document.getElementById("I5-text").value;
+        console.log(identity3);
+      }
+      elapsedTime = Date.now() - startTime;
+      identityTime = elapsedTime;
+      console.log(identityTime);
       dice = getRandomInt(1, 2);
       if (dice === 1) {
         console.log("question " + sectionNumber + " (" + dice + ")");
@@ -111,6 +182,8 @@ function nextSection(sectionNumber) {
         setTimeout(() => {
           relationships.className = "section show";
           R1.className = "container show";
+          startTime = Date.now();
+          console.log(startTime);
         }, 750);
         break;
       } else {
@@ -120,10 +193,31 @@ function nextSection(sectionNumber) {
         setTimeout(() => {
           relationships.className = "section show";
           R2.className = "container show";
+          startTime = Date.now();
+          console.log(startTime);
         }, 750);
         break;
       }
     case "5":
+      if (dice === 1) {
+        if (document.querySelector('input[name="R1-group"]:checked') == null) {
+          break;
+        } else {
+          relationships1 = document.querySelector(
+            'input[name="R1-group"]:checked'
+          ).value;
+          console.log(relationships1);
+        }
+      } else {
+        if (document.querySelector('input[name="R2-group"]:checked') == null) {
+          break;
+        } else {
+          relationships1 = document.querySelector(
+            'input[name="R2-group"]:checked'
+          ).value;
+          console.log(relationships1);
+        }
+      }
       console.log("question " + sectionNumber);
       R1.className = "container hide";
       R2.className = "container hide";
@@ -132,6 +226,8 @@ function nextSection(sectionNumber) {
       }, 750);
       break;
     case "6":
+      relationships2 = document.getElementById("R3-range").value;
+      console.log(relationships2);
       dice = getRandomInt(1, 2);
       if (dice === 1) {
         console.log("question " + sectionNumber + " (" + dice + ")");
@@ -149,6 +245,24 @@ function nextSection(sectionNumber) {
         break;
       }
     case "7":
+      if (dice === 1) {
+        if (!document.getElementById("R4-text").value.trim()) {
+          break;
+        } else {
+          relationships3 = document.getElementById("R4-text").value;
+          console.log(relationships3);
+        }
+      } else {
+        if (!document.getElementById("R5-text").value.trim()) {
+          break;
+        } else {
+          relationships3 = document.getElementById("R5-text").value;
+          console.log(relationships3);
+        }
+      }
+      elapsedTime = Date.now() - startTime;
+      relationshipsTime = elapsedTime;
+      console.log(relationshipsTime);
       dice = getRandomInt(1, 3);
       if (dice === 1) {
         console.log("question " + sectionNumber + " (" + dice + ")");
@@ -158,6 +272,8 @@ function nextSection(sectionNumber) {
         setTimeout(() => {
           violence.className = "section show";
           V1.className = "container show";
+          startTime = Date.now();
+          console.log(startTime);
         }, 750);
         break;
       } else if (dice === 2) {
@@ -167,6 +283,8 @@ function nextSection(sectionNumber) {
         setTimeout(() => {
           violence.className = "section show";
           V2.className = "container show";
+          startTime = Date.now();
+          console.log(startTime);
         }, 750);
         break;
       } else {
@@ -176,10 +294,40 @@ function nextSection(sectionNumber) {
         setTimeout(() => {
           violence.className = "section show";
           V3.className = "container show";
+          startTime = Date.now();
+          console.log(startTime);
         }, 750);
         break;
       }
     case "8":
+      if (dice === 1) {
+        if (document.querySelector('input[name="V1-group"]:checked') == null) {
+          break;
+        } else {
+          violence1 = document.querySelector(
+            'input[name="V1-group"]:checked'
+          ).value;
+          console.log(violence1);
+        }
+      } else if (dice === 2) {
+        if (document.querySelector('input[name="V2-group"]:checked') == null) {
+          break;
+        } else {
+          violence1 = document.querySelector(
+            'input[name="V2-group"]:checked'
+          ).value;
+          console.log(violence1);
+        }
+      } else {
+        if (document.querySelector('input[name="V3-group"]:checked') == null) {
+          break;
+        } else {
+          violence1 = document.querySelector(
+            'input[name="V3-group"]:checked'
+          ).value;
+          console.log(violence1);
+        }
+      }
       console.log("question " + sectionNumber);
       V1.className = "container hide";
       V2.className = "container hide";
@@ -189,6 +337,8 @@ function nextSection(sectionNumber) {
       }, 750);
       break;
     case "9":
+      violence2 = document.getElementById("V4-range").value;
+      console.log(violence2);
       console.log("question " + sectionNumber);
       V4.className = "container hide";
       setTimeout(() => {
@@ -196,6 +346,15 @@ function nextSection(sectionNumber) {
       }, 750);
       break;
     case "10":
+      if (!document.getElementById("V5-text").value.trim()) {
+        break;
+      } else {
+        violence3 = document.getElementById("V5-text").value;
+        console.log(violence3);
+      }
+      elapsedTime = Date.now() - startTime;
+      violenceTime = elapsedTime;
+      console.log(violenceTime);
       dice = getRandomInt(1, 3);
       if (dice === 1) {
         console.log("question " + sectionNumber + " (" + dice + ")");
@@ -204,6 +363,8 @@ function nextSection(sectionNumber) {
         setTimeout(() => {
           sexuality.className = "section show";
           S1.className = "container show";
+          startTime = Date.now();
+          console.log(startTime);
         }, 750);
         break;
       } else if (dice === 2) {
@@ -213,6 +374,8 @@ function nextSection(sectionNumber) {
         setTimeout(() => {
           sexuality.className = "section show";
           S2.className = "container show";
+          startTime = Date.now();
+          console.log(startTime);
         }, 750);
         break;
       } else {
@@ -222,10 +385,40 @@ function nextSection(sectionNumber) {
         setTimeout(() => {
           sexuality.className = "section show";
           S3.className = "container show";
+          startTime = Date.now();
+          console.log(startTime);
         }, 750);
         break;
       }
     case "11":
+      if (dice === 1) {
+        if (document.querySelector('input[name="S1-group"]:checked') == null) {
+          break;
+        } else {
+          sexuality1 = document.querySelector(
+            'input[name="S1-group"]:checked'
+          ).value;
+          console.log(sexuality1);
+        }
+      } else if (dice === 2) {
+        if (document.querySelector('input[name="S2-group"]:checked') == null) {
+          break;
+        } else {
+          sexuality1 = document.querySelector(
+            'input[name="S2-group"]:checked'
+          ).value;
+          console.log(sexuality1);
+        }
+      } else {
+        if (document.querySelector('input[name="S3-group"]:checked') == null) {
+          break;
+        } else {
+          sexuality1 = document.querySelector(
+            'input[name="S3-group"]:checked'
+          ).value;
+          console.log(sexuality1);
+        }
+      }
       console.log("question " + sectionNumber);
       S1.className = "container hide";
       S2.className = "container hide";
@@ -235,6 +428,8 @@ function nextSection(sectionNumber) {
       }, 750);
       break;
     case "12":
+      sexuality2 = document.getElementById("S4-range").value;
+      console.log(sexuality2);
       console.log("question " + sectionNumber);
       S4.className = "container hide";
       setTimeout(() => {
@@ -242,6 +437,15 @@ function nextSection(sectionNumber) {
       }, 750);
       break;
     case "13":
+      if (!document.getElementById("S5-text").value.trim()) {
+        break;
+      } else {
+        sexuality3 = document.getElementById("S5-text").value;
+        console.log(sexuality3);
+      }
+      elapsedTime = Date.now() - startTime;
+      sexualityTime = elapsedTime;
+      console.log(sexualityTime);
       dice = getRandomInt(1, 2);
       if (dice === 1) {
         console.log("question " + sectionNumber + " (" + dice + ")");
@@ -250,6 +454,8 @@ function nextSection(sectionNumber) {
         setTimeout(() => {
           beliefs.className = "section show";
           B1.className = "container show";
+          startTime = Date.now();
+          console.log(startTime);
         }, 750);
         break;
       } else {
@@ -259,10 +465,31 @@ function nextSection(sectionNumber) {
         setTimeout(() => {
           beliefs.className = "section show";
           B2.className = "container show";
+          startTime = Date.now();
+          console.log(startTime);
         }, 750);
         break;
       }
     case "14":
+      if (dice === 1) {
+        if (document.querySelector('input[name="B1-group"]:checked') == null) {
+          break;
+        } else {
+          beliefs1 = document.querySelector(
+            'input[name="B1-group"]:checked'
+          ).value;
+          console.log(beliefs1);
+        }
+      } else {
+        if (document.querySelector('input[name="B2-group"]:checked') == null) {
+          break;
+        } else {
+          beliefs1 = document.querySelector(
+            'input[name="B2-group"]:checked'
+          ).value;
+          console.log(beliefs1);
+        }
+      }
       console.log("question " + sectionNumber);
       B1.className = "container hide";
       B2.className = "container hide";
@@ -271,6 +498,8 @@ function nextSection(sectionNumber) {
       }, 750);
       break;
     case "15":
+      beliefs2 = document.getElementById("B3-range").value;
+      console.log(beliefs2);
       dice = getRandomInt(1, 3);
       if (dice === 1) {
         console.log("question " + sectionNumber + " (" + dice + ")");
@@ -295,6 +524,31 @@ function nextSection(sectionNumber) {
         break;
       }
     case "16":
+      if (dice === 1) {
+        if (!document.getElementById("B4-text").value.trim()) {
+          break;
+        } else {
+          beliefs3 = document.getElementById("B4-text").value;
+          console.log(beliefs3);
+        }
+      } else if (dice === 2) {
+        if (!document.getElementById("B5-text").value.trim()) {
+          break;
+        } else {
+          beliefs3 = document.getElementById("B5-text").value;
+          console.log(beliefs3);
+        }
+      } else {
+        if (!document.getElementById("B6-text").value.trim()) {
+          break;
+        } else {
+          beliefs3 = document.getElementById("B6-text").value;
+          console.log(beliefs3);
+        }
+      }
+      elapsedTime = Date.now() - startTime;
+      beliefsTime = elapsedTime;
+      console.log(beliefsTime);
       console.log("loading");
       B4.className = "container hide";
       B5.className = "container hide";
@@ -303,6 +557,30 @@ function nextSection(sectionNumber) {
       setTimeout(() => {
         loading.className = "section show";
         loadingContent.className = "container show";
+        generatedArtwork = new generativeArtwork(
+          identity2,
+          identity3,
+          identityTime,
+          relationships1,
+          relationships2,
+          relationships3,
+          relationshipsTime,
+          violence1,
+          violence2,
+          violence3,
+          violenceTime,
+          sexuality1,
+          sexuality2,
+          sexuality3,
+          sexualityTime,
+          beliefs1,
+          beliefs2,
+          beliefs3,
+          beliefsTime
+        );
+        console.log(generatedArtwork);
+        console.log(generatedArtwork.totalTime);
+        console.log(generatedArtwork.filter);
         setTimeout(() => {
           artworkIsLoading = true;
         }, 750);
@@ -326,23 +604,6 @@ function setup() {
   rectMode(CENTER);
   noStroke();
   background(255);
-  generatedArtwork = new generativeArtwork(
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15
-  );
 }
 
 function draw() {
