@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Everett";
-  src: url("./assets/fonts/TWKEverett-Regular-web.woff") format("woff");
+  src: url("../assets/fonts/TWKEverett-Regular-web.woff") format("woff");
 }
 
 * {
