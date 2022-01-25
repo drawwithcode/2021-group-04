@@ -83,22 +83,21 @@ class generativeArtwork {
     noiseDetail(octaves, falloff);
     if (this.textAnswersAverageLength <= 16) {
       subd = 6;
-      console.log(subd);
+      console.log("grid: " + subd);
     } else if (
       this.textAnswersAverageLength > 16 &&
       this.textAnswersAverageLength <= 32
     ) {
       subd = 9;
-      console.log(subd);
+      console.log("grid: " + subd);
     } else if (this.textAnswersAverageLength > 32) {
       subd = 12;
-      console.log(subd);
+      console.log("grid: " + subd);
     }
     for (var x = 0 + width / subd / 2; x < width; x += width / subd) {
       for (var y = 0 + height / subd / 2; y < height; y += width / subd) {
         push();
         let noiseColor = noise(x, y);
-        console.log(noiseColor);
         if (noiseColor >= 0 && noiseColor <= this.identityTimeRatio) {
           if (this.identity1 == "true") {
             fill("#7722F6");

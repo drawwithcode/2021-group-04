@@ -579,8 +579,6 @@ function nextSection(sectionNumber) {
           beliefsTime
         );
         console.log(generatedArtwork);
-        console.log(generatedArtwork.totalTime);
-        console.log(generatedArtwork.filter);
         setTimeout(() => {
           artworkIsLoading = true;
         }, 750);
