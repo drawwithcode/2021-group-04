@@ -13,74 +13,102 @@
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="normalize.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script src="assets/libraries/p5.min.js"></script>
     <!--temp-->
+    <script src="background.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   </head>
   <body>
-    <section id="one">
-      <div class="container">
-        <div class="header">
-          <button id="about" onclick=""><span>ARCHIVE</span></button>
-          <button id="archive"><span>ABOUT</span></button>
-        </div>
+    <div id="container">
+      <div id="background"></div>
+      <div id="scroll">
+        <p style="color: black">SCROLL UP</p>
       </div>
-    </section>
-    <div id="logo-container">
-      <img src="assets/images/pnglogo.png" alt="logo" />
-    </div>
 
-    <div id="myAbout" class="modal show-modal">
-      <div id="wrapper">
-        <div class="modal-content">
-          <div class="modal-header"></div>
+      <section id="one">
+        <div class="container">
+          <div class="header">
+            <button id="about" onclick=""><span>ARCHIVE</span></button>
+            <button id="archive"><span>ABOUT</span></button>
+          </div>
         </div>
-        <div class="modal-body">
-          <section class="modal-title">
-            <div class="item2">
-              <h1>ABOUT METANOISE</h1>
-              <p>Visual mapping thoughts</p>
-            </div>
-          </section>
+      </section>
+      <div id="logo-container">
+        <img src="assets/images/pnglogo.png" alt="logo" />
+      </div>
 
-          <section class="modal-grid1">
-            <div id="description">
+      <!--MARQUEE-->
+      <marquee class="marquee" width="100%" behavior="scroll">
+        <p id="text-marquee">
+          JUMPING OFF A MOTORWAY BRIDGE &emsp;&emsp;&emsp;&emsp;&emsp; STICKING
+          SOMETHING IN MY EYE &emsp;&emsp;&emsp;&emsp;&emsp; JUMPING ONTO TRAIN
+          TRACKS &emsp;&emsp;&emsp;&emsp;&emsp; VIOLENT ACTS IN SEX
+          &emsp;&emsp;&emsp;&emsp;&emsp; CONTRACTING DISEASES IN PUBLIC PLACES
+          &emsp;&emsp;&emsp;&emsp;&emsp; WISHING FOR A PERSON TO DIE
+          &emsp;&emsp;&emsp;&emsp;&emsp; INSULTING A FRIEND FOR NO APPARENT
+          reason &emsp;&emsp;&emsp;&emsp;&emsp; SLAPPING SOMEONE WHO TALKS TOO
+          MUCH &emsp;&emsp;&emsp;&emsp;&emsp; DIRT THAT IS ALWAYS ON ONE'S HANDS
+          &emsp;&emsp;&emsp;&emsp;&emsp; IMPULSE TO SHOUT AT ONE'S RELATIVES
+          &emsp;&emsp;&emsp;&emsp;&emsp; BLASPHEMOUS EVENTS IN CHURCH OR AT A
+          FUNERAL &emsp;&emsp;&emsp;&emsp;&emsp; BEING TRAPPED IN A CAR
+          UNDERWATER &emsp;&emsp;&emsp;&emsp;&emsp; UNNATURAL SEXUAL ACTS
+          &emsp;&emsp;&emsp;&emsp;&emsp; HURTING OF KILLING A LOVED ONE
+          &emsp;&emsp;&emsp;&emsp;&emsp; IMAGE OF A PENIS
+          &emsp;&emsp;&emsp;&emsp;&emsp; GRANDPARENTS HAVING SEX
+          &emsp;&emsp;&emsp;&emsp;&emsp;
+        </p>
+      </marquee>
+
+      <div id="myAbout" class="modal show-modal">
+        <div id="wrapper">
+          <div class="modal-content">
+            <div class="modal-header"></div>
+          </div>
+          <div class="modal-body">
+            <section class="modal-title">
+              <div class="item2">
+                <h1>ABOUT METANOISE</h1>
+                <p>Visual mapping thoughts</p>
+              </div>
+            </section>
+
+            <section class="modal-grid1">
+              <div id="description">
+                <p>
+                  “Metanoise” is a virtual space created for the course of
+                  Creative Coding at Politecnico di Milano. If there was a
+                  button to restart your whole life, would you press it? In this
+                  website people will be asked to answer to question like the
+                  one above, all based on “intrusive thoughts”: unwanted
+                  thoughts that can pop into our heads without warnings. These
+                  thoughts, that reveal parts of the inner reality of a human
+                  being, regard 5 dimensions: identity, beliefs, relationships,
+                  sexuality and violence. By answering, the users will leave a
+                  path that will be “translated” into an “intimate postcard”.
+                  Each postcard is unique: it represents the reflection of the
+                  user’s inner self. At the end of the experience the image will
+                  be collected in our “archive” where all the postcards
+                  generated can be visualized together. Now go find a safe place
+                  and enjoy this intimate experience. Good luck. Metanoise’s
+                  team.
+                </p>
+              </div>
+            </section>
+
+            <section class="modal-grid2">
+              <p>TEAM</p>
+            </section>
+
+            <section class="modal-grid3">
               <p>
-                “Metanoise” is a virtual space created for the course of
-                Creative Coding at Politecnico di Milano. If there was a button
-                to restart your whole life, would you press it? In this website
-                people will be asked to answer to question like the one above,
-                all based on “intrusive thoughts”: unwanted thoughts that can
-                pop into our heads without warnings. These thoughts, that reveal
-                parts of the inner reality of a human being, regard 5
-                dimensions: identity, beliefs, relationships, sexuality and
-                violence. By answering, the users will leave a path that will be
-                “translated” into an “intimate postcard”. Each postcard is
-                unique: it represents the reflection of the user’s inner self.
-                At the end of the experience the image will be collected in our
-                “archive” where all the postcards generated can be visualized
-                together. Now go find a safe place and enjoy this intimate
-                experience. Good luck. Metanoise’s team.
+                FACULTY: Michele Mauri Tommaso Elli Andrea Benedetti Academic
+                year 2021-2022 Politecnico di Milano
               </p>
-            </div>
-          </section>
-
-          <section class="modal-grid2">
-            <p>TEAM</p>
-          </section>
-
-          <section class="modal-grid3">
-            <p>
-              FACULTY: Michele Mauri Tommaso Elli Andrea Benedetti Academic year
-              2021-2022 Politecnico di Milano
-            </p>
-          </section>
+            </section>
+          </div>
         </div>
       </div>
     </div>
-
-    <!--MARQUEE-->
-    <marquee class="marquee" width="100%" behavior="scroll">
-      <p id="text-marquee">BLA BLA BLA BLA BLA</p>
-    </marquee>
   </body>
 </html>
