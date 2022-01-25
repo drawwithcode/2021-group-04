@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <!--meta tags-->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <meta name="theme-color" content="#232628" />
+    <!--title-->
+    <title>METANOISE</title>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="normalize.css" />
+    <link rel="stylesheet" type="text/css" href="questions.css" />
+    <!--p5 libraries-->
+    <script src="assets/libraries/p5.min.js"></script>
+  </head>
+  <body>
+    <!--buffer-->
+    <section class="section hide">
+      <div class="container show" id="artwork-buffer"></div>
+    </section>
+
+    <!--background-->
+    <section class="section show" id="background">
+      <div class="container show" id="background-content"></div>
+    </section>
+
+    <!--intro-->
+    <section class="section show" id="intro">
+      <div class="container show" id="intro-content">
+        <!-- <div class="header">
+          <a href class="link-home"><span>HOME</span></a>
+        </div> -->
+        <div class="wrapper">
+          <p class="question-text">Click START when you're ready.</p>
+        </div>
+        <div class="footer">
+          <button class="next-button" onclick="nextSection('1')">START</button>
+        </div>
+      </div>
+    </section>
+
+    <!--questions-->
+    <section class="section hide" id="questions">
+      <!--section 1-->
+      <section class="section hide" id="identity">
+        <div class="container hide" id="I1" data-question-group="1">
+          <div class="wrapper">
+            <p class="question-text">Are humans free?</p>
+          </div>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="I1-yes" name="I1-group" value="true" />
+            <label for="I1-yes">Yes</label>
+            <input type="radio" id="I1-no" name="I1-group" value="false" />
+            <label for="I1-no">No</label>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('2')">NEXT</button>
+          </div>
+        </div>
+        <div class="container hide" id="I2" data-question-group="1">
+          <div class="wrapper">
+            <p class="question-text">
+              Have you ever cried looking at yourself in the mirror?
+            </p>
+          </div>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="I2-yes" name="I2-group" value="true" />
+            <label for="I2-yes">Yes</label>
+            <input type="radio" id="I2-no" name="I2-group" value="false" />
+            <label for="I2-no">No</label>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('2')">NEXT</button>
+          </div>
+        </div>
+        <div class="container hide" id="I3" data-question-group="1">
+          <div class="wrapper">
+            <p class="question-text">
+              If there was a button to restart your entire life, would you press
+              it?
+            </p>
+          </div>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="I3-yes" name="I3-group" value="true" />
+            <label for="I3-yes">Yes</label>
+            <input type="radio" id="I3-no" name="I3-group" value="false" />
+            <label for="I3-no">No</label>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('2')">NEXT</button>
+          </div>
+        </div>
+        <div class="container hide" id="I4" data-question-group="2">
+          <div class="wrapper">
+            <p class="question-text">How often do you feel regretful?</p>
+          </div>
+          <div class="wrapper">
+            <div class="answer-range-wrapper">
+              <div class="mobile-range-label-wrapper">
+                <label for="I4-range" class="mobile-range-label">Never</label>
+                <label for="I4-range" class="mobile-range-label">Always</label>
+              </div>
+              <label for="I4-range" class="desktop-range-label">Never</label>
+              <input
+                type="range"
+                id="I4-range"
+                class="answer-range"
+                min="-100"
+                max="100"
+              />
+              <label for="I4-range" class="desktop-range-label">Always</label>
+            </div>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('3')">NEXT</button>
+          </div>
+        </div>
+        <div class="container hide" id="I5" data-question-group="3">
+          <div class="wrapper">
+            <p class="question-text">How does the dream end?</p>
+          </div>
+          <div class="wrapper">
+            <textarea
+              class="answer-text"
+              id="I5-text"
+              placeholder="Feel free to use your native language."
+            ></textarea>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('4')">NEXT</button>
+          </div>
+        </div>
+      </section>
+
+      <!--section 2 (relationships)-->
+      <section class="section hide" id="relationships">
+        <div class="container hide" id="R1" data-question-group="4">
+          <div class="wrapper">
+            <p class="question-text">
+              Is it more important to love yourself more than other people?
+            </p>
+          </div>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="R1-yes" name="R1-group" value="true" />
+            <label for="R1-yes">Yes</label>
+            <input type="radio" id="R1-no" name="R1-group" value="false" />
+            <label for="R1-no">No</label>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('5')">NEXT</button>
+          </div>
+        </div>
+        <div class="container hide" id="R2" data-question-group="4">
+          <div class="wrapper">
+            <p class="question-text">
+              You just found out that your friends' partner has cheated on them.
+              Would you tell them?
+            </p>
+          </div>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="R2-yes" name="R2-group" value="true" />
+            <label for="R2-yes">Yes</label>
+            <input type="radio" id="R2-no" name="R2-group" value="false" />
+            <label for="R2-no">No</label>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('5')">NEXT</button>
+          </div>
+        </div>
+        <div class="container hide" id="R3" data-question-group="5">
+          <div class="wrapper">
+            <p class="question-text">How invisible do you feel?</p>
+          </div>
+          <div class="wrapper">
+            <div class="answer-range-wrapper">
+              <div class="mobile-range-label-wrapper">
+                <label for="R3-range" class="mobile-range-label"
+                  >Not at all</label
+                >
+                <label for="R3-range" class="mobile-range-label"
+                  >Completely</label
+                >
+              </div>
+              <label for="R3-range" class="desktop-range-label"
+                >Not at all</label
+              >
+              <input
+                type="range"
+                class="answer-range"
+                id="R3-range"
+                min="-100"
+                max="100"
+              />
+              <label for="R3-range" class="desktop-range-label"
+                >Completely</label
+              >
+            </div>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('6')">NEXT</button>
+          </div>
+        </div>
+        <div class="container hide" id="R4" data-question-group="6">
+          <div class="wrapper">
+            <p class="question-text">
+              When did you realize that you are alone?
+            </p>
+          </div>
+          <div class="wrapper">
+            <textarea
+              class="answer-text"
+              id="R4-text"
+              placeholder="Feel free to use your native language."
+            ></textarea>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('7')">NEXT</button>
+          </div>
+        </div>
+        <div class="container hide" id="R5" data-question-group="6">
+          <div class="wrapper">
+            <p class="question-text">
+              How many people have suffered because of you? Was it worth it?
+            </p>
+          </div>
+          <div class="wrapper">
+            <textarea
+              class="answer-text"
+              id="R5-text"
+              placeholder="Feel free to use your native language."
+            ></textarea>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('7')">NEXT</button>
+          </div>
+        </div>
+      </section>
+
+      <!--section 3 (violence)-->
+      <section class="section hide" id="violence">
+        <div class="container hide" id="V1" data-question-group="7">
+          <div class="wrapper">
+            <p class="question-text">Have you ever enjoyed hurting someone?</p>
+          </div>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="V1-yes" name="V1-group" value="true" />
+            <label for="V1-yes">Yes</label>
+            <input type="radio" id="V1-no" name="V1-group" value="false" />
+            <label for="V1-no">No</label>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('8')">NEXT</button>
+          </div>
+        </div>
+        <div class="container hide" id="V2" data-question-group="7">
+          <div class="wrapper">
+            <p class="question-text">
+              Have you ever fantasized about murdering your father?
+            </p>
+          </div>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="V2-yes" name="V2-group" value="true" />
+            <label for="V2-yes">Yes</label>
+            <input type="radio" id="V2-no" name="V2-group" value="false" />
+            <label for="V2-no">No</label>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('8')">NEXT</button>
+          </div>
+        </div>
+        <div class="container hide" id="V3" data-question-group="7">
+          <div class="wrapper">
+            <p class="question-text">To kill or to be killed?</p>
+          </div>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="V3-yes" name="V3-group" value="true" />
+            <label for="V3-yes">Kill</label>
+            <input type="radio" id="V3-no" name="V3-group" value="false" />
+            <label for="V3-no">Be killed</label>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('8')">NEXT</button>
+          </div>
+        </div>
+        <div class="container hide" id="V4" data-question-group="8">
+          <div class="wrapper">
+            <p class="question-text">
+              How likely you'd be willing to sacrifice yourself to save somebody
+              else?
+            </p>
+          </div>
+          <div class="wrapper">
+            <div class="answer-range-wrapper">
+              <div class="mobile-range-label-wrapper">
+                <label for="V4-range" class="mobile-range-label"
+                  >Not at all</label
+                >
+                <label for="V4-range" class="mobile-range-label"
+                  >Completely</label
+                >
+              </div>
+              <label for="V4-range" class="desktop-range-label">Never</label>
+              <input
+                type="range"
+                id="V4-range"
+                class="answer-range"
+                min="-100"
+                max="100"
+              />
+              <label for="V4-range" class="desktop-range-label"
+                >Completely</label
+              >
+            </div>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('9')">NEXT</button>
+          </div>
+        </div>
+        <div class="container hide" id="V5" data-question-group="9">
+          <div class="wrapper">
+            <p class="question-text">What could justify capital punishment?</p>
+          </div>
+          <div class="wrapper">
+            <textarea
+              class="answer-text"
+              id="V5-text"
+              placeholder="Feel free to use your native language."
+            ></textarea>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('10')">
+              NEXT
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!--section 4 (sexuality)-->
+      <section class="section hide" id="sexuality">
+        <div class="container hide" id="S1" data-question-group="10">
+          <div class="wrapper">
+            <p class="question-text">Have you ever cried during sex?</p>
+          </div>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="S1-yes" name="S1-group" value="true" />
+            <label for="S1-yes">Yes</label>
+            <input type="radio" id="S1-no" name="S1-group" value="false" />
+            <label for="S1-no">No</label>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('11')">
+              NEXT
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="S2" data-question-group="10">
+          <div class="wrapper">
+            <p class="question-text">
+              Have you ever thought about having sex with someone you shouldn't?
+            </p>
+          </div>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="S2-yes" name="S2-group" value="true" />
+            <label for="S2-yes">Yes</label>
+            <input type="radio" id="S2-no" name="S2-group" value="false" />
+            <label for="S2-no">No</label>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('11')">
+              NEXT
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="S3" data-question-group="10">
+          <div class="wrapper">
+            <p class="question-text">Taking control or being submissive?</p>
+          </div>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="S3-yes" name="S3-group" value="true" />
+            <label for="S3-yes">Control</label>
+            <input type="radio" id="S3-no" name="S3-group" value="false" />
+            <label for="S3-no">Submission</label>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('11')">
+              NEXT
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="S4" data-question-group="11">
+          <div class="wrapper">
+            <p class="question-text">How safe would you feel while sexting?</p>
+          </div>
+          <div class="wrapper">
+            <div class="answer-range-wrapper">
+              <div class="mobile-range-label-wrapper">
+                <label for="S4-range" class="mobile-range-label"
+                  >Not at all</label
+                >
+                <label for="S4-range" class="mobile-range-label"
+                  >Completely</label
+                >
+              </div>
+              <label for="S4-range" class="desktop-range-label"
+                >Not at all</label
+              >
+              <input
+                type="range"
+                id="S4-range"
+                class="answer-range"
+                min="-100"
+                max="100"
+              />
+              <label for="S4-range" class="desktop-range-label"
+                >Completely</label
+              >
+            </div>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('12')">
+              NEXT
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="S5" data-question-group="12">
+          <div class="wrapper">
+            <p class="question-text">
+              How would you feel if you found out that your partner had
+              cybersex?
+            </p>
+          </div>
+          <div class="wrapper">
+            <textarea
+              class="answer-text"
+              id="S5-text"
+              placeholder="Feel free to use your native language."
+            ></textarea>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('13')">
+              NEXT
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!--section 5 (beliefs)-->
+      <section class="section hide" id="beliefs">
+        <div class="container hide" id="B1" data-question-group="13">
+          <div class="wrapper">
+            <p class="question-text">Is science a religion?</p>
+          </div>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="B1-yes" name="B1-group" value="true" />
+            <label for="B1-yes">Yes</label>
+            <input type="radio" id="B1-no" name="B1-group" value="false" />
+            <label for="B1-no">No</label>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('14')">
+              NEXT
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="B2" data-question-group="13">
+          <div class="wrapper">
+            <p class="question-text">
+              Would you give up your beliefs for someone else?
+            </p>
+          </div>
+          <div class="answer-button-wrapper">
+            <input type="radio" id="B2-yes" name="B2-group" value="true" />
+            <label for="B2-yes">Yes</label>
+            <input type="radio" id="B2-no" name="B2-group" value="false" />
+            <label for="B2-no">No</label>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('14')">
+              NEXT
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="B3" data-question-group="14">
+          <div class="wrapper">
+            <p class="question-text">How close are you to happiness?</p>
+          </div>
+          <div class="wrapper">
+            <div class="answer-range-wrapper">
+              <div class="mobile-range-label-wrapper">
+                <label for="B3-range" class="mobile-range-label">Far</label>
+                <label for="B3-range" class="mobile-range-label"
+                  >Very close</label
+                >
+              </div>
+              <label for="B3-range" class="desktop-range-label">Far</label>
+              <input
+                type="range"
+                id="B3-range"
+                class="answer-range"
+                min="-100"
+                max="100"
+              />
+              <label for="B3-range" class="desktop-range-label"
+                >Very close</label
+              >
+            </div>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('15')">
+              NEXT
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="B4" data-question-group="15">
+          <div class="wrapper">
+            <p class="question-text">
+              What is stopping you from feeling complete?
+            </p>
+          </div>
+          <div class="wrapper">
+            <textarea
+              class="answer-text"
+              id="B4-text"
+              placeholder="Feel free to use your native language."
+            ></textarea>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('16')">
+              NEXT
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="B5" data-question-group="15">
+          <div class="wrapper">
+            <p class="question-text">What saves us?</p>
+          </div>
+          <div class="wrapper">
+            <textarea
+              class="answer-text"
+              id="B5-text"
+              placeholder="Feel free to use your native language."
+            ></textarea>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('16')">
+              NEXT
+            </button>
+          </div>
+        </div>
+        <div class="container hide" id="B6" data-question-group="15">
+          <div class="wrapper">
+            <p class="question-text">Where do we go when we die?</p>
+          </div>
+          <div class="wrapper">
+            <textarea
+              class="answer-text"
+              id="B6-text"
+              placeholder="Feel free to use your native language."
+            ></textarea>
+          </div>
+          <div class="footer">
+            <button class="next-button" onclick="nextSection('16')">
+              NEXT
+            </button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!--loading screen-->
+    <section class="section hide" id="loading">
+      <div class="container hide" id="loading-content">
+        <div class="wrapper">
+          <p class="question-text">
+            Processing your thoughts.<br />Please hold on.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--artwork-->
+    <section class="section hide" id="artwork">
+      <div class="container hide" id="artwork-content">
+        <div class="wrapper">
+          <img id="artwork-snapshot" src="" />
+        </div>
+        <div class="footer" id="save-artwork">
+          <button class="next-button" onclick="">SAVE AND UPLOAD</button>
+        </div>
+      </div>
+    </section>
+
+    <!--generative artwork-->
+    <script src="artwork.js"></script>
+    <!--script-->
+    <script src="questions.js"></script>
+  </body>
+</html>
