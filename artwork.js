@@ -81,16 +81,16 @@ class generativeArtwork {
   display() {
     noiseSeed(this.totalTime);
     noiseDetail(octaves, falloff);
-    if (this.textAnswersAverageLength <= 35) {
+    if (this.textAnswersAverageLength <= 16) {
       subd = 6;
       console.log(subd);
     } else if (
-      this.textAnswersAverageLength > 35 &&
-      this.textAnswersAverageLength <= 75
+      this.textAnswersAverageLength > 17 &&
+      this.textAnswersAverageLength <= 32
     ) {
       subd = 9;
       console.log(subd);
-    } else if (this.textAnswersAverageLength > 75) {
+    } else if (this.textAnswersAverageLength > 33) {
       subd = 12;
       console.log(subd);
     }
