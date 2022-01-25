@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Everett";
+  src: url("./assets/fonts/TWKEverett-Regular-web.woff") format("woff");
+}
+
+* {
+  /* dimensioning */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* fonts */
+  font-family: "Everett", sans-serif;
+  font-weight: normal;
+}
+
+html,
+body {
+  /* position, dimensions */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* behavioral settings */
+  overflow: hidden;
+  /* styles, colours */
+  background: #dfdee2;
+  color: black;
+}
+
+.horizontal-scroll-wrapper {
+  width: fit-content;
+  height: 100%;
+  display: flexbox;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0px;
+}
+
+.horizontal-scroll-wrapper .image-container {
+  border: 1px solid black;
+  display: inline-block;
+  height: 50%;
+  width: 50%;
+}

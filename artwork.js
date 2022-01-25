@@ -85,12 +85,12 @@ class generativeArtwork {
       subd = 6;
       console.log(subd);
     } else if (
-      this.textAnswersAverageLength > 17 &&
+      this.textAnswersAverageLength > 16 &&
       this.textAnswersAverageLength <= 32
     ) {
       subd = 9;
       console.log(subd);
-    } else if (this.textAnswersAverageLength > 33) {
+    } else if (this.textAnswersAverageLength > 32) {
       subd = 12;
       console.log(subd);
     }
