@@ -1,11 +1,9 @@
 // noise (arbitrary)
-const octaves = 8;
+const octaves = 24;
 const falloff = 0.5;
 
 // texture control (6, 9, 12) based on the length of the strings inside the text areas
-let subd = 6;
-// let subd = 9;
-// let subd = 12;
+let subd;
 
 class generativeArtwork {
   // parameters to build the image
@@ -56,6 +54,19 @@ class generativeArtwork {
       this.violenceTime +
       this.sexualityTime +
       this.beliefsTime;
+    this.identityTimeRatio = (this.identityTime * 1) / this.totalTime;
+    this.relationshipsTimeRatio = (this.relationshipsTime * 1) / this.totalTime;
+    this.violenceTimeRatio = (this.violenceTime * 1) / this.totalTime;
+    this.sexualityTimeRatio = (this.sexualityTime * 1) / this.totalTime;
+    this.beliefsTimeRatio = (this.beliefsTime * 1) / this.totalTime;
+    this.textAnswersAverageLength = round(
+      (this.identity3.length +
+        this.relationships3.length +
+        this.violence3.length +
+        this.sexuality3.length +
+        this.beliefs3.length) /
+        5
+    );
     this.filter = round(
       (abs(this.identity2) +
         abs(this.relationships2) +
@@ -70,39 +81,79 @@ class generativeArtwork {
   display() {
     noiseSeed(this.totalTime);
     noiseDetail(octaves, falloff);
+    if (this.textAnswersAverageLength <= 35) {
+      subd = 6;
+      console.log(subd);
+    } else if (
+      this.textAnswersAverageLength > 35 &&
+      this.textAnswersAverageLength <= 75
+    ) {
+      subd = 9;
+      console.log(subd);
+    } else if (this.textAnswersAverageLength > 75) {
+      subd = 12;
+      console.log(subd);
+    }
     for (var x = 0 + width / subd / 2; x < width; x += width / subd) {
       for (var y = 0 + height / subd / 2; y < height; y += width / subd) {
         push();
-        let noiseColor = noise(x * 100, y * 100);
-        if (noiseColor > 0.1875 && noiseColor < 0.3125) {
+        let noiseColor = noise(x, y);
+        console.log(noiseColor);
+        if (noiseColor >= 0 && noiseColor <= this.identityTimeRatio) {
           if (this.identity1 == "true") {
             fill("#7722F6");
           } else {
             fill("#B44EF2");
           }
           rect(x, y, width / subd, height / subd);
-        } else if (noiseColor > 0.3125 && noiseColor < 0.4375) {
+        } else if (
+          noiseColor > this.identityTimeRatio &&
+          noiseColor <= this.identityTimeRatio + this.relationshipsTimeRatio
+        ) {
           if (this.relationships1 == "true") {
             fill("#ABFF38");
           } else {
             fill("#D6FA26");
           }
           rect(x, y, width / subd, height / subd);
-        } else if (noiseColor > 0.4375 && noiseColor < 0.5625) {
+        } else if (
+          noiseColor > this.identityTimeRatio + this.relationshipsTimeRatio &&
+          noiseColor <=
+            this.identityTimeRatio +
+              this.relationshipsTimeRatio +
+              this.violenceTimeRatio
+        ) {
           if (this.violence1 == "true") {
             fill("#FE0000");
           } else {
             fill("#FF6432");
           }
           rect(x, y, width / subd, height / subd);
-        } else if (noiseColor > 0.5625 && noiseColor < 0.6875) {
+        } else if (
+          noiseColor >
+            this.identityTimeRatio +
+              this.relationshipsTimeRatio +
+              this.violenceTimeRatio &&
+          noiseColor <=
+            this.identityTimeRatio +
+              this.relationshipsTimeRatio +
+              this.violenceTimeRatio +
+              this.sexualityTimeRatio
+        ) {
           if (this.sexuality1 == "true") {
             fill("#FF1493");
           } else {
             fill("#FE3EEF");
           }
           rect(x, y, width / subd, height / subd);
-        } else if (noiseColor > 0.6875 && noiseColor < 0.8125) {
+        } else if (
+          noiseColor >
+            this.identityTimeRatio +
+              this.relationshipsTimeRatio +
+              this.violenceTimeRatio +
+              this.sexualityTimeRatio &&
+          noiseColor <= 1
+        ) {
           if (this.beliefs1 == "true") {
             fill("#1D64FF");
           } else {
@@ -114,16 +165,7 @@ class generativeArtwork {
       }
     }
 
-    // filter based on the median value of the sliders, rounded (0, 25, 50, 75, 100)
-    // filter(BLUR, 0);
-    // filter(BLUR, 12.5);
-    // filter(BLUR, 25);
-    // filter(BLUR, 37.5);
-    // filter(BLUR, 50);
-    // filter(BLUR, 75);
-    // filter(BLUR, 100);
-
-    // for testing purposes, may be final who knows
+    // filter based on the median value of the sliderss
     filter(BLUR, this.filter);
   }
 }

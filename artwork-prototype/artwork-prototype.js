@@ -1,6 +1,7 @@
 // noise (arbitrary)
-const octaves = 8;
+const octaves = 24;
 const falloff = 0.5;
+const noiseScale = 0.24;
 
 // texture control (6, 9, 12) based on the length of the strings inside the text areas
 // let subd = 6;
@@ -10,7 +11,7 @@ let subd = 12;
 function setup() {
   createCanvas(540, 540).parent("container");
   pixelDensity(1);
-  frameRate(1);
+  frameRate(0.2);
   rectMode(CENTER);
   noStroke();
   background(255);
@@ -82,7 +83,10 @@ class generativeArtwork {
     for (var x = 0 + width / subd / 2; x < width; x += width / subd) {
       for (var y = 0 + height / subd / 2; y < height; y += width / subd) {
         push();
-        let noiseColor = noise(x * frameCount, y * frameCount);
+        let noiseColor = noise(
+          x * noiseScale * frameCount,
+          y * noiseScale * frameCount
+        );
         console.log(noiseColor);
 
         // if (noiseColor > 0 && noiseColor < 0.2) {
