@@ -137,6 +137,21 @@ div::-webkit-scrollbar {
   font-size: medium;
 }
 
+#grain {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url(../assets/images/grain.gif);
+  z-index: +100;
+}
+
 /* responsiveness */
 @media only screen and (max-width: 540px) {
   .vertical-scroll-wrapper {

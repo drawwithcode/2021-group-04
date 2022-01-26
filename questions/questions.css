@@ -25,6 +25,8 @@ body {
   overflow: hidden;
   /* styles, colours */
   background: #232628;
+  /* background: #2e2d2c; */
+  /* background: black; */
   color: white;
 }
 
@@ -470,6 +472,21 @@ input[type="range"]:focus::-moz-range-track {
   outline: none;
   color: #4e5152;
   /* mix-blend-mode: difference; */
+}
+
+#grain {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url(../assets/images/grain.gif);
+  z-index: +100;
 }
 
 /* responsiveness */
