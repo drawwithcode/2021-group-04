@@ -42,7 +42,7 @@ The questions posed by the website, as mentioned, concern a particularly intimat
 // gif homepage con animazione e interazioni //
 
 The homepage has the goal to show the key elements of the website. First the user will see Metanoise’s logo. The naming *metanoise* indicates a transformation, the metamorphosis, in the path from raw data to meaning. The word *metanoise* is commonly used in the cybernetic contest referring to inaccurate and irrelevant data, generated in systems with a scheme based on an uncontrolled vocabulary. Declining this meaning inside the cognitive sphere, Metanoise represents the set of unconscious and unwanted thoughts that self-generate and create disturbing noise (discomfort).
-The animation on the background gives an idea of how the *visualizing mapping thoughts*, the artwork that will be generated at the end of the questions, will be. Thanks to this the user will have the first approach with the result of the project. 
+The animation on the background gives an idea of how the *visually mapping thoughts*, the artwork that will be generated at the end of the questions, will be. Thanks to this the user will have the first approach with the result of the project. 
 
 Before accessing to the question’s page, the user will interact with two alerts. The first one concerns the use of data, which are temporarily collected in anonymous form and safely, only to generate parameters that will define the final artwork. The second alert is focused on the surrounded physic space around the user: the environment has to be quiet and comfortable.
 
