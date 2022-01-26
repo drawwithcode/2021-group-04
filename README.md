@@ -7,8 +7,6 @@
 
 <!-- ## Coding Challenges -->
 
-<!-- ## Inspo -->
-
 ## Credits
 Draw With Code: Creative Coding 2021/2022 <br>
 Politecnico di Milano – Dipartimento di Design
