@@ -24,14 +24,16 @@ b. [Coding challenges](#coding-challenges)<br>
 
 # Project idea
 ## Concept
-The concept translates the idea of metamorphosis into a transformation of data into images. The users’ thoughts are processed by the algorithm in order to obtain a representation of their inner selves. 
+The concept translates the idea of metamorphosis into a translation of data into images. The users' thoughts are processed by the algorithm to obtain a visual representation.
 
-The site is proposed as a virtual space in which people can leave a trace, looking in particular at intrusive thoughts, which, by their nature, are hidden in a personal dimension without finding outlet in the outside world.
+The site proposes itself as a virtual space where people can leave a trace of their cognitions, as a safe place without finding an outlet in the real world.
 
-The user provides data by answering to questions about the five spheres of intrusive thoughts: violence, identity, sexuality, religious beliefs and relationships. The questions touch upon those mental intrusions defined by Rachman as "*every recurring, unacceptable, unwanted thought accompanied by a subjective emotional discomfort*". The algorithm interprets the way users interact with the questions, giving back to them images. All data are recorded locally to ensure the protection of privacy.
+The user provides data by answering questions on the five spheres of intrusive thoughts: violence, identity, sexuality, religious beliefs and relationships. The questions touch on those mental intrusions defined by Rachman as 'any recurrent, unacceptable, unwanted thought accompanied by subjective emotional distress'. The algorithm interprets how users interact with the questions, returning visualisations to them. All data is recorded locally to ensure privacy protection.
 
 ## Context of use
-The questions posed by the website, as mentioned, concern a particularly intimate sphere of human thoughts: for this reason, the experience requires some control over the surrounding environment that shouldn’t present any distractions. At the discretion of each user, the choice of the preferred device (which is developed to work both on mobile device - first - and desktop).
+The atmosphere that is generated is particularly intimate: for this reason, the experience requires a certain control over the surrounding environment, which must not present distractions. It is up to each user to choose their preferred device (which is developed to work on both mobile devices - primarily - and desktops).
+
+
 
 # Structure
 
@@ -39,33 +41,32 @@ The questions posed by the website, as mentioned, concern a particularly intimat
 
 ## Homepage
 
-// gif homepage con animazione e interazioni //
+// gif homepage with animation and interactions //
 
-The homepage has the goal to show the key elements of the website. First the user will see Metanoise’s logo. The naming *metanoise* indicates a transformation, the metamorphosis, in the path from raw data to meaning. The word *metanoise* is commonly used in the cybernetic contest referring to inaccurate and irrelevant data, generated in systems with a scheme based on an uncontrolled vocabulary. Declining this meaning inside the cognitive sphere, Metanoise represents the set of unconscious and unwanted thoughts that self-generate and create disturbing noise (discomfort).
-The animation on the background gives an idea of how the *visually mapping thoughts*, the artwork that will be generated at the end of the questions, will be. Thanks to this the user will have the first approach with the result of the project. 
+The homepage aims to show the key elements of the site. First the user will see the logo, the naming metanoise indicates a transformation, metamorphosis, in the path from raw data to meaning. The word metanoise is commonly used in the cyber context to refer to inaccurate and irrelevant data, generated in systems with a pattern based on an uncontrolled vocabulary. Declining this meaning within the cognitive sphere, Metanoise represents the set of unconscious and unwanted thoughts that are self-generated and create disturbing noise (discomfort). The animation in the background gives an idea of what the visual mapping of thoughts will look like, the artwork that will be generated at the end of the questions. Thanks to this the user will have the first approach to the result of the project.
 
-Before accessing to the question’s page, the user will interact with two alerts. The first one concerns the use of data, which are temporarily collected in anonymous form and safely, only to generate parameters that will define the final artwork. The second alert is focused on the surrounded physic space around the user: the environment has to be quiet and comfortable.
+Before accessing the questions page, the user will interact with two warnings. The first concerns the use of data, which are temporarily collected anonymously and securely, only to generate the parameters that will define the final work. The second warning is focused on the physical space surrounding the user: the environment must be quiet and comfortable.
 
-When the user is ready to start can press play.
+When the user is ready to start he can press play.
 
 ## Questions
-The web pages dedicated to questions are the main section of the project, and it is where the user can make an experience in between a psychotherapeutic session and a confessional.
+The web pages dedicated to questions are the main section of the project, and it is where the user can have an experience somewhere between a psychotherapeutic session and a confessional.
 
-All the questions are grouped under five categories and they were chosen according to some consistency criteria: we didn’t want to deal with sensitive topics that could hurt someone.
+All questions are grouped in five categories and have been balanced according to some criteria of coherence: no sensitive or too thorny topics.
 
-Each question has been analyzed in order to establish what kind of answers it needed: some answer are articulated by using sliders, some by an answer box, and some by multiple choice. 
+Each question was analysed to establish what kind of answers it needed: some answers are articulated through the use of sliders, others through an answer box, others through multiple choice.
 
-// gif con i tre tipi di risposta //
+// gif with the three answer types //
 
-The peculiarity of the question’s webpage, highlighted by a darker background color, is to be a safe section, controlled and without distraction. Because of this the web page doesn’t have any graphic connections with the others (homepage and archive): here the users’ attention must be as high as possible to create a strictly personal final artwork. The visual mapping thoughts would have to represent the image of the inner debate that these topics will raise.
+The look and feel of the question section stands out through a darker background colour communicating confidence and calmness. This is why the webpage has no graphic links to the others (homepage and archive): here the user's attention must be maximised to create a final, strictly personal work of art. The visual mapping thoughts should represent the image of the inner debate that these topics will raise.
 
 ## Archive
 
-// gif con interazioni archivio //
+// gifs with archive interactions //
 
-The metamorphosis is completed in the archive: a web page that collects all the images generated by the algorithm. Each visualizing mapping thoughts belongs to a single anonymous person. Therefore, the archive it is a gallery of representation of our subconscious that tells you about connections and differences between people without make it explicit. 
+The metamorphosis is completed in the archive: a web page that collects all the images generated by the algorithm. Each visual representation is anonymous and belongs to a single user. Therefore, the archive is a visualisation gallery of our subconscious that tells connections and differences between people without making them explicit.
 
-Metanoise takes shape when exists a place where are collected data that are usually considered ephemeral, incomplete, non-identifying, which, however, concern the emotional sphere, private thoughts and the judgments that constitute us as persons, as individual identities. 
+Metanoise generates the metamorphosis by generating a place where data are collected that are usually considered ephemeral, incomplete, non-identifying, but which concern the emotional sphere, private thoughts and judgements that constitute us as persons, as individual identities. 
 
 
 
