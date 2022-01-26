@@ -27,16 +27,43 @@ body {
   margin: 0;
   padding: 0;
   /* styles, colours */
-  background: #dfdee2;
   color: black;
   /* fonts */
   font-family: "Everett", sans-serif;
   font-weight: normal;
-  font-size: large;
+  font-size: 1.1em;
 }
 
-canvas {
-  display: block;
+/* !!! text !!! */
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+h1 {
+  /* fonts */
+  font-family: "Everett", sans-serif;
+  font-weight: normal;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  /* position, dimensions */
+  padding: 0;
+  margin: 0;
+}
+
+/* !!! BACKGROUND !!! */
+
+#canvasContainer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
 }
 
 #background {
@@ -45,44 +72,22 @@ canvas {
   height: 100%;
 }
 
-a {
-  /* styles, colours */
-  color: black;
-  /* fonts */
-  font-family: "Everett", sans-serif;
-  font-weight: normal;
-  font-size: large;
-  text-decoration: none;
+#grain {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url(./assets/images/granafondo.gif);
+  z-index: +100;
 }
 
-button {
-  /* position, dimensions */
-  margin: 10px;
-  padding: 5px;
-  /* behavioral settings */
-  cursor: pointer;
-  /* styles, colours */
-  background: transparent;
-  color: black;
-  font-size: medium;
-  border-style: solid;
-  border-color: black;
-}
-
-h1 {
-  /* fonts */
-  font-family: "Everett", sans-serif;
-  font-weight: normal;
-  font-size: 8vmax;
-}
-
-p {
-  /* position, dimensions */
-  padding: 0;
-  margin: 0;
-  /* fonts */
-  font-size: large;
-}
+/* SECTION */
 
 section {
   /* position, dimensions */
@@ -95,79 +100,38 @@ section {
   color: black;
 }
 
+/*HEADER*/
+
 .header {
   /* position, dimensions */
-  position: absolute;
+  position: fixed;
   left: 0;
-  right: 0;
   top: 0;
-  margin: 0px;
-  padding: 10px;
-  /* styles, colours */
-  background: transparent;
-  /* fonts */
-  font-family: "Everett", sans-serif;
-  font-weight: normal;
-  font-size: medium;
+  width: 100%;
 }
 
 #about {
-  /* position, dimensions */
-  position: absolute;
   left: 0;
   top: 0;
-  margin: 10px;
-  padding: 5px;
-  /* behavioral settings */
-  cursor: pointer;
-  /* styles, colours */
-  background: transparent;
-  color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-color: black;
 }
 
 #archive {
-  /* position, dimensions */
-  position: absolute;
   right: 0;
   top: 0;
-  margin: 10px;
-  padding: 5px;
-  /* behavioral settings */
-  cursor: pointer;
-  /* styles, colours */
-  background: transparent;
-  color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-color: black;
 }
 
-.footer {
-  /* position, dimensions */
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0px;
-  padding: 10px;
-  /* behavioral settings */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* styles, colours */
+button {
+  cursor: pointer;
   background: transparent;
-  /* fonts */
-  font-family: "Everett", sans-serif;
-  font-weight: normal;
-  font-size: large;
+  color: black;
+  border: none;
+  padding: 20px;
+  position: inherit;
 }
 
 .container {
   /* position, dimensions */
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   /* behavioral settings */
@@ -176,17 +140,24 @@ section {
   justify-content: center;
 }
 
-.wrapper {
-  /* position, dimensions */
-  margin: 10%;
-  padding: 5px;
-  /* behavioral settings */
-  display: inline;
-  /* styles, colours */
-  border-style: solid;
-  border-width: 1.5px;
-  border-radius: 0.5em;
-  border-color: black;
+#scroll {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* MARQUEE */
@@ -200,18 +171,17 @@ marquee {
 /*TESTO SCORRIMENTO MARQUEE*/
 #text-marquee {
   font-family: EVERETT;
-  font-size: 1.2vw;
   color: #dfdee2;
-  line-height: 0em;
-  transform: translate(0, -75%);
+  line-height: 1.8em;
 }
 
 #logo-container {
   width: 100%;
   position: fixed;
-  top: 25%;
   left: 0;
-  padding: 0;
+  top: 50%;
+  transform: translate(0, -60%);
+  padding: 20px;
 }
 
 #logo-container img {
@@ -220,32 +190,31 @@ marquee {
   position: relative;
 }
 
-#myAbout {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  position: relative;
-}
+/* !!! ABOUT !!! */
 
-#wrapper {
-  width: 40%;
+#myAbout {
+  width: 40vw;
+  left: 30vw;
+  top: 20px;
+  bottom: 2em;
+  position: fixed;
+  overflow: scroll;
+
+  /* styles, colours */
   background-color: #dfdee2;
   border-style: solid;
   border-width: 1px;
   border-color: black;
-  padding: 25px;
+
+  padding: 20px;
 }
 
-#scroll {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  position: absolute;
-  top: 95%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: "Everett";
-  color: black;
+#about-description,
+#about-team,
+#about-faculty {
+  padding-top: 1em;
+}
+
+#myAbout img {
+  width: 15%;
 }

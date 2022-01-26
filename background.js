@@ -1,8 +1,14 @@
 function setup() {
-  createCanvas(windowWidth, windowHeight).parent("container");
+  let canvas = createCanvas(windowWidth, windowHeight).parent(
+    "canvasContainer"
+  );
+  canvas.style("position", "absolute");
+  canvas.style("top", "0");
+  canvas.style("padding", "0");
+  canvas.style("z-index", "-100");
+  canvas.style("-webkit-filter", "blur(50px)");
   smooth();
   noStroke();
-  fill("#232628");
   noiseDetail(5, 0.5);
 }
 
@@ -46,5 +52,5 @@ function draw() {
       pop();
     }
   }
-  //filter(BLUR,50)
+  //filter(BLUR, 50);
 }
