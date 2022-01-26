@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="./questions.css" />
     <!--p5 libraries-->
     <script src="../assets/libraries/p5.min.js"></script>
+    <!--firebase-->
+    <script src="../assets/firebase/firebase.js"></script>
   </head>
   <body>
     <!--buffer-->
@@ -588,7 +590,9 @@
           <img id="artwork-snapshot" src="" />
         </div>
         <div class="footer" id="save-artwork">
-          <button class="next-button" onclick="">SAVE AND UPLOAD</button>
+          <button class="next-button" onclick="upload()">
+            SAVE AND UPLOAD
+          </button>
         </div>
       </div>
     </section>

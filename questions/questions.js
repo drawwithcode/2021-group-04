@@ -620,6 +620,10 @@ function draw() {
   }
 }
 
+function upload() {
+  addArtwork(artworkSnapshot.src);
+}
+
 // todo: finalise background animation
 // let sketch = function (sketch) {
 //   sketch.setup = function () {
