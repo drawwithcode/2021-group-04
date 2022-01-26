@@ -10,6 +10,8 @@ function setup() {
   smooth();
   noStroke();
   noiseDetail(5, 0.5);
+
+  frameRate(35);
 }
 
 function draw() {
@@ -22,30 +24,40 @@ function draw() {
       noStroke();
 
       let noiseColor = noise(
-        (frameCount / 1 + x) / 250,
-        (frameCount / 1 + y) / 250
+        (frameCount / 1 + x) / 850,
+        (frameCount / 1 + y) / 850
       );
 
       if (Math.floor(noiseColor * 10) == 0) {
-        fill("#B44EF2");
+        //rossoscuro
+        fill("#FE0000");
       } else if (Math.floor(noiseColor * 10) == 1) {
-        fill("#FF6432");
+        //rossochiaro
+        fill("#FF1493");
       } else if (Math.floor(noiseColor * 10) == 2) {
-        fill("#FF6432");
+        //fucsiascuro
+        fill("#7722F6");
       } else if (Math.floor(noiseColor * 10) == 3) {
-        fill("#B44EF2");
+        //fucsiachiaro
+        fill("#1D64FF");
       } else if (Math.floor(noiseColor * 10) == 4) {
+        //violascuro
         fill("#ABFF38");
       } else if (Math.floor(noiseColor * 10) == 5) {
-        fill("#FE3EEF");
+        //violachiaro
+        fill("#FF6432");
       } else if (Math.floor(noiseColor * 10) == 6) {
-        fill("#37C3FF");
-      } else if (Math.floor(noiseColor * 10) == 7) {
-        fill("#37C3FF");
-      } else if (Math.floor(noiseColor * 10) == 8) {
+        //bluscuro
         fill("#FE3EEF");
+      } else if (Math.floor(noiseColor * 10) == 7) {
+        //bluchiaro
+        fill("#B44EF2");
+      } else if (Math.floor(noiseColor * 10) == 8) {
+        //verdescuro
+        fill("#37C3FF");
       } else {
-        fill("#ABFF38");
+        //verdechiaro
+        fill("#DgFA26");
       }
 
       rect(0, 0, 60, 60);
