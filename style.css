@@ -196,7 +196,7 @@ marquee {
   width: 40vw;
   left: 30vw;
   top: 20px;
-  bottom: 2em;
+  bottom: 3em;
   position: fixed;
   overflow: scroll;
 
@@ -212,9 +212,31 @@ marquee {
 #about-description,
 #about-team,
 #about-faculty {
-  padding-top: 1em;
+  padding-top: 4em;
+  line-height: 1.3em;
 }
 
 #myAbout img {
   width: 15%;
 }
+
+/* responsiveness */
+/*@media only screen and (max-width: 540px) {
+  /*#myAbout {
+    width: 40vw;
+    left: 30vw;
+    top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    bottom: 3em;
+    position: fixed;
+    overflow: scroll;*/
+
+/* styles, colours */
+/*background-color: #dfdee2;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+
+    padding: 20px;
+  }*/
