@@ -32,41 +32,49 @@ async function firebaseSetup() {
   // database reference
   const artworksRef = ref(database, "artworks");
 
-  // retrieve the stored artworks
+  // retrieve the stored artworks and put them inside the grid randomly
   onValue(artworksRef, (snapshot) => {
     // console.log(snapshot.val());
     allArtworks = snapshot.val();
-    allArtworksAll = Object.values(allArtworks);
+    allArtworksArray = Object.values(allArtworks);
 
-    const imageWrappre = document.getElementById("image-wraper");
+    const imageWrapper = document.getElementById("image-wrapper");
 
-    if (!imageWrappre) {
-      console.log("not found");
+    if (!imageWrapper) {
+      console.log("the image-wrapper element was not found");
       return;
     } else {
-      console.log("Values ", allArtworksAll);
+      console.log("values: ", allArtworksArray);
     }
 
-    while (imageWrappre.childElementCount) {
-      imageWrappre.innerHTML = "";
+    while (imageWrapper.childElementCount) {
+      imageWrapper.innerHTML = "";
     }
-    for (const artwork of allArtworksAll) {
-      console.log(artwork);
 
+    let i = 0;
+    for (const artwork of allArtworksArray) {
+      // add noise, like noise(i) * 5
+      // generate a number
+      let span = Math.floor(Math.random() * 3);
+
+      // add a random number of empty elements before another image
+      for (let x = 0; x < span; x++) {
+        const emptyDiv = document.createElement("div");
+        emptyDiv.classList.add("image-container");
+        imageWrapper.appendChild(emptyDiv);
+      }
+
+      // add an artwork
       const el = document.createElement("div");
-
       el.classList.add("image-container");
-
       const img = document.createElement("img");
       img.src = artwork;
       img.classList.add("artwork-snapshot");
-
       el.appendChild(img);
+      imageWrapper.appendChild(el);
 
-      imageWrappre.appendChild(el);
+      i++;
     }
-
-    // console.log("sss ", allArtworksAll);
   });
 
   // add an artwork

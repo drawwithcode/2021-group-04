@@ -622,6 +622,25 @@ function draw() {
 
 function upload() {
   addArtwork(artworkSnapshot.src);
+  setTimeout(() => {
+    let date = new Date();
+    let currentDate =
+      date.getFullYear() +
+      "-" +
+      (date.getMonth() + 1) +
+      "-" +
+      date.getDate() +
+      "-" +
+      date.getHours() +
+      "-" +
+      date.getMinutes() +
+      "-" +
+      date.getSeconds();
+    saveCanvas("my metanoise_" + currentDate, "png");
+    setTimeout(() => {
+      window.open("../archive/archive.html", "_self");
+    }, 750);
+  }, 750);
 }
 
 // todo: finalise background animation
