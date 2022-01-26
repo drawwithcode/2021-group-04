@@ -1,6 +1,9 @@
+// IMG LOGO //
+
+
 # About
 METANOISE is a virtual space created for the course of Creative Coding at Politecnico di Milano. 
-If there was a button to restart your whole life, would you press it? In this website people will be asked to answer to question like the one above, all based on “intrusive thoughts”:  unwanted thoughts that can pop into our heads without warnings. These thoughts, that reveal parts of the inner reality of a human being, regard 5 dimensions: identity, beliefs, relationships, sexuality and violence. By answering, the users will leave a path that will be “translated” into an “intimate postcard”. Each postcard is unique: it represents the reflection of the user’s inner self. At the end of the experience the image will be collected in our “archive” where all the postcards generated can be visualized together. Now go find a safe place and enjoy this intimate experience.
+If there was a button to restart your whole life, would you press it? In this website people will be asked to answer to question like the one above, all based on *intrusive thoughts*:  unwanted thoughts that can pop into our heads without warnings. These thoughts, that reveal parts of the inner reality of a human being, regard 5 dimensions: identity, beliefs, relationships, sexuality and violence. By answering, the users will leave a path that will be *translated* into an *intimate postcard*. Each postcard is unique: it represents the reflection of the user’s inner self. At the end of the experience the image will be collected in our “archive” where all the postcards generated can be visualized together. Now go find a safe place and enjoy this intimate experience.
 
 **Table of Contents**
 1. Project idea<br>
@@ -25,21 +28,21 @@ The concept translates the idea of metamorphosis into a transformation of data i
 
 The site is proposed as a virtual space in which people can leave a trace, looking in particular at intrusive thoughts, which, by their nature, are hidden in a personal dimension without finding outlet in the outside world.
 
-The user provides data by answering to questions about the five spheres of intrusive thoughts: violence, identity, sexuality, religious beliefs and relationships. The questions touch upon those mental intrusions defined by Rachman as "every recurring, unacceptable, unwanted thought accompanied by a subjective emotional discomfort". The algorithm interprets the way users interact with the questions, giving back to them images. All data are recorded locally to ensure the protection of privacy.
+The user provides data by answering to questions about the five spheres of intrusive thoughts: violence, identity, sexuality, religious beliefs and relationships. The questions touch upon those mental intrusions defined by Rachman as "*every recurring, unacceptable, unwanted thought accompanied by a subjective emotional discomfort*". The algorithm interprets the way users interact with the questions, giving back to them images. All data are recorded locally to ensure the protection of privacy.
 
 ## Context of use
 The questions posed by the website, as mentioned, concern a particularly intimate sphere of human thoughts: for this reason, the experience requires some control over the surrounding environment that shouldn’t present any distractions. At the discretion of each user, the choice of the preferred device (which is developed to work both on mobile device - first - and desktop).
 
 # Structure
 
-// immagine struttura html //
+![html](images/html.png)
 
 ## Homepage
 
 // gif homepage con animazione e interazioni //
 
-The homepage has the goal to show the key elements of the website. First the user will see Metanoise’s logo. The naming “metanoise” indicates a transformation, the metamorphosis, in the path from raw data to meaning. The word “metanoise” is commonly used in the cybernetic contest referring to inaccurate and irrelevant data, generated in systems with a scheme based on an uncontrolled vocabulary. Declining this meaning inside the cognitive sphere, Metanoise represents the set of unconscious and unwanted thoughts that self-generate and create disturbing noise (discomfort).
-The animation on the background gives an idea of how the “visualizing mapping thoughts”, the artwork that will be generated at the end of the questions, will be. Thanks to this the user will have the first approach with the result of the project. 
+The homepage has the goal to show the key elements of the website. First the user will see Metanoise’s logo. The naming *metanoise* indicates a transformation, the metamorphosis, in the path from raw data to meaning. The word *metanoise* is commonly used in the cybernetic contest referring to inaccurate and irrelevant data, generated in systems with a scheme based on an uncontrolled vocabulary. Declining this meaning inside the cognitive sphere, Metanoise represents the set of unconscious and unwanted thoughts that self-generate and create disturbing noise (discomfort).
+The animation on the background gives an idea of how the *visualizing mapping thoughts*, the artwork that will be generated at the end of the questions, will be. Thanks to this the user will have the first approach with the result of the project. 
 
 Before accessing to the question’s page, the user will interact with two alerts. The first one concerns the use of data, which are temporarily collected in anonymous form and safely, only to generate parameters that will define the final artwork. The second alert is focused on the surrounded physic space around the user: the environment has to be quiet and comfortable.
 
@@ -72,7 +75,7 @@ Metanoise takes shape when exists a place where are collected data that are usua
 ## Design challenges
 The design of the webpage is focused on the overall perception of the user’s experience, a helpful atmosphere created in order to introduce people into their introspective path. The main colors of the page are two different shades of gray: for the homepage and archive a light gray (#DFDEE2), almost aseptic and scientific, while a deeper shade (#2E2D2C) for the section dedicated to questions that suggests an immersive atmosphere of reflection.
 
-// img palette pagine //
+![palette](images/palette.png)
 
 The font selected for the project is named Everett, released in 2021 and designed by Paparelli for the foundry type.weltkren. [Directly from the specimen: «Strong typographic details add a high tension while keeping a reading comfort, finding the right balance between a font that is graphic yet fluid.»] 
 The symmetry of the font puts the user in a visually comfortable situation, the interruptions of the lines refer to the concept of METANOISE: the recording of ephemeral data, usually defined as useless, that inside the project become protagonists. 
@@ -87,17 +90,18 @@ Another challenge refers to the parameterization of the artwork. The visual para
 
 The grid is determined by the average of characters typed within the open questions:
 
-// img differenti griglie //
-
+![grid](images/grid.png)
+ 
 > 1 to 16 characters = 6x6 grid, 17 to 33 = 9x9 grid, 34 to infinity = 12x12 grid.
 
 Each section has been assigned a color in two different shades. The percentage of a particular color is determined by the time spent in the section associated with it: if in an artwork is strong the presence of red, it means that the user treats the subject of violence with caution, taking more time to get to the bottom of what you think. The hue is determined by the option of your choice. 
 
-// img ego + differenti tonalità //
+![ego](images/ego.png)
+![palette2](images/palette2.png)
 
 We’ve also assigned two different shades to each color connected to the intrusive thoughts (violence: #FE0000, #FF6432; sexuality: #FF1493, #FE3EEF; identity: #7722F6, #B44EF2; beliefs: #1D64FF #37C3FF; relationships: #ABFF38, #D6FA26). The percentage of a particular color is defined by the time spent by the users on each section: if an artwork characterized by a strong presence of red, it means that an user treats the subject of violence with caution. The hue is determined by the option chosen by the user on the multiple choice kind of answers. 
 
-// img blur? //
+![blur](images/blur.png)
 
 Finally, the blur effect is defined by the average percentage of the sliders: the closer you are to the center, sharper the image.
 
