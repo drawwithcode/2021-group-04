@@ -1,4 +1,4 @@
-// IMG LOGO //
+![logo](images/logo.png)
 
 
 # About
@@ -173,14 +173,7 @@ testBox.add("jQuery").remove("jQuery");
 
 # TEAM
 
-// img team //
-
-- Mina Bavosi
-- Andrea Benedetto
-- Antonio Federico Brunetti
-- Maria Paola Canali
-- Rosalba Difonzo
-- Elisabetta Vignali
+![team](images/team.png)
 
 
 2021-team-work-group-4 created by GitHub Classroom
