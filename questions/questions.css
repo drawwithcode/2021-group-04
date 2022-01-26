@@ -442,6 +442,7 @@ input[type="range"]:focus::-moz-range-track {
 }
 
 #save-artwork {
+  gap: 80px;
   justify-content: center;
 }
 
@@ -547,7 +548,7 @@ input[type="range"]:focus::-moz-range-track {
     height: auto;
   }
   #save-artwork {
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 }
 
@@ -593,6 +594,6 @@ input[type="range"]:focus::-moz-range-track {
     height: auto;
   }
   #save-artwork {
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 }

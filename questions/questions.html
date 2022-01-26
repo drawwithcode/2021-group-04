@@ -33,10 +33,42 @@
 
     <!--intro-->
     <section class="section show" id="intro">
-      <div class="container show" id="intro-content">
-        <!-- <div class="header">
-          <a href class="link-home"><span>HOME</span></a>
-        </div> -->
+      <div class="container show" id="intro-alert-1">
+        <div class="wrapper">
+          <p class="question-text">
+            METANOISE is a tool which analyses how noisy our thoughts might be.
+            By taking partin this experience, you'll let the algorithm interpret
+            your data.
+          </p>
+        </div>
+        <div class="footer">
+          <button class="next-button" onclick="nextSection('A')">NEXT</button>
+        </div>
+      </div>
+      <div class="container hide" id="intro-alert-2">
+        <div class="wrapper">
+          <p class="question-text">
+            You're entering a safe place: all of your answers will be
+            temporarily stored in order to generate an artwork which can be then
+            downloaded and uploaded to the archive.
+          </p>
+        </div>
+        <div class="footer">
+          <button class="next-button" onclick="nextSection('B')">NEXT</button>
+        </div>
+      </div>
+      <div class="container hide" id="intro-alert-3">
+        <div class="wrapper">
+          <p class="question-text">
+            Before you start, be sure to find a space whithout any distractions
+            that makes you feel in control.
+          </p>
+        </div>
+        <div class="footer">
+          <button class="next-button" onclick="nextSection('C')">NEXT</button>
+        </div>
+      </div>
+      <div class="container hide" id="intro-content">
         <div class="wrapper">
           <p class="question-text">Click START when you're ready.</p>
         </div>
@@ -592,8 +624,9 @@
           <img id="artwork-snapshot" src="" />
         </div>
         <div class="footer" id="save-artwork">
+          <button class="next-button" onclick="saveArtwork()">DOWNLOAD</button>
           <button class="next-button" onclick="upload()">
-            SAVE AND UPLOAD
+            UPLOAD TO ARCHIVE
           </button>
         </div>
       </div>

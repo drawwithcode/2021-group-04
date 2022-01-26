@@ -34,7 +34,6 @@ async function firebaseSetup() {
 
   // retrieve the stored artworks and put them inside the grid randomly
   onValue(artworksRef, (snapshot) => {
-    // console.log(snapshot.val());
     allArtworks = snapshot.val();
     allArtworksArray = Object.values(allArtworks);
 
@@ -43,8 +42,6 @@ async function firebaseSetup() {
     if (!imageWrapper) {
       console.log("the image-wrapper element was not found");
       return;
-    } else {
-      console.log("values: ", allArtworksArray);
     }
 
     while (imageWrapper.childElementCount) {
