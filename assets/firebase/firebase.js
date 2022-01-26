@@ -1,4 +1,4 @@
-let allArtworks; // contains all greetings
+let allArtworks; // contains all artworks
 
 // load and initialize Firebase
 async function firebaseSetup() {
@@ -34,8 +34,39 @@ async function firebaseSetup() {
 
   // retrieve the stored artworks
   onValue(artworksRef, (snapshot) => {
-    console.log(snapshot.val());
+    // console.log(snapshot.val());
     allArtworks = snapshot.val();
+    allArtworksAll = Object.values(allArtworks);
+
+    const imageWrappre = document.getElementById("image-wraper");
+
+    if (!imageWrappre) {
+      console.log("not found");
+      return;
+    } else {
+      console.log("Values ", allArtworksAll);
+    }
+
+    while (imageWrappre.childElementCount) {
+      imageWrappre.innerHTML = "";
+    }
+    for (const artwork of allArtworksAll) {
+      console.log(artwork);
+
+      const el = document.createElement("div");
+
+      el.classList.add("image-container");
+
+      const img = document.createElement("img");
+      img.src = artwork;
+      img.classList.add("artwork-snapshot");
+
+      el.appendChild(img);
+
+      imageWrappre.appendChild(el);
+    }
+
+    // console.log("sss ", allArtworksAll);
   });
 
   // add an artwork
