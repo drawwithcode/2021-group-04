@@ -121,7 +121,7 @@ The initial problem we had was _how to create this experience with a cross platf
 
 After having decided how to structure the website, we started to work on the core part of it, the Questions page. It is linked to three different JS files: one to manipulate the different sections written in raw HTML and CSS, the other to declare the artwork class and its methods, and the last to connect and upload an artwork to a Firebase real time database.
 
-In order to maximise the usage of the Pp5 library, we decided to use its blur filter in order to accomodate our design vision. Its main drawback is hardware utilisation: it's calculated inside of a canvas and more particularly in real time, so we had to reduce as much as possible the number of frames, and more specifically we took advantage of the `noLoop()` function.
+In order to maximise the usage of the p5 library, we decided to use its blur filter in order to accomodate our design vision. Its main drawback is hardware utilisation: it's calculated inside of a canvas, and more particularly in real time. For this reason, we had to reduce as much as possible the frame rate, and more specifically we took advantage of the `noLoop()` function.
 
 #### p5 artwork sketch (Questions page – questions.js)
 
@@ -151,7 +151,7 @@ function draw() {
 }
 ```
 
-As we can see, the artwork is calculated only one time, via it's display option. Then, the content of the hidden canvas (that is—in fact—a buffer) is put inside of the src property an already present image element. It is important to note that an instance of the artwork is created before, during the loading animation.
+As we can see, the artwork is calculated only one time, via its display option. Then, the content of the hidden canvas (that is—in fact—a buffer) is put inside of the src property an already present image element. It is important to note that an instance of the artwork is created before this happens, during the loading animation.
 
 This implementation made the anonymisation of the artwork possible, as it is uploaded to the Firebase real time database as a B64 PNG file without any other data attached to it:
 
