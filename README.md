@@ -41,12 +41,16 @@ The atmosphere that is generated is particularly intimate: for this reason, the 
 
 ## Homepage
 
-![homepage1](images/homepage1.png)
+![homepage](images/homepage.png)
 
 
 The homepage aims to show the key elements of the site. First the user will see the logo, the naming metanoise indicates a transformation, metamorphosis, in the path from raw data to meaning. The word metanoise is commonly used in the cyber context to refer to inaccurate and irrelevant data, generated in systems with a pattern based on an uncontrolled vocabulary. Declining this meaning within the cognitive sphere, Metanoise represents the set of unconscious and unwanted thoughts that are self-generated and create disturbing noise (discomfort). The animation in the background gives an idea of what the visual mapping of thoughts will look like, the artwork that will be generated at the end of the questions. Thanks to this the user will have the first approach to the result of the project.
 
 Before accessing the questions page, the user will interact with two warnings. The first concerns the use of data, which are temporarily collected anonymously and securely, only to generate the parameters that will define the final work. The second warning is focused on the physical space surrounding the user: the environment must be quiet and comfortable.
+
+![warning1](images/warning1.png) 
+![warning2](images/warning2.png)
+![warning3](images/warning3.png)
 
 When the user is ready to start he can press play.
 
