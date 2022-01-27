@@ -117,66 +117,127 @@ Finally, the blur effect is defined by the average percentage of the sliders: th
 
 ## Coding challenges
 
-<!--  #### Inline code
+The initial problem we had was _how to create this experience with a cross platform and mobile first mindset_. For this reason, we decided to make the structure of the website as simple as possible, by not only limiting the number of html pages but also the number of external dependencies (which for this project are p5 and Firebase). This meant that only vanilla HTML, CSS and JS were used to create it.
 
-`$ npm install marked`
+After having decided how to structure the website, we started to work on the core part of it, the Questions page. It is linked to three different JS files: one to manipulate the different sections written in raw HTML and CSS, the other to declare the artwork class and its methods, and the last to connect and upload an artwork to a Firebase real time database.
 
-#### Javascript　
+In order to maximise the usage of the Pp5 library, we decided to use its blur filter in order to accomodate our design vision. Its main drawback is hardware utilisation: it's calculated inside of a canvas and more particularly in real time, so we had to reduce as much as possible the number of frames, and more specifically we took advantage of the `noLoop()` function.
+
+#### p5 artwork sketch (Questions page – questions.js)
 
 ```javascript
-function test(){
-	console.log("Hello world!");
+function setup() {
+  createCanvas(540, 540).parent("artwork-buffer");
+  pixelDensity(1);
+  rectMode(CENTER);
+  noStroke();
+  background(255);
 }
 
-(function(){
-    var box = function(){
-        return box.fn.init();
-    };
-
-    box.prototype = box.fn = {
-        init : function(){
-            console.log('box.init()');
-
-			return this;
-        },
-
-		add : function(str){
-			alert("add", str);
-
-			return this;
-		},
-
-		remove : function(str){
-			alert("remove", str);
-
-			return this;
-		}
-    };
-
-    box.fn.init.prototype = box.fn;
-
-    window.box =box;
-})();
-
-var testBox = box();
-testBox.add("jQuery").remove("jQuery");
+function draw() {
+  if (artworkIsLoading) {
+    generatedArtwork.display();
+    noLoop();
+    artworkSnapshot.src = canvas.toDataURL();
+    setTimeout(() => {
+      loadingContent.className = "container hide";
+      loading.className = "section hide";
+      setTimeout(() => {
+        artwork.className = "section show";
+        artworkContent.className = "container show";
+      }, 750);
+    }, 750);
+  }
+}
 ```
 
-#### HTML code
+As we can see, the artwork is calculated only one time, via it's display option. Then, the content of the hidden canvas (that is—in fact—a buffer) is put inside of the src property an already present image element. It is important to note that an instance of the artwork is created before, during the loading animation.
 
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <mate charest="utf-8" />
-        <title>Hello world!</title>
-    </head>
-    <body>
-        <h1>Hello world!</h1>
-    </body>
-</html>
+This implementation made the anonymisation of the artwork possible, as it is uploaded to the Firebase real time database as a B64 PNG file without any other data attached to it:
+
+```javascript
+function saveArtwork() {
+  let date = new Date();
+  let currentDate =
+    date.getFullYear() +
+    "-" +
+    (date.getMonth() + 1) +
+    "-" +
+    date.getDate() +
+    "-" +
+    date.getHours() +
+    "-" +
+    date.getMinutes() +
+    "-" +
+    date.getSeconds();
+  saveCanvas("my metanoise_" + currentDate, "png");
+}
+
+function upload() {
+  addArtwork(artworkSnapshot.src);
+  setTimeout(() => {
+    window.open("../archive/archive.html", "_self");
+  }, 750);
+}
 ```
--->
+
+The archive page is also linked to the Firebase JS file: inside of it we can find the addArtwork and onValue functions:
+
+#### addArtwork and onValue functions (Questions page and Archive page – firebase.js)
+
+```javascript
+// retrieve the stored artworks and put them inside the grid randomly
+onValue(artworksRef, (snapshot) => {
+  allArtworks = snapshot.val();
+  allArtworksArray = Object.values(allArtworks);
+
+  const imageWrapper = document.getElementById("image-wrapper");
+
+  if (!imageWrapper) {
+    console.log("the image-wrapper element was not found");
+    return;
+  }
+
+  while (imageWrapper.childElementCount) {
+    imageWrapper.innerHTML = "";
+  }
+
+  let i = 0;
+  for (const artwork of allArtworksArray) {
+    // add noise, like noise(i) * 5
+    // generate a number
+    let span = Math.floor(Math.random() * 3);
+
+    // add a random number of empty elements before another image
+    for (let x = 0; x < span; x++) {
+      const emptyDiv = document.createElement("div");
+      emptyDiv.classList.add("image-container");
+      imageWrapper.appendChild(emptyDiv);
+    }
+
+    // add an artwork
+    const el = document.createElement("div");
+    el.classList.add("image-container");
+    const img = document.createElement("img");
+    img.src = artwork;
+    img.classList.add("artwork-snapshot");
+    el.appendChild(img);
+    imageWrapper.appendChild(el);
+
+    i++;
+  }
+});
+
+// add an artwork
+addArtwork = (data) => {
+  // create a reference
+  const newArtworkRef = push(artworksRef);
+  // add data to the database
+  set(newArtworkRef, data);
+};
+```
+
+In order to maintain the randomness theme even inside of the archive, each time an user access it the B64 images are put inside of a div element along with a random quantity of blank areas.
 
 # Team
 
