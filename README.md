@@ -112,7 +112,7 @@ Finally, the blur effect is defined by the average percentage of the sliders: th
 
 ## Coding challenges
 
-#### Inline code
+<!--  #### Inline code
 
 `$ npm install marked`
 
@@ -171,6 +171,7 @@ testBox.add("jQuery").remove("jQuery");
     </body>
 </html>
 ```
+-->
 
 
 # TEAM
