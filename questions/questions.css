@@ -11,6 +11,14 @@
   /* fonts */
   font-family: "Everett", sans-serif;
   font-weight: normal;
+  /* scrolling */
+  -ms-overflow-style: none; /* (IE and Edge) */
+  scrollbar-width: none; /* (Firefox) */
+}
+
+/* scrolling (Chrome) */
+::-webkit-scrollbar {
+  display: none;
 }
 
 html,
@@ -25,8 +33,6 @@ body {
   overflow: hidden;
   /* styles, colours */
   background: #232628;
-  /* background: #2e2d2c; */
-  /* background: black; */
   color: white;
 }
 

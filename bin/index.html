@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <!--meta tags-->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <meta name="theme-color" content="#232628" />
+    <!--title-->
+    <title>METANOISE</title>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <!--temp-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("a[href*=#]:not([href=#])").click(function () {
+          if (
+            location.pathname.replace(/^\//, "") ==
+              this.pathname.replace(/^\//, "") &&
+            location.hostname == this.hostname
+          ) {
+            var target = $(this.hash);
+            target = target.length
+              ? target
+              : $("[name=" + this.hash.slice(1) + "]");
+            if (target.length) {
+              $("html,body").animate(
+                {
+                  scrollTop: target.offset().top,
+                },
+                1000
+              );
+              return false;
+            }
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <section id="one">
+      <div class="container">
+        <div class="header">
+          <button id="about"><span>ARCHIVE</span></button>
+          <button id="archive"><span>ABOUT</span></button>
+        </div>
+        <h1>METANOISE</h1>
+        <div class="footer">
+          <a href="#two">↓</a>
+        </div>
+      </div>
+    </section>
+    <section id="two">
+      <div class="container">
+        <div class="wrapper">
+          <p>
+            By partaking in this experience, you understand that some of the
+            data will be collected and handled temporarily in anonymous form.
+          </p>
+        </div>
+        <div class="footer">
+          <a href="#three">↓</a>
+        </div>
+      </div>
+    </section>
+    <section id="three">
+      <div class="container">
+        <div class="wrapper">
+          <p>
+            Be sure to find a place in which you feel relaxed and safe. Ready?
+          </p>
+        </div>
+        <div class="footer"><button>PLAY</button></div>
+      </div>
+    </section>
+  </body>
+</html>

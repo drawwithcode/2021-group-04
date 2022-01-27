@@ -11,6 +11,14 @@
   /* fonts */
   font-family: "Everett", sans-serif;
   font-weight: normal;
+  /* scrolling */
+  -ms-overflow-style: none; /* (IE and Edge) */
+  scrollbar-width: none; /* (Firefox) */
+}
+
+/* scrolling (Chrome) */
+::-webkit-scrollbar {
+  display: none;
 }
 
 html,
@@ -41,11 +49,13 @@ span {
   color: black;
   text-decoration: none;
   /* fonts */
-  font-size: 2em;
+  font-size: 1em;
 }
 
-div::-webkit-scrollbar {
-  display: none;
+marquee {
+  background-color: black;
+  color: #dfdee2;
+  padding: 30px;
 }
 
 .container {
@@ -68,7 +78,7 @@ div::-webkit-scrollbar {
   right: 0;
   top: 0;
   margin: 0px;
-  padding: 20px;
+  padding: 30px;
   /* behavioral settings */
   display: flex;
   align-items: center;
@@ -121,8 +131,8 @@ div::-webkit-scrollbar {
   right: 0;
   bottom: 0;
   margin: 0px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   padding-left: 0px;
   padding-right: 0px;
   /* behavioral settings */
@@ -149,11 +159,11 @@ div::-webkit-scrollbar {
   z-index: 1;
   pointer-events: none;
   background-image: url(../assets/images/grain.gif);
-  z-index: +100;
+  z-index: 100;
 }
 
 /* responsiveness */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .vertical-scroll-wrapper {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -167,9 +177,9 @@ div::-webkit-scrollbar {
     padding: 10px;
   }
   .footer {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding: 0px;
+  }
+  marquee {
+    padding: 10px;
   }
 }

@@ -5,9 +5,12 @@
 
 * {
   /* dimensioning */
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  /* fonts */
+  font-family: "Everett", sans-serif;
+  font-weight: normal;
   /* scrolling */
   -ms-overflow-style: none; /* (IE and Edge) */
   scrollbar-width: none; /* (Firefox) */
@@ -26,158 +29,416 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  /* behavioral settings */
+  overflow: hidden;
   /* styles, colours */
-  background: #232628;
-  color: white;
+  color: black;
   /* fonts */
-  font-family: "Everett", sans-serif;
-  font-weight: normal;
-  font-size: large;
+  /* font-size: 1.125em; */
+}
+
+/* native tags */
+a,
+p,
+marquee,
+span {
+  /* position, dimensions */
+  margin: 0;
+  border: 0;
+  padding: 0;
+  /* behavioral settings */
+  display: block;
+  color: black;
+  text-decoration: none;
+  /* fonts */
+  font-size: 1em;
 }
 
 a {
-  /* styles, colours */
-  color: white;
-  /* fonts */
-  font-family: "Everett", sans-serif;
-  font-weight: normal;
-  font-size: large;
-  text-decoration: none;
-}
-
-button {
-  /* position, dimensions */
-  margin: 10px;
-  padding: 5px;
-  /* behavioral settings */
   cursor: pointer;
-  /* styles, colours */
-  background: transparent;
-  color: white;
-  font-size: medium;
-  border-style: solid;
-  border-radius: 0.5em;
-  border-color: white;
 }
 
 h1 {
-  /* fonts */
-  font-family: "Everett", sans-serif;
-  font-weight: normal;
-  font-size: 8vmax;
-}
-
-p {
-  /* position, dimensions */
-  padding: 0;
   margin: 0;
-  /* fonts */
-  font-size: large;
-}
-
-section {
-  /* position, dimensions */
-  height: 100%;
-  width: 100%;
-  /* behavioral settings */
-  display: block;
-  /* styles, colours */
-  background: transparent;
-  color: white;
-}
-
-.header {
-  /* position, dimensions */
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  margin: 0px;
-  padding: 10px;
-  /* styles, colours */
-  background: transparent;
+  padding: 0;
   /* fonts */
   font-family: "Everett", sans-serif;
   font-weight: normal;
-  font-size: medium;
+  font-size: 2.25em;
 }
 
-#about {
-  /* position, dimensions */
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin: 10px;
-  padding: 5px;
-  /* behavioral settings */
-  cursor: pointer;
-  /* styles, colours */
-  background: transparent;
-  color: white;
-  border-style: solid;
-  border-width: 1.5px;
-  border-radius: 0.5em;
-  border-color: white;
+marquee {
+  background-color: black;
+  color: #dfdee2;
+  padding: 30px;
 }
 
-#archive {
-  /* position, dimensions */
+/* background */
+#canvas {
   position: absolute;
-  right: 0;
-  top: 0;
-  margin: 10px;
-  padding: 5px;
-  /* behavioral settings */
-  cursor: pointer;
-  /* styles, colours */
-  background: transparent;
-  color: white;
-  border-style: solid;
-  border-width: 1.5px;
-  border-radius: 0.5em;
-  border-color: white;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.1);
+  z-index: -2;
 }
 
-.footer {
-  /* position, dimensions */
+#canvas-overlay {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0px;
-  padding: 10px;
-  /* behavioral settings */
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+#logo-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* styles, colours */
-  background: transparent;
-  /* fonts */
-  font-family: "Everett", sans-serif;
-  font-weight: normal;
-  font-size: large;
 }
 
+#logo-container img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  flex-grow: 1;
+}
+
+/* content */
 .container {
   /* position, dimensions */
   position: absolute;
   width: 100%;
   height: 100%;
+  padding: 0px;
+  /* behavioral settings */
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: space-between;
+  z-index: 0;
+}
+
+.header {
+  /* position, dimensions */
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0px;
+  padding: 30px;
+  /* behavioral settings */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* styles, colours */
+  background: transparent;
+  /* fonts */
+  font-family: "Everett", sans-serif;
+  font-weight: normal;
+  font-size: medium;
+}
+
+/* scrolling placeholder 
+   todo: make play button aligned to the center (metanoise - play - marquee) 
+*/
+#play {
+  position: relative;
+  padding: 80px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  animation: blink 1s linear infinite;
+  font-size: 1em;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.footer {
+  /* position, dimensions */
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
   /* behavioral settings */
   display: flex;
   align-items: center;
   justify-content: center;
+  /* styles, colours */
+  background: transparent;
+  /* fonts */
+  font-family: "Everett", sans-serif;
+  font-weight: normal;
+  font-size: medium;
 }
 
-.wrapper {
-  /* position, dimensions */
-  margin: 10%;
-  padding: 5px;
-  /* behavioral settings */
-  display: inline;
+/* modal */
+.subtitle {
+  margin-bottom: 15px;
+}
+
+.about-wrapper-hide {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  opacity: 0%;
+  pointer-events: none;
+  /* animations */
+  transition: opacity 1s ease-in-out;
+}
+
+.about-wrapper-show {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  /* animations */
+  transition: opacity 1s ease-in-out;
+}
+
+#about-container {
+  position: absolute;
+  left: 30vw;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 40vw;
+  height: calc(100% - 60px);
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
   /* styles, colours */
+  background-color: #dfdee2;
   border-style: solid;
-  border-width: 1.5px;
-  border-radius: 0.5em;
-  border-color: white;
+  border-width: 1px;
+  border-color: black;
+  padding: 0px;
+}
+
+#about-close-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 15px;
+  border-bottom: 1px solid black;
+}
+
+#about-content {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+#about-title {
+  margin-top: 0px;
+  margin-bottom: 60px;
+}
+
+#about-description {
+  margin-top: 15px;
+  margin-bottom: 60px;
+  /* line-height: 1.3em; */
+  font-size: 1.125em;
+}
+
+#description-content {
+  /* line-height: 1.3em; */
+  font-size: 1.125em;
+}
+
+.coloured-text {
+  font-size: 1em;
+}
+
+#about-team {
+  margin-top: 15px;
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
+
+#about-team div {
+  display: inline-block;
+}
+
+#about-team p {
+  font-size: 0.75em;
+}
+
+#about-team img {
+  width: 100%;
+  outline: 1px solid black;
+}
+
+#about-faculty {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  font-size: 1.125em;
+  /* line-height: 1.3em; */
+}
+
+#teachers {
+  margin-bottom: 15px;
+}
+
+#course {
+  margin-top: 15px;
+}
+
+/* overlay */
+#grain {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url(./assets/images/grain.gif);
+  z-index: 100;
+}
+
+/* responsiveness */
+@media only screen and (max-width: 1024px) {
+  /* general layout */
+  h1 {
+    font-size: 2.25em;
+  }
+  a,
+  marquee,
+  p,
+  span {
+    font-size: 0.75em;
+  }
+  .header {
+    padding: 10px;
+  }
+  .footer {
+    padding: 0px;
+  }
+  marquee {
+    padding: 10px;
+  }
+  /* fonts */
+  #play {
+    font-size: 1.125em;
+  }
+  /* behaviour */
+  .about-wrapper-show {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    display: block;
+  }
+  .about-wrapper-hide {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    display: block;
+  }
+  #about-container {
+    left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    /* styles, colours */
+    background-color: #dfdee2;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding: 0px;
+  }
+  /* generic */
+  #about-close-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 10px;
+    border-bottom: 1px solid black;
+  }
+  #about-content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  #about-title {
+    margin-top: 0px;
+    margin-bottom: 40px;
+  }
+  #about-description {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    /* line-height: 1.3em; */
+    font-size: 1.125em;
+  }
+  #description-content {
+    /* line-height: 1.3em; */
+    font-size: 1.125em;
+  }
+  .coloured-text {
+    font-size: 1em;
+  }
+  #about-team {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+  #about-team div {
+    display: inline-block;
+  }
+  #about-team img {
+    width: 100%;
+    outline: 1px solid black;
+  }
+  #about-faculty {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 1.125em;
+    /* line-height: 1.3em; */
+  }
+  #teachers {
+    margin-bottom: 10px;
+  }
+  #course {
+    margin-top: 10px;
+  }
 }
