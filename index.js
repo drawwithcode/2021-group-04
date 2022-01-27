@@ -1,4 +1,4 @@
-// event listneners
+// event listeners
 document.getElementById("about-open").addEventListener("click", () => {
   toggleAbout("about-wrapper-show");
 });
