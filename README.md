@@ -178,12 +178,12 @@ testBox.add("jQuery").remove("jQuery");
 -->
 
 
-# TEAM
-
+# Team
+Meet the team Creative Cose 
 ![team](images/team.png)
 
 
-2021-team-work-group-4 created by GitHub Classroom
+
 
 ## Credits
 Draw With Code: Creative Coding 2021/2022 <br>
@@ -193,3 +193,5 @@ Politecnico di Milano – Dipartimento di Design
 - Michele Mauri
 - Tommaso Elli
 - Andrea Benedetti
+
+*2021-team-work-group-4 created by GitHub Classroom*
