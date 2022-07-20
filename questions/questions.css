@@ -37,7 +37,6 @@ body {
 }
 
 canvas {
-  /* behavioral settings */
   display: block;
 }
 
@@ -161,13 +160,11 @@ span {
   /* behavioral settings */
   flex-grow: 1;
   display: block;
-  /* justify-content: center; */
   /* styles, colours */
   background: transparent;
 }
 
 .question-text {
-  /* fonts */
   font-size: 4em;
 }
 
@@ -346,12 +343,10 @@ span {
 }
 
 .answer-range-wrapper input[type="range"]:focus {
-  /* behavioral settings */
   outline: none;
 }
 
 .answer-range-wrapper input[type="range"]:focus::-webkit-slider-runnable-track {
-  /* styles, colours */
   background: #4e5152;
 }
 
@@ -378,14 +373,10 @@ input[type="range"]::-moz-range-thumb {
 
 /* hide the outline behind the border */
 input[type="range"]:-moz-focusring {
-  /* behavioral settings */
-  /* outline: 1px solid white;
-  outline-offset: -1px; */
   outline: none;
 }
 
 input[type="range"]:focus::-moz-range-track {
-  /* styles, colours */
   background: #4e5152;
 }
 
@@ -410,7 +401,6 @@ input[type="range"]:focus::-moz-range-track {
 }
 
 .answer-text::placeholder {
-  /* styles, colours */
   color: #4e5152;
 }
 
@@ -448,6 +438,7 @@ input[type="range"]:focus::-moz-range-track {
 }
 
 #save-artwork {
+  /* behavioral settings */
   gap: 80px;
   justify-content: center;
 }
@@ -469,31 +460,28 @@ input[type="range"]:focus::-moz-range-track {
 }
 
 .next-button:hover {
-  /* styles, colours */
   color: #4e5152;
-  /* mix-blend-mode: difference; */
 }
 
 .next-button:focus {
-  /* styles, colours */
-  outline: none;
   color: #4e5152;
-  /* mix-blend-mode: difference; */
 }
 
 #grain {
-  width: 100vw;
-  height: 100vh;
+  /* position, dimensions */
   position: fixed;
   top: 0px;
   left: 0px;
-  background-repeat: repeat;
-  mix-blend-mode: multiply;
-  opacity: 0.6;
-  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  /* behavioral settings */
   pointer-events: none;
-  background-image: url(../assets/images/grain.gif);
   z-index: +100;
+  /* styles, colours */
+  background-image: url(../assets/images/grain.gif);
+  background-repeat: repeat;
+  opacity: 0.6;
+  mix-blend-mode: multiply;
 }
 
 /* responsiveness */
@@ -503,23 +491,28 @@ input[type="range"]:focus::-moz-range-track {
   .wrapper {
     padding: 20px;
   }
+
   .answer-button-wrapper {
     padding: 20px;
     grid-column-gap: 20px;
   }
+
   .answer-button-wrapper .answer-button,
   .answer-button-wrapper label {
     padding: 10px;
   }
+
   .answer-text {
     padding: 10px;
   }
+
   .footer {
     padding-top: 0px;
     padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
   }
+
   /* fonts */
   .question-text,
   .answer-button,
@@ -528,9 +521,11 @@ input[type="range"]:focus::-moz-range-track {
   .answer-text {
     font-size: 1.5em;
   }
+
   .next-button {
     font-size: 0.75em;
   }
+
   /* behaviour */
   .answer-range-wrapper {
     padding: 10px;
@@ -538,21 +533,25 @@ input[type="range"]:focus::-moz-range-track {
     flex-direction: column;
     gap: 10px;
   }
+
   .answer-range-wrapper .mobile-range-label-wrapper {
     display: flex;
   }
+
   .answer-range-wrapper .desktop-range-label {
     display: none;
   }
+
   .answer-range-wrapper input[type="range"] {
     width: 100%;
     height: 2em;
-    /* margin-top: 0.375em; */
   }
+
   #artwork-snapshot {
     width: 100%;
     height: auto;
   }
+
   #save-artwork {
     justify-content: space-between;
   }
@@ -572,33 +571,39 @@ input[type="range"]:focus::-moz-range-track {
     height: 50%;
     flex-direction: column;
   }
+
   .answer-range-wrapper .mobile-range-label-wrapper {
     display: flex;
   }
+
   .answer-range-wrapper .desktop-range-label {
     display: none;
   }
+
   .answer-range-wrapper input[type="range"] {
     width: 100%;
     height: 4em;
-    /* margin-top: 0.75em; */
   }
+
   .answer-range-wrapper input[type="range"]::-webkit-slider-thumb {
     /* position, dimensions */
     margin-top: -2em;
     width: 4em;
     height: 4em;
   }
+
   .answer-range-wrapper input[type="range"]::-moz-range-thumb {
     /* position, dimensions */
     margin-top: -2em;
     width: 4em;
     height: 4em;
   }
+
   #artwork-snapshot {
     width: 100%;
     height: auto;
   }
+
   #save-artwork {
     justify-content: space-between;
   }

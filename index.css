@@ -344,11 +344,11 @@ a {
   width: 100vw;
   height: 100vh;
   /* behavioral settings */
-  z-index: 1;
   pointer-events: none;
-  background-repeat: repeat;
+  z-index: 1;
   /* styles, colours */
   background-image: url(./assets/images/grain.gif);
+  background-repeat: repeat;
   opacity: 0.6;
   mix-blend-mode: multiply;
 }
