@@ -9,24 +9,21 @@
     />
     <meta name="theme-color" content="#000000" />
     <!--title-->
-    <title>METANOISE – Home</title>
+    <title>METANOISE</title>
     <!--favicon-->
     <link rel="icon" href="./assets/images/favicon.png" />
     <!--CSS-->
-    <link rel="stylesheet" type="text/css" href="normalize.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="index.css" />
     <!--p5 libraries-->
     <script src="assets/libraries/p5.min.js"></script>
+    <!--background animation-->
+    <script src="background.js"></script>
   </head>
   <body>
     <!--canvas background-->
     <div id="canvas"></div>
     <div id="canvas-overlay"></div>
-
-    <!--logo-->
-    <div id="logo-container">
-      <img src="assets/images/logo.svg" alt="logo" />
-    </div>
 
     <!--main page contents-->
     <div class="container">
@@ -34,18 +31,22 @@
         <a href="./archive/archive.html">ARCHIVE</a>
         <a id="about-open">ABOUT</a>
       </div>
-      <div id="play"><a href="./questions/questions.html">PLAY</a></div>
+      <div class="spacer"><span>&emsp;</span></div>
+      <div id="logo-container">
+        <img src="assets/images/logo.svg" alt="logo" />
+      </div>
+      <div class="spacer" id="play">
+        <a href="./questions/questions.html">PLAY</a>
+      </div>
       <div class="footer">
-        <marquee behavior="scroll" direction="left" scrollamount="12">
-          DO YOU HAVE UNWANTED THOUGHTS THAT MAKE YOU FEEL UNCOMFORTABLE?
-          &emsp;&emsp;&emsp;&emsp;&emsp; DO YOUR THOUGHTS TELL SOMETHING ABOUT
-          YOU? &emsp;&emsp;&emsp;&emsp;&emsp; WILL YOUR UNWANTED THOUGHTS EVER
-          GO AWAY? &emsp;&emsp;&emsp;&emsp;&emsp; IS THERE A PART OF YOUR INNER
-          SELF THAT PREVAILS? &emsp;&emsp;&emsp;&emsp;&emsp;</marquee
-        >
+        <div class="marquee3k" data-speed="2">
+          <!--prettier-ignore-->
+          <span><span class="marquee-content">DO YOU HAVE UNWANTED THOUGHTS THAT MAKE YOU FEEL UNCOMFORTABLE?</span><span class="marquee-content">DO YOUR THOUGHTS TELL SOMETHING ABOUT YOU?</span><span class="marquee-content">WILL YOUR UNWANTED THOUGHTS EVER GO AWAY?</span><span class="marquee-content">IS THERE A PART OF YOUR INNER SELF THAT PREVAILS?</span></span>
+        </div>
       </div>
     </div>
 
+    <!--modal-->
     <div class="about-wrapper-hide" id="about-wrapper">
       <div id="about-container">
         <!--close button-->
@@ -61,7 +62,7 @@
 
           <!--description-->
           <div id="about-description">
-            <div class="subtitle">CONCEPT</div>
+            <div class="about-subtitle">CONCEPT</div>
             <div id="description-content">
               Metanoise is a virtual space created for the Creative Coding
               course, held at Politecnico di Milano.<br />
@@ -71,34 +72,35 @@
               unwanted thoughts that can pop into our heads without any warning.
               These thoughts, that reveal parts of the inner reality of a human
               being, regard 5 dimensions:
-              <span
-                class="coloured-text"
-                style="display: inline-block; background-color: #b44ef2"
-                >identity</span
-              >,
-              <span
-                class="coloured-text"
-                style="display: inline-block; background-color: #37c3ff"
-                >beliefs</span
-              >,
-              <span
-                class="coloured-text"
-                style="display: inline-block; background-color: #abff38"
-                >relationships</span
-              >,
-              <span
-                class="coloured-text"
-                style="display: inline-block; background-color: #fe3eef"
-                >sexuality</span
-              >, and
-              <span
-                class="coloured-text"
-                style="display: inline-block; background-color: #ff6432"
-                >violence</span
-              >. By answering, the users will leave a path that will be
+              <span class="coloured-text" style="white-space: nowrap"
+                ><span class="coloured-text" style="background-color: #b44ef2"
+                  >identity</span
+                >,
+              </span>
+              <span class="coloured-text" style="white-space: nowrap"
+                ><span class="coloured-text" style="background-color: #37c3ff"
+                  >beliefs</span
+                >,
+              </span>
+              <span class="coloured-text" style="white-space: nowrap"
+                ><span class="coloured-text" style="background-color: #abff38"
+                  >relationships</span
+                >,
+              </span>
+              <span class="coloured-text" style="white-space: nowrap"
+                ><span class="coloured-text" style="background-color: #fe3eef"
+                  >sexuality</span
+                >, and
+              </span>
+              <span class="coloured-text" style="white-space: nowrap"
+                ><span class="coloured-text" style="background-color: #ff6432"
+                  >violence</span
+                >.</span
+              >
+              By answering, the users will leave a path that will be
               “translated” into an “intimate postcard”. Each postcard is unique:
               it represents the reflection of the user's inner self. At the end
-              of the experience the image can be saved and collected in our
+              of the experience, the image can be saved and collected in our
               "archive", where all the postcards generated can be visualised
               together. <br />We hope that you'll enjoy this intimate experience
               as much as we did when building it.
@@ -106,7 +108,7 @@
           </div>
 
           <!--team-->
-          <div class="subtitle">TEAM</div>
+          <div class="about-subtitle">TEAM</div>
           <div id="about-team">
             <div>
               <img src="assets/images/team/MinaMETA.png" alt="Mina" />
@@ -136,7 +138,7 @@
 
           <!--faculty-->
           <div id="about-faculty">
-            <div class="subtitle">FACULTY</div>
+            <div class="about-subtitle">FACULTY</div>
             <div id="teachers">
               Michele Mauri<br />Tommaso Elli<br />
               Andrea Benedetti<br />
@@ -151,9 +153,13 @@
     <!--grain effect-->
     <div id="grain"></div>
 
-    <!--background animation-->
-    <script src="background.js"></script>
     <!--script-->
     <script src="index.js"></script>
+
+    <!--marquee3000-->
+    <script src="assets/libraries/marquee3k.js"></script>
+    <script>
+      Marquee3k.init();
+    </script>
   </body>
 </html>
