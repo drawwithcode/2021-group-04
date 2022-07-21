@@ -187,10 +187,10 @@ span {
 /* to do: remove */
 .answer-button-wrapper .answer-button {
   /* position, dimensions */
-  margin: 0px;
-  padding: 20px;
   width: 100%;
   height: 50%;
+  margin: 0px;
+  padding: 20px;
   /* behavioral settings */
   cursor: pointer;
   text-align: center;
@@ -467,6 +467,7 @@ input[type="range"]:focus::-moz-range-track {
   color: #4e5152;
 }
 
+/* overlay */
 #grain {
   /* position, dimensions */
   position: fixed;
@@ -476,7 +477,7 @@ input[type="range"]:focus::-moz-range-track {
   height: 100vh;
   /* behavioral settings */
   pointer-events: none;
-  z-index: +100;
+  z-index: 100;
   /* styles, colours */
   background-image: url(../assets/images/grain.gif);
   background-repeat: repeat;
@@ -493,7 +494,9 @@ input[type="range"]:focus::-moz-range-track {
   }
 
   .answer-button-wrapper {
+    /* position, dimensions */
     padding: 20px;
+    /* behavioral settings */
     grid-column-gap: 20px;
   }
 
@@ -507,6 +510,7 @@ input[type="range"]:focus::-moz-range-track {
   }
 
   .footer {
+    /* position, dimensions */
     padding-top: 0px;
     padding-bottom: 20px;
     padding-left: 20px;
@@ -528,8 +532,10 @@ input[type="range"]:focus::-moz-range-track {
 
   /* behaviour */
   .answer-range-wrapper {
+    /* position, dimensions */
     padding: 10px;
     height: 50%;
+    /* behavioral settings */
     flex-direction: column;
     gap: 10px;
   }
@@ -543,11 +549,13 @@ input[type="range"]:focus::-moz-range-track {
   }
 
   .answer-range-wrapper input[type="range"] {
+    /* position, dimensions */
     width: 100%;
     height: 2em;
   }
 
   #artwork-snapshot {
+    /* position, dimensions */
     width: 100%;
     height: auto;
   }
@@ -568,6 +576,7 @@ input[type="range"]:focus::-moz-range-track {
 @media only screen and (min-width: 541px) and (max-width: 1024px) {
   /* behaviour */
   .answer-range-wrapper {
+    /* position, dimensions */
     height: 50%;
     flex-direction: column;
   }
@@ -581,25 +590,27 @@ input[type="range"]:focus::-moz-range-track {
   }
 
   .answer-range-wrapper input[type="range"] {
+    /* position, dimensions */
     width: 100%;
     height: 4em;
   }
 
   .answer-range-wrapper input[type="range"]::-webkit-slider-thumb {
     /* position, dimensions */
-    margin-top: -2em;
     width: 4em;
     height: 4em;
+    margin-top: -2em;
   }
 
   .answer-range-wrapper input[type="range"]::-moz-range-thumb {
     /* position, dimensions */
-    margin-top: -2em;
     width: 4em;
     height: 4em;
+    margin-top: -2em;
   }
 
   #artwork-snapshot {
+    /* position, dimensions */
     width: 100%;
     height: auto;
   }
